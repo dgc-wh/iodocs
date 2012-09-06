@@ -161,6 +161,10 @@
             }
         })
     });
+    $('#requestContent').change(function(){
+	    $('.requestContent').html('<pre class="prettyprint">' + $('#requestContent').val() + '</pre>');
+            prettyPrint();
+    });
 
     /*
         Try it! button. Submits the method params, apikey and secret if any, and apiName
