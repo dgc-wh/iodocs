@@ -70,78 +70,105 @@
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"]
+                        "EnumeratedList": ["csv", "json", "xml"],
+			"Description": "Selects the requested response representation format."
                     },
                     {
                         "Name": "client_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "Restricts sites to those in client_id which the user has access."
+                        "Description": "Restricts sites to those in client_id to which the user has access."
                     },
                     {
                         "Name": "display_entry_points",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
                     },
                     {
                         "Name": "display_assessment_complete",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
                     },
                     {
                         "Name": "display_vuln_policy",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
                     },
                     {
                         "Name": "display_allowed_hosts",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
                     },
                     {
                         "Name": "display_scan_status",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
                     },
                     {
                         "Name": "display_site_credentials",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
                     },
                     {
                         "Name": "display_vuln_stats",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose simple statistics about the number of vulns on the Site."
                     },
                     {
                         "Name": "display_scan_schedule",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose the scan schedule which indicates when automated scanning will take place."
                     },
                     {
                         "Name": "display_groups",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+                   },
+		   {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                   },
+		   {
+                        "Name": "display_min",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+			"Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
                    }
+		
                 ]
             },
             {
@@ -161,71 +188,105 @@
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"]
+                        "EnumeratedList": ["csv", "json", "xml"],
+			"Description": "Selects the requested response representation format."
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Restricts sites to those in client_id to which the user has access."
                     },
                     {
                         "Name": "display_entry_points",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
                     },
                     {
                         "Name": "display_assessment_complete",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
                     },
                     {
                         "Name": "display_vuln_policy",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
                     },
                     {
                         "Name": "display_allowed_hosts",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
                     },
                     {
                         "Name": "display_scan_status",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
                     },
                     {
                         "Name": "display_site_credentials",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
                     },
                     {
                         "Name": "display_vuln_stats",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose simple statistics about the number of vulns on the Site."
                     },
                     {
                         "Name": "display_scan_schedule",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose the scan schedule which indicates when automated scanning will take place."
                     },
                     {
                         "Name": "display_groups",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
+                        "EnumeratedList": [0, 1],
+			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+                   },
+		   {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                   },
+		   {
+                        "Name": "display_min",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+			"Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
                    }
+		
                 ]
             },
 	                {
