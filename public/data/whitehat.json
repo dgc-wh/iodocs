@@ -1,0 +1,329 @@
+{
+    "endpoints": [
+    {
+        "name": "Customer API",
+        "methods": [
+            { 
+                "MethodName": "/",
+                "Synopsis": "Returns user and client information",
+                "HTTPMethod": "GET",
+                "URI": "/", 
+                "RequiresOAuth": "N",
+                "parameters": []
+            }
+        ]
+    },
+    {
+            "name": "Account API",
+                "methods": [
+                {
+                    "MethodName": "/user/:username",
+                    "Synopsis": "Returns information on Sentinel user",
+                    "HTTPMethod": "GET",
+                    "URI": "/user/:username",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "username",
+                            "Required": "Y",
+                            "Type": "email address"   
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "/user",
+                    "Synopsis": "Returns information on Sentinel users the current user can manage",
+                    "HTTPMethod": "GET",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        }
+                    ]
+                }
+           ]
+        },
+    {
+        "name": "Site API",
+        "methods": [
+            {
+                "MethodName": "/site",
+                "Synopsis": "Returns information on sites user has access to",
+                "HTTPMethod": "GET",
+                "URI": "/site",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"]
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Restricts sites to those in client_id which the user has access."
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_groups",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                   }
+                ]
+            },
+            {
+                "MethodName": "/site/:site_id",
+                "Synopsis": "Returns information on one site",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Type": "integer"
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"]
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "display_groups",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                   }
+                ]
+            },
+	                {
+                "MethodName": "/site/:site_id",
+                "Synopsis": "Update information for one site",
+                "HTTPMethod": "PUT",
+                "URI": "/site/:site_id",
+                "RequiresOAuth": "N",
+		"content":{
+			"schema":{"type":"string"},
+			"contentType":["application/json","application/xml"]
+		},
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Type": "integer"
+                    },
+                    {
+                        "Name": "weight",
+                        "Type": "enumerated",
+                        "EnumeratedList": [
+                            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                         ]
+                    },
+                    {
+                        "Name": "industry",
+                        "Type": "enumerated",
+                        "EnumeratedList": [
+                            "Banking"
+                         ]
+                    },
+                    {
+                        "Name": "speed",
+                        "Type": "enumerated",
+                        "EnumeratedList": [
+                            0.0, 0.125, 0.25, 0.5
+                         ]
+                    },
+                    {
+                        "Name": "enable_scan_creds",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1]
+                    },
+                    {
+                        "Name": "vuln_policy_id",
+                        "Type": "integer"
+                    } 
+                ]
+            }   
+        ]
+    },
+        {
+            "name": "Admin API",
+            "methods": [
+                {
+                    "MethodName": "/:client_id/",
+                    "Synopsis": "Manage user access and site groups",
+                    "HTTPMethod": "GET",
+                    "URI": "/:client_id/",
+                    "parameters": [
+                        {
+                            "Name": "client_id",
+                            "Required": "Y"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Job API",
+            "methods": [
+                {
+                    "MethodName": "Fetch a Job",
+                    "Synopsis": "GET /api/job/{id} returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                    "HTTPMethod": "GET",
+                    "URI": "/job/:job_id",
+                    "parameters": [
+                        {
+                            "Name": "job_id",
+                            "Required": "N",
+                            "Description":"The ID number of the desired Job resource",
+                            "Type":"integer"
+                        }
+                    ]
+                },{
+                    "MethodName": "Fetch a list of Jobs",
+                    "Synopsis": "GET /api/job/ returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                    "HTTPMethod": "GET",
+                    "URI": "/job/",
+                    "parameters": [
+                    ]
+                }
+            ]
+             
+        }
+ 
+    ]
+}
+
+
