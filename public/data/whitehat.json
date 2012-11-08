@@ -64,19 +64,71 @@
         "name": "Application API",
             "methods": [
                 {
-                    "MethodName": "/user/:username",
-                    "Synopsis": "Returns information on Sentinel user",
+                    "MethodName": "/appication",
+                    "Synopsis": "Get single application | confirm uri name",
                     "HTTPMethod": "GET",
-                    "URI": "/user/:username",
+                    "URI": "/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
-                            "Name": "username",
-                            "Required": "Y",
-                            "Type": "email address"   
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "query_application",
+                        },
+                        {
+                            "Name": "query_client_id",
+                        },
+                        {
+                            "Name": "query_status",
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "stub description"
                         },
                         {
                             "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                        },
+                        {
+                            "Name": "page:limit",
+                        },
+                        {
+                            "Name": "page:offset",
+                        },
+                        {
+                            "Name": "page:order_by",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
