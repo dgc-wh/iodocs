@@ -1,21 +1,9 @@
 {
     "endpoints": [
+
     {
-        "name": "Customer API",
-        "methods": [
-            { 
-                "MethodName": "/",
-                "Synopsis": "Returns user and client information",
-                "HTTPMethod": "GET",
-                "URI": "/", 
-                "RequiresOAuth": "N",
-                "parameters": []
-            }
-        ]
-    },
-    {
-            "name": "Account API",
-                "methods": [
+        "name": "Account API",
+            "methods": [
                 {
                     "MethodName": "/user/:username",
                     "Synopsis": "Returns information on Sentinel user",
@@ -54,7 +42,89 @@
                     ]
                 }
            ]
-        },
+    },
+    {
+        "name": "Admin API",
+        "methods": [
+            {
+                "MethodName": "/:client_id/",
+                "Synopsis": "Manage user access and site groups",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Application API",
+            "methods": [
+                {
+                    "MethodName": "/user/:username",
+                    "Synopsis": "Returns information on Sentinel user",
+                    "HTTPMethod": "GET",
+                    "URI": "/user/:username",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "username",
+                            "Required": "Y",
+                            "Type": "email address"   
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        }
+                    ]
+                }
+           ]
+    },
+    {
+        "name": "Customer API",
+        "methods": [
+            { 
+                "MethodName": "/",
+                "Synopsis": "Returns user and client information",
+                "HTTPMethod": "GET",
+                "URI": "/", 
+                "RequiresOAuth": "N",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "name": "Job API",
+        "methods": [
+            {
+                "MethodName": "Fetch a Job",
+                "Synopsis": "GET /api/job/{id} returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "N",
+                        "Description":"The ID number of the desired Job resource",
+                        "Type":"integer"
+                    }
+                ]
+            },{
+                "MethodName": "Fetch a list of Jobs",
+                "Synopsis": "GET /api/job/ returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/",
+                "parameters": [
+                ]
+            }
+        ]
+    },
     {
         "name": "Site API",
         "methods": [
@@ -338,51 +408,7 @@
                 ]
             }   
         ]
-    },
-        {
-            "name": "Admin API",
-            "methods": [
-                {
-                    "MethodName": "/:client_id/",
-                    "Synopsis": "Manage user access and site groups",
-                    "HTTPMethod": "GET",
-                    "URI": "/:client_id/",
-                    "parameters": [
-                        {
-                            "Name": "client_id",
-                            "Required": "Y"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Job API",
-            "methods": [
-                {
-                    "MethodName": "Fetch a Job",
-                    "Synopsis": "GET /api/job/{id} returns a Job resource which describes a runnable configurations such as Scans and Retests",
-                    "HTTPMethod": "GET",
-                    "URI": "/job/:job_id",
-                    "parameters": [
-                        {
-                            "Name": "job_id",
-                            "Required": "N",
-                            "Description":"The ID number of the desired Job resource",
-                            "Type":"integer"
-                        }
-                    ]
-                },{
-                    "MethodName": "Fetch a list of Jobs",
-                    "Synopsis": "GET /api/job/ returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
-                    "HTTPMethod": "GET",
-                    "URI": "/job/",
-                    "parameters": [
-                    ]
-                }
-            ]
-             
-        }
+    }
  
     ]
 }
