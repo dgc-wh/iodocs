@@ -589,6 +589,19 @@
                 ]
             }   
         ]
+    },
+    {
+        "name": "Group API",
+        "methods": [
+            {
+                "MethodName": "/group/",
+                "Synopsis": "POST /api/:client_id/group/:group_name will create the group 'group_name' for the client 'client_id'| stub",
+                "HTTPMethod": "POST",
+                "URI": ":client_id/group/:groupname/",
+                "RequiresOAuth": "N",
+                "parameters": []
+            }
+        ]
     }
  
     ]
