@@ -73,14 +73,16 @@
                         {
                             "Name": "query_label",
                             "Required": "N",
-                            "Default": "xml",
-                            "Type": "string"
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"stub"
                         },
                         {
                             "Name": "query_label_like",
                             "Required": "N",
-                            "Default": "xml",
-                            "Type": "string"
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"stub"
                         },
                         {
                             "Name": "query_application"
@@ -120,10 +122,18 @@
                             "Name": "display_vuln_stats"
                         },
                         {
-                            "Name": "page:limit"
+                            "Name": "page:limit",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": "stub"
                         },
                         {
-                            "Name": "page:offset"
+                            "Name": "page:offset",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": "stub"
                         },
                         {
                             "Name": "page:order_by",
@@ -132,8 +142,7 @@
                             "Type": "enumerated",
                             "EnumeratedList": ["asc", "desc"]
                         }
-                    ],
-                    "xml_parameters": []
+                    ]
                 },
                 {
                     "MethodName": "/application/",
@@ -594,34 +603,172 @@
         "name": "Group API",
         "methods": [
             {
-                "MethodName": "/group/",
-                "Synopsis": "GET /api/:client_id/group/ | stub",
+                "MethodName": "/group/:group_id",
+                "Synopsis": "GET /api/:client_id/group/:group_id | stub",
                 "HTTPMethod": "GET",
-                "URI": ":client_id/group/",
+                "URI": ":client_id/group/:group_id",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"stub"
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"stub"
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "stub"
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "stub"
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["asc", "desc"]
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"]
+                    }
+                ]
             },
             {
-                "MethodName": "/group/",
+                "MethodName": "/group/:group_id",
                 "Synopsis": "POST /api/:client_id/group/:group_id will create the group 'group_id' for the client 'client_id'| stub",
                 "HTTPMethod": "POST",
-                "URI": ":client_id/group/:groupname/",
+                "URI": "/api/:client_id/group/:group_id/",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "N",
+                        "Default": "new site id",
+                        "Type": "integer",
+                        "Description":"POST body | Creates a new site."
+                    },
+                    {
+                        "Name": "application_id",
+                        "Required": "N",
+                        "Default": "new application id",
+                        "Type": "integer",
+                        "Description":"POST body | Creates a new application."
+                    }
+                ]
             },
             {
-                "MethodName": "/group/",
-                "Synopsis": "PUT /api/:client_id/group/ | stub",
+                "MethodName": "/group/:group_id/role",
+                "Synopsis": "POST /api/:client_id/group/:group_id/role Associate a user and role to a group.| stub",
+                "HTTPMethod": "POST",
+                "URI": "/api/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "user",
+                        "Required": "N",
+                        "Default": "new user name",
+                        "Type": "email address",
+                        "Description":"POST body | Provide user to be assigned to the group."
+                    },
+                    {
+                        "Name": "role",
+                        "Required": "N",
+                        "Default": "new user role",
+                        "Type": "string",
+                        "Description":"POST body | Provide role for user for given group."
+                    }
+                ]
+            },
+            {
+                "MethodName": "/group/:group_id/role",
+                "Synopsis": "PUT /api/:client_id/group/:group_id/role | stub",
                 "HTTPMethod": "PUT",
-                "URI": ":client_id/group/",
+                "URI": "/api/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "user",
+                        "Required": "N",
+                        "Default": "new user name",
+                        "Type": "email address",
+                        "Description":"POST body | Provide user to be assigned to the group."
+                    },
+                    {
+                        "Name": "role",
+                        "Required": "N",
+                        "Default": "new user role",
+                        "Type": "string",
+                        "Description":"POST body | Provide role for user for given group."
+                    }
+                ]
             },
             {
-                "MethodName": "/group/",
+                "MethodName": "/group/:group_id",
                 "Synopsis": "DELETE /api/:client_id/group/:group_id Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm, line 841)| stub",
                 "HTTPMethod": "DELETE",
-                "URI": ":client_id/group/",
+                "URI": "/api/:client_id/group/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "/group/:group_id/role/:target_user_id",
+                "Synopsis": "DELETE /api/:client_id/group/:group_id/role/:target_user_id Remove user privilege| stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/api/:client_id/group/:group_id/role/:target_user_id",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "/group/:group_id/site/target_site_id",
+                "Synopsis": "DELETE /api/:client_id/group/:group_id/site/target_site_id Remove site from group (or is the site the group?)| stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/api/:client_id/group/:group_id/site/target_site_id",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "/group/:group_id/application/target_application_id",
+                "Synopsis": "DELETE /api/:client_id/group/:group_id/application/target_application_id Remove app from group| stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/api/:client_id/group/:group_id/application/target_application_id",
                 "RequiresOAuth": "N",
                 "parameters": []
             }
