@@ -258,7 +258,7 @@
                 },
                 {
                     "MethodName": "/application/:app_id/scan_schedule",
-                    "Synopsis": "PUT /api/application/:app_id/scan_schedule put a scan_schedule| stub",
+                    "Synopsis": "PUT /api/application/:app_id/scan_schedule Setup a scan schedule for a particular application.| stub",
                     "HTTPMethod": "PUT",
                     "URI": "/application/:app_id/scan_schedule",
                     "RequiresOAuth": "N",
