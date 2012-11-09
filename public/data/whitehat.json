@@ -64,34 +64,32 @@
         "name": "Application API",
             "methods": [
                 {
-                    "MethodName": "/appication",
-                    "Synopsis": "Get single application | confirm uri name",
+                    "MethodName": "/application/",
+                    "Synopsis": "GET /api/application/ get application collection| stub",
                     "HTTPMethod": "GET",
-                    "URI": "/application/:app_id",
+                    "URI": "/application/",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
                             "Name": "query_label",
                             "Required": "N",
                             "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "Type": "string"
                         },
                         {
                             "Name": "query_label_like",
                             "Required": "N",
                             "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "Type": "string"
                         },
                         {
-                            "Name": "query_application",
+                            "Name": "query_application"
                         },
                         {
-                            "Name": "query_client_id",
+                            "Name": "query_client_id"
                         },
                         {
-                            "Name": "query_status",
+                            "Name": "query_status"
                         },
                         {
                             "Name": "query_has_schedule",
@@ -116,26 +114,157 @@
                             "EnumeratedList": ["text/csv", "application/json", "text/xml"]
                         },
                         {
-                            "Name": "display_scan_schedule",
+                            "Name": "display_scan_schedule"
                         },
                         {
-                            "Name": "display_vuln_stats",
+                            "Name": "display_vuln_stats"
                         },
                         {
-                            "Name": "page:limit",
+                            "Name": "page:limit"
                         },
                         {
-                            "Name": "page:offset",
+                            "Name": "page:offset"
                         },
                         {
                             "Name": "page:order_by",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
+                            "EnumeratedList": ["asc", "desc"]
+                        }
+                    ],
+                    "xml_parameters": []
+                },
+                {
+                    "MethodName": "/application/",
+                    "Synopsis": "POST /api/application/ post application collection| stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/application/",
+                    "RequiresOAuth": "N",
+                    "parameters": []
+                },
+                {
+                    "MethodName": "/application/:app_id",
+                    "Synopsis": "GET /api/application/{id} gets a single application| stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "string"
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "string"
+                        },
+                        {
+                            "Name": "query_application"
+                        },
+                        {
+                            "Name": "query_client_id"
+                        },
+                        {
+                            "Name": "query_status"
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "stub description"
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
                             "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        },
+                        {
+                            "Name": "display_scan_schedule"
+                        },
+                        {
+                            "Name": "display_vuln_stats"
+                        },
+                        {
+                            "Name": "page:limit"
+                        },
+                        {
+                            "Name": "page:offset"
+                        },
+                        {
+                            "Name": "page:order_by",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["asc", "desc"]
                         }
                     ]
+                },
+                {
+                    "MethodName": "/application/:app_id",
+                    "Synopsis": "PUT /api/application/{id} modify a single application| stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": []
+                },
+                {
+                    "MethodName": "/application/:app_id",
+                    "Synopsis": "DELETE /api/application/{id} delete a single application| stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": []
+                },
+                {
+                    "MethodName": "/application/:app_id/users",
+                    "Synopsis": "GET /api/application/:app_id/users get collection of users of application| stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/users",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "root": "users",
+                            "Description": "xml parameter | stub, figure out xml parameters."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "/application/:app_id/appliance",
+                    "Synopsis": "PUT /api/application/:app_id/appliance put an appliance| stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/appliance",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "root": "appliance",
+                            "Description": "xml parameter | stub, figure out xml parameters."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "/application/:app_id/scan_schedule",
+                    "Synopsis": "PUT /api/application/:app_id/scan_schedule put a scan_schedule| stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/scan_schedule",
+                    "RequiresOAuth": "N",
+                    "parameters": []
                 }
+
            ]
     },
     {
