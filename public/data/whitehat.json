@@ -604,7 +604,7 @@
         "methods": [
             {
                 "MethodName": "/group/:group_id",
-                "Synopsis": "GET /api/:client_id/group/:group_id | stub",
+                "Synopsis": "| stub",
                 "HTTPMethod": "GET",
                 "URI": ":client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -673,7 +673,7 @@
             },
             {
                 "MethodName": "/group/:group_id",
-                "Synopsis": "POST /api/:client_id/group/:group_id will create the group 'group_id' for the client 'client_id'| stub",
+                "Synopsis": "will create the group 'group_id' for the client 'client_id'| stub",
                 "HTTPMethod": "POST",
                 "URI": "/api/:client_id/group/:group_id/",
                 "RequiresOAuth": "N",
@@ -696,7 +696,7 @@
             },
             {
                 "MethodName": "/group/:group_id/role",
-                "Synopsis": "POST /api/:client_id/group/:group_id/role Associate a user and role to a group.| stub",
+                "Synopsis": "Associate a user and role to a group.| stub",
                 "HTTPMethod": "POST",
                 "URI": "/api/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
@@ -719,7 +719,7 @@
             },
             {
                 "MethodName": "/group/:group_id/role",
-                "Synopsis": "PUT /api/:client_id/group/:group_id/role | stub",
+                "Synopsis": "| stub",
                 "HTTPMethod": "PUT",
                 "URI": "/api/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
@@ -742,7 +742,7 @@
             },
             {
                 "MethodName": "/group/:group_id",
-                "Synopsis": "DELETE /api/:client_id/group/:group_id Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm, line 841)| stub",
+                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm, line 841)| stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -750,7 +750,7 @@
             },
             {
                 "MethodName": "/group/:group_id/role/:target_user_id",
-                "Synopsis": "DELETE /api/:client_id/group/:group_id/role/:target_user_id Remove user privilege| stub",
+                "Synopsis": "Remove user privilege| stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id/role/:target_user_id",
                 "RequiresOAuth": "N",
@@ -758,7 +758,7 @@
             },
             {
                 "MethodName": "/group/:group_id/site/target_site_id",
-                "Synopsis": "DELETE /api/:client_id/group/:group_id/site/target_site_id Remove site from group (or is the site the group?)| stub",
+                "Synopsis": "Remove site from group (or is the site the group?)| stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id/site/target_site_id",
                 "RequiresOAuth": "N",
@@ -766,7 +766,7 @@
             },
             {
                 "MethodName": "/group/:group_id/application/target_application_id",
-                "Synopsis": "DELETE /api/:client_id/group/:group_id/application/target_application_id Remove app from group| stub",
+                "Synopsis": "Remove app from group| stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id/application/target_application_id",
                 "RequiresOAuth": "N",
