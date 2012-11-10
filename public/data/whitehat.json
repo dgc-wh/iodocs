@@ -8,7 +8,7 @@
                     "MethodName": "/user/:username",
                     "Synopsis": "Returns information on Sentinel user",
                     "HTTPMethod": "GET",
-                    "URI": "/user/:username",
+                    "URI": "/api/user/:username",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -29,7 +29,7 @@
                     "MethodName": "/user",
                     "Synopsis": "Returns information on Sentinel users the current user can manage",
                     "HTTPMethod": "GET",
-                    "URI": "/user",
+                    "URI": "/api/user",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -50,7 +50,7 @@
                 "MethodName": "/:client_id/",
                 "Synopsis": "Manage user access and site groups",
                 "HTTPMethod": "GET",
-                "URI": "/:client_id/",
+                "URI": "/api/:client_id/",
                 "parameters": [
                     {
                         "Name": "client_id",
@@ -65,9 +65,9 @@
             "methods": [
                 {
                     "MethodName": "/application/",
-                    "Synopsis": "GET /api/application/ get application collection| stub",
+                    "Synopsis": "get application collection| stub",
                     "HTTPMethod": "GET",
-                    "URI": "/application/",
+                    "URI": "/api/application/",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -146,17 +146,17 @@
                 },
                 {
                     "MethodName": "/application/",
-                    "Synopsis": "POST /api/application/ post application collection| stub",
+                    "Synopsis": "post application collection| stub",
                     "HTTPMethod": "POST",
-                    "URI": "/application/",
+                    "URI": "/api/application/",
                     "RequiresOAuth": "N",
                     "parameters": []
                 },
                 {
                     "MethodName": "/application/:app_id",
-                    "Synopsis": "GET /api/application/{id} gets a single application| stub",
+                    "Synopsis": "gets a single application| stub",
                     "HTTPMethod": "GET",
-                    "URI": "/application/:app_id",
+                    "URI": "/api/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -225,25 +225,25 @@
                 },
                 {
                     "MethodName": "/application/:app_id",
-                    "Synopsis": "PUT /api/application/{id} modify a single application| stub",
+                    "Synopsis": "modify a single application| stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/application/:app_id",
+                    "URI": "/api/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": []
                 },
                 {
                     "MethodName": "/application/:app_id",
-                    "Synopsis": "DELETE /api/application/{id} delete a single application| stub",
+                    "Synopsis": "delete a single application| stub",
                     "HTTPMethod": "DELETE",
-                    "URI": "/application/:app_id",
+                    "URI": "/api/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": []
                 },
                 {
                     "MethodName": "/application/:app_id/users",
-                    "Synopsis": "GET /api/application/:app_id/users get collection of users of application| stub",
+                    "Synopsis": "get collection of users of application| stub",
                     "HTTPMethod": "GET",
-                    "URI": "/application/:app_id/users",
+                    "URI": "/api/application/:app_id/users",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -254,9 +254,9 @@
                 },
                 {
                     "MethodName": "/application/:app_id/appliance",
-                    "Synopsis": "PUT /api/application/:app_id/appliance put an appliance| stub",
+                    "Synopsis": "put an appliance| stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/application/:app_id/appliance",
+                    "URI": "/api/application/:app_id/appliance",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -267,9 +267,9 @@
                 },
                 {
                     "MethodName": "/application/:app_id/scan_schedule",
-                    "Synopsis": "PUT /api/application/:app_id/scan_schedule Setup a scan schedule for a particular application.| stub",
+                    "Synopsis": "Setup a scan schedule for a particular application.| stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/application/:app_id/scan_schedule",
+                    "URI": "/api/application/:app_id/scan_schedule",
                     "RequiresOAuth": "N",
                     "parameters": []
                 }
@@ -294,9 +294,9 @@
         "methods": [
             {
                 "MethodName": "Fetch a Job",
-                "Synopsis": "GET /api/job/{id} returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
-                "URI": "/job/:job_id",
+                "URI": "/api/job/:job_id",
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -307,9 +307,9 @@
                 ]
             },{
                 "MethodName": "Fetch a list of Jobs",
-                "Synopsis": "GET /api/job/ returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
-                "URI": "/job/",
+                "URI": "/api/job/",
                 "parameters": [
                 ]
             }
@@ -322,7 +322,7 @@
                 "MethodName": "/site",
                 "Synopsis": "Returns information on sites user has access to",
                 "HTTPMethod": "GET",
-                "URI": "/site",
+                "URI": "/api/site",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -435,7 +435,7 @@
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Returns information on one site",
                 "HTTPMethod": "GET",
-                "URI": "/site/:site_id",
+                "URI": "/api/site/:site_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -553,11 +553,11 @@
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Update information for one site",
                 "HTTPMethod": "PUT",
-                "URI": "/site/:site_id",
+                "URI": "/api/site/:site_id",
                 "RequiresOAuth": "N",
-		"content":{
-			"schema":{"type":"string"},
-			"contentType":["application/json","application/xml"]
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
 		},
                 "parameters": [
                     {
@@ -603,10 +603,10 @@
         "name": "Group API",
         "methods": [
             {
-                "MethodName": "/group/:group_id",
-                "Synopsis": "| stub",
+                "MethodName": "Retrieve group details",
+                "Synopsis": "Report out a list of groups and sites on request, by group name.",
                 "HTTPMethod": "GET",
-                "URI": ":client_id/group/:group_id",
+                "URI": "/api/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -615,7 +615,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description":"stub"
+                        "Description":"Display applications assoicated with group id."
                     },
                     {
                         "Name": "display_roles",
@@ -623,7 +623,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description":"stub"
+                        "Description":"Display roles assoicated with group id."
                     },
                     {
                         "Name": "display_sites",
@@ -631,28 +631,29 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description":"stub"
+                        "Description":"Display sites associated with group id."
                     },
                     {
                         "Name": "page:limit",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "stub"
+                        "Description": "Number of pages to retrieve."
                     },
                     {
                         "Name": "page:offset",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "stub"
+                        "Description": "Begin retrieving pages from this index."
                     },
                     {
                         "Name": "page:order_by",
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["asc", "desc"]
+                        "EnumeratedList": ["asc", "desc"],
+                        "Description": "Order results in ascending or descending order."
                     },
                     {
                         "Name": "format",
@@ -667,110 +668,178 @@
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"]
+                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
             {
-                "MethodName": "/group/:group_id",
-                "Synopsis": "will create the group 'group_id' for the client 'client_id'| stub",
+                "MethodName": "Create new group",
+                "Synopsis": "Create a new group and obtain the new group's id. (not sure if accurate) | stub",
+                "HTTPMethod": "POST",
+                "URI": "/api/:client_id/group/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "name",
+                        "Required": "N",
+                        "Default": "new group name",
+                        "Type": "string",
+                        "Description":"Content body example: \"name\":\"iodocs_group\""
+                    },
+                    {
+                        "Name": "description",
+                        "Required": "N",
+                        "Default": "new group description",
+                        "Type": "string",
+                        "Description":"Content body example: \"description\":\"This group contains all IODocs related stuff.\""
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add application or site to group",
+                "Synopsis": "Add an application or site to a given group. | stub",
                 "HTTPMethod": "POST",
                 "URI": "/api/:client_id/group/:group_id/",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "id",
                         "Required": "N",
                         "Default": "new site id",
                         "Type": "integer",
-                        "Description":"POST body | Creates a new site."
+                        "Description":"Content body example: \"id\":\"42\""
                     },
                     {
                         "Name": "application_id",
                         "Required": "N",
                         "Default": "new application id",
                         "Type": "integer",
-                        "Description":"POST body | Creates a new application."
+                        "Description":"Content body example: \"application_id\":\"142\""
                     }
                 ]
             },
             {
-                "MethodName": "/group/:group_id/role",
-                "Synopsis": "Associate a user and role to a group.| stub",
+                "MethodName": "Add user & role to group",
+                "Synopsis": "Associate a user and role to a group. | stub",
                 "HTTPMethod": "POST",
                 "URI": "/api/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "user",
                         "Required": "N",
                         "Default": "new user name",
                         "Type": "email address",
-                        "Description":"POST body | Provide user to be assigned to the group."
+                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
                     },
                     {
                         "Name": "role",
                         "Required": "N",
                         "Default": "new user role",
                         "Type": "string",
-                        "Description":"POST body | Provide role for user for given group."
+                        "Description":"Content body example: \"role\":\"Viewer\""
                     }
                 ]
             },
             {
-                "MethodName": "/group/:group_id/role",
-                "Synopsis": "| stub",
+                "MethodName": "Update group information",
+                "Synopsis": "Update an existing user with a new role. | stub",
                 "HTTPMethod": "PUT",
                 "URI": "/api/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "user",
                         "Required": "N",
                         "Default": "new user name",
                         "Type": "email address",
-                        "Description":"POST body | Provide user to be assigned to the group."
+                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
                     },
                     {
                         "Name": "role",
                         "Required": "N",
                         "Default": "new user role",
                         "Type": "string",
-                        "Description":"POST body | Provide role for user for given group."
+                        "Description":"Content body example: \"role\":\"admin\""
                     }
                 ]
             },
             {
-                "MethodName": "/group/:group_id",
-                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm, line 841)| stub",
+                "MethodName": "Remove group",
+                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm:sub handle_delete) | stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "group_id of group to be deleted/removed."
+                    }
+                ]
             },
             {
-                "MethodName": "/group/:group_id/role/:target_user_id",
-                "Synopsis": "Remove user privilege| stub",
+                "MethodName": "Remove user privilege",
+                "Synopsis": "Removes the given user's group privilege. | stub",
                 "HTTPMethod": "DELETE",
                 "URI": "/api/:client_id/group/:group_id/role/:target_user_id",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "target_user_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "user_id of user to be deleted/removed."
+                    }
+                ]
             },
             {
-                "MethodName": "/group/:group_id/site/target_site_id",
-                "Synopsis": "Remove site from group (or is the site the group?)| stub",
+                "MethodName": "Delete site from group",
+                "Synopsis": "Delete the given site from the given group. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id/site/target_site_id",
+                "URI": "/api/:client_id/group/:group_id/site/:target_site_id",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "target_site_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "site_id of site to be deleted/removed."
+                    }
+                ]
             },
             {
-                "MethodName": "/group/:group_id/application/target_application_id",
-                "Synopsis": "Remove app from group| stub",
+                "MethodName": "Delete application from group.",
+                "Synopsis": "Delete the given application from the given group. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id/application/target_application_id",
+                "URI": "/api/:client_id/group/:group_id/application/:target_application_id",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "target_application_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "application_id of application to be deleted/removed."
+                    }
+                ]
             }
         ]
     }
