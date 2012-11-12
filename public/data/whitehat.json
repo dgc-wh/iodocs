@@ -305,7 +305,8 @@
                         "Type":"integer"
                     }
                 ]
-            },{
+            },
+            {
                 "MethodName": "Fetch a list of Jobs",
                 "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
@@ -549,7 +550,7 @@
 		
                 ]
             },
-	                {
+            {
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Update information for one site",
                 "HTTPMethod": "PUT",
@@ -839,6 +840,35 @@
                         "Type": "integer",
                         "Description": "application_id of application to be deleted/removed."
                     }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Role API",
+        "methods": [
+            {
+                "MethodName": "Retrieve role collection",
+                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/api/:client_id/role",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "Retrieve role resource",
+                "Synopsis": "Role resource containing a description of the role and associated privileges. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/api/:client_id/role/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Role resource "
+                    }
+
                 ]
             }
         ]
