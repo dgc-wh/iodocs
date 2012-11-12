@@ -64,8 +64,8 @@
         "name": "Application API",
             "methods": [
                 {
-                    "MethodName": "/application/",
-                    "Synopsis": "get application collection| stub",
+                    "MethodName": "Get application collection",
+                    "Synopsis": "Get application collection | stub",
                     "HTTPMethod": "GET",
                     "URI": "/api/application/",
                     "RequiresOAuth": "N",
@@ -75,23 +75,35 @@
                             "Required": "N",
                             "Default": "",
                             "Type": "string",
-                            "Description":"stub"
+                            "Description":"Search for the label. | stub"
                         },
                         {
                             "Name": "query_label_like",
                             "Required": "N",
                             "Default": "",
                             "Type": "string",
-                            "Description":"stub"
+                            "Description":"Search for something like the given label. | stub"
                         },
                         {
-                            "Name": "query_application"
+                            "Name": "query_application",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description":"Can be one or more comma-seperated application ids | stub"
                         },
                         {
-                            "Name": "query_client_id"
+                            "Name": "query_client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Can be one or more comma-seperated client ids | stub"
                         },
                         {
-                            "Name": "query_status"
+                            "Name": "query_status",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Status values: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
                         },
                         {
                             "Name": "query_has_schedule",
@@ -99,153 +111,75 @@
                             "Default": 0,
                             "Type": "enumerated",
                             "EnumeratedList": [0, 1],
-                            "Description": "stub description"
+                            "Description": "Checks whether there is a schedule. | stub"
                         },
                         {
                             "Name": "format",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"],
+                            "Description": "Not sure what this does. | stub"
                         },
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "EnumeratedList": ["text/csv", "application/json"]
                         },
                         {
-                            "Name": "display_scan_schedule"
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
                         },
                         {
-                            "Name": "display_vuln_stats"
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
                         },
                         {
                             "Name": "page:limit",
                             "Required": "N",
-                            "Default": "",
+                            "Default": "5",
                             "Type": "integer",
-                            "Description": "stub"
+                            "Description": "Limit results to n number of pages. Default is set to 5."
                         },
                         {
                             "Name": "page:offset",
                             "Required": "N",
-                            "Default": "",
+                            "Default": "0",
                             "Type": "integer",
-                            "Description": "stub"
+                            "Description": "Begin showing results from page number n."
                         },
                         {
                             "Name": "page:order_by",
                             "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["asc", "desc"]
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
                         }
                     ]
                 },
                 {
-                    "MethodName": "/application/",
-                    "Synopsis": "post application collection| stub",
-                    "HTTPMethod": "POST",
-                    "URI": "/api/application/",
-                    "RequiresOAuth": "N",
-                    "parameters": []
-                },
-                {
-                    "MethodName": "/application/:app_id",
-                    "Synopsis": "gets a single application| stub",
-                    "HTTPMethod": "GET",
-                    "URI": "/api/application/:app_id",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "query_label",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "query_label_like",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "query_application"
-                        },
-                        {
-                            "Name": "query_client_id"
-                        },
-                        {
-                            "Name": "query_status"
-                        },
-                        {
-                            "Name": "query_has_schedule",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "stub description"
-                        },
-                        {
-                            "Name": "format",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
-                        },
-                        {
-                            "Name": "display_scan_schedule"
-                        },
-                        {
-                            "Name": "display_vuln_stats"
-                        },
-                        {
-                            "Name": "page:limit"
-                        },
-                        {
-                            "Name": "page:offset"
-                        },
-                        {
-                            "Name": "page:order_by",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["asc", "desc"]
-                        }
-                    ]
-                },
-                {
-                    "MethodName": "/application/:app_id",
-                    "Synopsis": "modify a single application| stub",
-                    "HTTPMethod": "PUT",
-                    "URI": "/api/application/:app_id",
-                    "RequiresOAuth": "N",
-                    "parameters": []
-                },
-                {
-                    "MethodName": "/application/:app_id",
-                    "Synopsis": "delete a single application| stub",
-                    "HTTPMethod": "DELETE",
-                    "URI": "/api/application/:app_id",
-                    "RequiresOAuth": "N",
-                    "parameters": []
-                },
-                {
-                    "MethodName": "/application/:app_id/users",
-                    "Synopsis": "get collection of users of application| stub",
+                    "MethodName": "Get users of application",
+                    "Synopsis": "Get collection of users of a particular application. | stub",
                     "HTTPMethod": "GET",
                     "URI": "/api/application/:app_id/users",
                     "RequiresOAuth": "N",
                     "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application you want the users for. | stub"
+                        },
                         {
                             "root": "users",
                             "Description": "xml parameter | stub, figure out xml parameters."
@@ -253,25 +187,202 @@
                     ]
                 },
                 {
-                    "MethodName": "/application/:app_id/appliance",
-                    "Synopsis": "put an appliance| stub",
-                    "HTTPMethod": "PUT",
-                    "URI": "/api/application/:app_id/appliance",
+                    "MethodName": "Get single application",
+                    "Synopsis": "gets a single application| stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/api/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
-                            "root": "appliance",
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application you are interested in. | stub"
+                        },
+                        {
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for the label. | stub"
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for something like the given label. | stub"
+                        },
+                        {
+                            "Name": "query_application",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description":"Can be one or more comma-seperated application ids | stub"
+                        },
+                        {
+                            "Name": "query_client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Can be one or more comma-seperated client ids | stub"
+                        },
+                        {
+                            "Name": "query_status",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Status values: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Checks whether there is a schedule. | stub"
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"],
+                            "Description": "Not sure what this does. | stub"
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json"]
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "page:limit",
+                            "Required": "N",
+                            "Default": "5",
+                            "Type": "integer",
+                            "Description": "Limit results to n number of pages. Default is set to 5."
+                        },
+                        {
+                            "Name": "page:offset",
+                            "Required": "N",
+                            "Default": "0",
+                            "Type": "integer",
+                            "Description": "Begin showing results from page number n."
+                        },
+                        {
+                            "Name": "page:order_by",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify an application",
+                    "Synopsis": "Modify a single application | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/api/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be modified. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Put an appliance",
+                    "Synopsis": "Put an appliance. What's an appliance? | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/api/application/:app_id/appliance",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be uploaded. | stub"
+                        },
+                        {
+                            "Name": "appliance",
                             "Description": "xml parameter | stub, figure out xml parameters."
                         }
                     ]
                 },
                 {
-                    "MethodName": "/application/:app_id/scan_schedule",
-                    "Synopsis": "Setup a scan schedule for a particular application.| stub",
+                    "MethodName": "New scan schedule for a application",
+                    "Synopsis": "Setup a scan schedule for a particular application. | stub",
                     "HTTPMethod": "PUT",
                     "URI": "/api/application/:app_id/scan_schedule",
                     "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id for which a new scan schedule will be created. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create new application",
+                    "Synopsis": "Create a new application | stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/api/application/",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
                     "parameters": []
+                },
+                {
+                    "MethodName": "Delete application",
+                    "Synopsis": "Delete a single application. | stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/api/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be delete. | stub"
+                        }
+                    ]
                 }
 
            ]
@@ -338,9 +449,9 @@
                     {
                         "Name": "page:limit",
                         "Required": "N",
-                        "Default": "",
+                        "Default": "5",
                         "Type": "integer",
-                        "Description": "Number of pages to retrieve."
+                        "Description": "Number of pages to retrieve. Default is set to 5."
                     },
                     {
                         "Name": "page:offset",
@@ -372,6 +483,45 @@
                         "Type": "enumerated",
                         "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
                         "Description": "Selects the requested response representation format."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update group information",
+                "Synopsis": "Update an existing user with a new role. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/api/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group in which user will be updated."
+                    },
+                    {
+                        "Name": "user",
+                        "Required": "N",
+                        "Default": "new user name",
+                        "Type": "email address",
+                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
+                    },
+                    {
+                        "Name": "role",
+                        "Required": "N",
+                        "Default": "new user role",
+                        "Type": "string",
+                        "Description":"Content body example: \"role\":\"admin\""
                     }
                 ]
             },
@@ -483,45 +633,6 @@
                         "Default": "new user role",
                         "Type": "string",
                         "Description":"Content body example: \"role\":\"Viewer\""
-                    }
-                ]
-            },
-            {
-                "MethodName": "Update group information",
-                "Synopsis": "Update an existing user with a new role. | stub",
-                "HTTPMethod": "PUT",
-                "URI": "/api/:client_id/group/:group_id/role",
-                "RequiresOAuth": "N",
-                "content":{
-                    "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
-                },
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    },
-                    {
-                        "Name": "group_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Group in which user will be updated."
-                    },
-                    {
-                        "Name": "user",
-                        "Required": "N",
-                        "Default": "new user name",
-                        "Type": "email address",
-                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
-                    },
-                    {
-                        "Name": "role",
-                        "Required": "N",
-                        "Default": "new user role",
-                        "Type": "string",
-                        "Description":"Content body example: \"role\":\"admin\""
                     }
                 ]
             },
