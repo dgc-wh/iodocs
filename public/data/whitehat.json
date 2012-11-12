@@ -300,6 +300,18 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id for which to retrieve information."
+                    },
+                    {
                         "Name": "display_applications",
                         "Required": "N",
                         "Default": 0,
@@ -375,6 +387,12 @@
                 },
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
                         "Name": "name",
                         "Required": "N",
                         "Default": "new group name",
@@ -401,6 +419,18 @@
                     "contentType":["application/json","application/xml"]
                 },
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which sites and/or applications will be added."
+                    },
                     {
                         "Name": "id",
                         "Required": "N",
@@ -429,6 +459,18 @@
                 },
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which user and role will be added."
+                    },
+                    {
                         "Name": "user",
                         "Required": "N",
                         "Default": "new user name",
@@ -456,6 +498,18 @@
                 },
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group in which user will be updated."
+                    },
+                    {
                         "Name": "user",
                         "Required": "N",
                         "Default": "new user name",
@@ -479,6 +533,12 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
                         "Name": "group_id",
                         "Required": "Y",
                         "Type": "integer",
@@ -493,6 +553,18 @@
                 "URI": "/api/:client_id/group/:group_id/role/:target_user_id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which user will be removed."
+                    },
                     {
                         "Name": "target_user_id",
                         "Required": "Y",
@@ -509,6 +581,18 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which site will be removed."
+                    },
+                    {
                         "Name": "target_site_id",
                         "Required": "Y",
                         "Type": "integer",
@@ -523,6 +607,18 @@
                 "URI": "/api/:client_id/group/:group_id/application/:target_application_id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which application will be removed."
+                    },
                     {
                         "Name": "target_application_id",
                         "Required": "Y",
@@ -555,8 +651,7 @@
                 "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
                 "URI": "/api/job/",
-                "parameters": [
-                ]
+                "parameters": []
             }
         ]
     },
@@ -569,7 +664,14 @@
                 "HTTPMethod": "GET",
                 "URI": "/api/:client_id/role",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
             },
             {
                 "MethodName": "Retrieve role resource",
@@ -578,6 +680,12 @@
                 "URI": "/api/:client_id/role/:id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
                     {
                         "Name": "id",
                         "Required": "Y",
@@ -686,7 +794,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-		   {
+                   {
                         "Name": "display_all",
                         "Required": "N",
                         "Default": 0,
@@ -694,7 +802,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
                    },
-		   {
+                   {
                         "Name": "display_min",
                         "Required": "N",
                         "Default": 0,
@@ -804,7 +912,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-		   {
+                   {
                         "Name": "display_all",
                         "Required": "N",
                         "Default": 0,
@@ -812,7 +920,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
                    },
-		   {
+                   {
                         "Name": "display_min",
                         "Required": "N",
                         "Default": 0,
@@ -882,7 +990,14 @@
                 "HTTPMethod": "GET",
                 "URI": "/api/:client_id/vuln_policy",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
             },
             {
                 "MethodName": "Get all vuln classes",
@@ -890,7 +1005,14 @@
                 "HTTPMethod": "GET",
                 "URI": "/api/:client_id/vuln_policy/all_vuln_classes",
                 "RequiresOAuth": "N",
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
             },
             {
                 "MethodName": "Get particular vuln policies",
@@ -899,6 +1021,12 @@
                 "URI": "/api/:client_id/vuln_policy/:id{,:id2,:id3,...}",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
                     {
                         "Name": "id(s)",
                         "Required": "Y",
@@ -919,6 +1047,12 @@
                 },
                 "parameters": [
                     {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
                         "Name": "id",
                         "Required": "Y",
                         "Type": "integer",
@@ -936,7 +1070,14 @@
                     "schema":{"type":"string"},
                     "contentType":["application/json","application/xml"]
                 },
-                "parameters": []
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
             },
             {
                 "MethodName": "Remove Vuln_Policy something",
@@ -945,6 +1086,12 @@
                 "URI": "/api/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
                     {
                         "Name": "id",
                         "Required": "Y",
