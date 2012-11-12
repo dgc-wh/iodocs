@@ -829,10 +829,10 @@
                 "HTTPMethod": "PUT",
                 "URI": "/api/site/:site_id",
                 "RequiresOAuth": "N",
-                "content":{
+                "content": {
                     "schema":{"type":"string"},
                     "contentType":["application/json","application/xml"]
-		},
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -871,6 +871,88 @@
                     } 
                 ]
             }   
+        ]
+    },
+    {
+        "name": "VulnPolicy API",
+        "methods": [
+            {
+                "MethodName": "Get collection of policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/api/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "Get all vuln classes",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/api/:client_id/vuln_policy/all_vuln_classes",
+                "RequiresOAuth": "N",
+                "parameters": []
+            },
+            {
+                "MethodName": "Get particular vuln policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/api/:client_id/vuln_policy/:id{,:id2,:id3,...}",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id(s)",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Can have a single id, or multiple comma-seperated ids."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Edit something existing",
+                "Synopsis": "Edit something related to Vuln_Policy. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/api/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Edit something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new something",
+                "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/api/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": []
+            },
+            {
+                "MethodName": "Remove Vuln_Policy something",
+                "Synopsis": "Something gets removed or deleted. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/api/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            }
         ]
     }
  
