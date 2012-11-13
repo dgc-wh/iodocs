@@ -1,11 +1,4 @@
 {
-    "wibshi": {
-        "name": "WIBSHI API",
-        "protocol": "http",
-        "baseURL": "www.woulditbesexualharassmentif.info",
-        "publicPath": "/",
-        "auth": "none"
-    },
      "whitehat": {
         "name": "WhiteHat API",
         "protocol": "https",
