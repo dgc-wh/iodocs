@@ -564,15 +564,15 @@ function processRequest(req, res, next) {
             options.headers = {}
         }
         if (!options.headers['Content-Length']) {
-            if (requestBody) {
-                options.headers['Content-Length'] = requestBody.length;
+            if (content) {
+                options.headers['Content-Length'] = content.length;
             }
             else {
                 options.headers['Content-Length'] = 0;
             }
         }
 
-        if (!options.headers['Content-Type'] && requestBody) {
+        if (!options.headers['Content-Type'] && content) {
             options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
         }
 
