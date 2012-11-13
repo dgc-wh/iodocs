@@ -8,7 +8,7 @@
                     "MethodName": "/user/:username",
                     "Synopsis": "Returns information on Sentinel user",
                     "HTTPMethod": "GET",
-                    "URI": "/api/user/:username",
+                    "URI": "/user/:username",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -29,7 +29,7 @@
                     "MethodName": "/user",
                     "Synopsis": "Returns information on Sentinel users the current user can manage",
                     "HTTPMethod": "GET",
-                    "URI": "/api/user",
+                    "URI": "/user",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -50,7 +50,7 @@
                 "MethodName": "/:client_id/",
                 "Synopsis": "Manage user access and site groups",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/",
+                "URI": "/:client_id/",
                 "parameters": [
                     {
                         "Name": "client_id",
@@ -67,7 +67,7 @@
                     "MethodName": "Get application collection",
                     "Synopsis": "Get application collection | stub",
                     "HTTPMethod": "GET",
-                    "URI": "/api/application/",
+                    "URI": "/application/",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -171,7 +171,7 @@
                     "MethodName": "Get users of application",
                     "Synopsis": "Get collection of users of a particular application. | stub",
                     "HTTPMethod": "GET",
-                    "URI": "/api/application/:app_id/users",
+                    "URI": "/application/:app_id/users",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -190,7 +190,7 @@
                     "MethodName": "Get single application",
                     "Synopsis": "gets a single application| stub",
                     "HTTPMethod": "GET",
-                    "URI": "/api/application/:app_id",
+                    "URI": "/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -300,7 +300,7 @@
                     "MethodName": "Modify an application",
                     "Synopsis": "Modify a single application | stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/api/application/:app_id",
+                    "URI": "/application/:app_id",
                     "RequiresOAuth": "N",
                     "content":{
                         "schema":{"type":"string"},
@@ -319,7 +319,7 @@
                     "MethodName": "Put an appliance",
                     "Synopsis": "Put an appliance. What's an appliance? | stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/api/application/:app_id/appliance",
+                    "URI": "/application/:app_id/appliance",
                     "RequiresOAuth": "N",
                     "content":{
                         "schema":{"type":"string"},
@@ -342,7 +342,7 @@
                     "MethodName": "New scan schedule for a application",
                     "Synopsis": "Setup a scan schedule for a particular application. | stub",
                     "HTTPMethod": "PUT",
-                    "URI": "/api/application/:app_id/scan_schedule",
+                    "URI": "/application/:app_id/scan_schedule",
                     "RequiresOAuth": "N",
                     "content":{
                         "schema":{"type":"string"},
@@ -361,7 +361,7 @@
                     "MethodName": "Create new application",
                     "Synopsis": "Create a new application | stub",
                     "HTTPMethod": "POST",
-                    "URI": "/api/application/",
+                    "URI": "/application/",
                     "RequiresOAuth": "N",
                     "content":{
                         "schema":{"type":"string"},
@@ -373,7 +373,7 @@
                     "MethodName": "Delete application",
                     "Synopsis": "Delete a single application. | stub",
                     "HTTPMethod": "DELETE",
-                    "URI": "/api/application/:app_id",
+                    "URI": "/application/:app_id",
                     "RequiresOAuth": "N",
                     "parameters": [
                         {
@@ -407,7 +407,7 @@
                 "MethodName": "Retrieve group details",
                 "Synopsis": "Report the list of groups under the control of client_id. If group_id is provided, details about that specific group will be reported.",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/group/:group_id",
+                "URI": "/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -490,7 +490,7 @@
                 "MethodName": "Update group information",
                 "Synopsis": "Update an existing user with a new role. | stub",
                 "HTTPMethod": "PUT",
-                "URI": "/api/:client_id/group/:group_id/role",
+                "URI": "/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -529,7 +529,7 @@
                 "MethodName": "Create new group",
                 "Synopsis": "Create a new group and obtain the new group's id. (not sure if accurate) | stub",
                 "HTTPMethod": "POST",
-                "URI": "/api/:client_id/group/",
+                "URI": "/:client_id/group/",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -562,7 +562,7 @@
                 "MethodName": "Add application or site to group",
                 "Synopsis": "Add an application or site to a given group. | stub",
                 "HTTPMethod": "POST",
-                "URI": "/api/:client_id/group/:group_id/",
+                "URI": "/:client_id/group/:group_id/",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -601,7 +601,7 @@
                 "MethodName": "Add user & role to group",
                 "Synopsis": "Associate a user and role to a group. | stub",
                 "HTTPMethod": "POST",
-                "URI": "/api/:client_id/group/:group_id/role",
+                "URI": "/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -640,7 +640,7 @@
                 "MethodName": "Remove group",
                 "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm:sub handle_delete) | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id",
+                "URI": "/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -661,7 +661,7 @@
                 "MethodName": "Remove user privilege",
                 "Synopsis": "Removes the given user's group privilege. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id/role/:target_user_id",
+                "URI": "/:client_id/group/:group_id/role/:target_user_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -688,7 +688,7 @@
                 "MethodName": "Delete site from group",
                 "Synopsis": "Delete the given site from the given group. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id/site/:target_site_id",
+                "URI": "/:client_id/group/:group_id/site/:target_site_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -715,7 +715,7 @@
                 "MethodName": "Delete application from group.",
                 "Synopsis": "Delete the given application from the given group. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/group/:group_id/application/:target_application_id",
+                "URI": "/:client_id/group/:group_id/application/:target_application_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -747,7 +747,7 @@
                 "MethodName": "Fetch a Job",
                 "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
-                "URI": "/api/job/:job_id",
+                "URI": "/job/:job_id",
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -761,7 +761,7 @@
                 "MethodName": "Fetch a list of Jobs",
                 "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
-                "URI": "/api/job/",
+                "URI": "/job/",
                 "parameters": []
             }
         ]
@@ -773,7 +773,7 @@
                 "MethodName": "Retrieve role collection",
                 "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/role",
+                "URI": "/:client_id/role",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -788,7 +788,7 @@
                 "MethodName": "Retrieve role resource",
                 "Synopsis": "Role resource containing a description of the role and associated privileges. | stub",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/role/:id",
+                "URI": "/:client_id/role/:id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -815,7 +815,7 @@
                 "MethodName": "/site",
                 "Synopsis": "Returns information on sites user has access to",
                 "HTTPMethod": "GET",
-                "URI": "/api/site",
+                "URI": "/site",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -928,7 +928,7 @@
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Returns information on one site",
                 "HTTPMethod": "GET",
-                "URI": "/api/site/:site_id",
+                "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -1046,7 +1046,7 @@
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Update information for one site",
                 "HTTPMethod": "PUT",
-                "URI": "/api/site/:site_id",
+                "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
                 "content": {
                     "schema":{"type":"string"},
@@ -1099,7 +1099,7 @@
                 "MethodName": "Get collection of policies",
                 "Synopsis": "| stub",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/vuln_policy",
+                "URI": "/:client_id/vuln_policy",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -1114,7 +1114,7 @@
                 "MethodName": "Get all vuln classes",
                 "Synopsis": "| stub",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/vuln_policy/all_vuln_classes",
+                "URI": "/:client_id/vuln_policy/all_vuln_classes",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -1129,7 +1129,7 @@
                 "MethodName": "Get particular vuln policies",
                 "Synopsis": "| stub",
                 "HTTPMethod": "GET",
-                "URI": "/api/:client_id/vuln_policy/:id{,:id2,:id3,...}",
+                "URI": "/:client_id/vuln_policy/:id{,:id2,:id3,...}",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -1150,7 +1150,7 @@
                 "MethodName": "Edit something existing",
                 "Synopsis": "Edit something related to Vuln_Policy. | stub",
                 "HTTPMethod": "PUT",
-                "URI": "/api/:client_id/vuln_policy/:id",
+                "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
                 "content": {
                     "schema":{"type":"string"},
@@ -1175,7 +1175,7 @@
                 "MethodName": "Create new something",
                 "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
                 "HTTPMethod": "POST",
-                "URI": "/api/:client_id/vuln_policy",
+                "URI": "/:client_id/vuln_policy",
                 "RequiresOAuth": "N",
                 "content": {
                     "schema":{"type":"string"},
@@ -1194,7 +1194,7 @@
                 "MethodName": "Remove Vuln_Policy something",
                 "Synopsis": "Something gets removed or deleted. | stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/api/:client_id/vuln_policy/:id",
+                "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
