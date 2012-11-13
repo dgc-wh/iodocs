@@ -1129,7 +1129,7 @@
                 "MethodName": "Get particular vuln policies",
                 "Synopsis": "| stub",
                 "HTTPMethod": "GET",
-                "URI": "/:client_id/vuln_policy/:id{,:id2,:id3,...}",
+                "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
@@ -1139,7 +1139,7 @@
                         "Description": "Client id"
                     },
                     {
-                        "Name": "id(s)",
+                        "Name": "id",
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Can have a single id, or multiple comma-seperated ids."
@@ -1208,6 +1208,99 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Schedule API",
+        "methods": [
+            {
+                "MethodName": "List schedules",
+                "Synopsis": "List all schedules owned by user. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Scan name. | stub"
+                    },
+                    {
+                        "Name": "start_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
+                    },
+                    {
+                        "Name": "end_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
+                    },
+                    {
+                        "Name": "duration",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time duration in seconds (I think). | stub"
+                    },
+                    {
+                        "Name": "timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
+                    },
+                    {
+                        "Name": "job_target",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
+                    },
+                    {
+                        "Name": "creator",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "Job schedule creator. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single schedule",
+                "Synopsis": "List a single schedule. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a schedule",
+                "Synopsis": "Delete a single schedule. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id"
                     }
                 ]
             }
