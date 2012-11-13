@@ -405,7 +405,7 @@
         "methods": [
             {
                 "MethodName": "Retrieve group details",
-                "Synopsis": "Report out a list of groups and sites on request, by group name.",
+                "Synopsis": "Report the list of groups under the control of client_id. If group_id is provided, details about that specific group will be reported.",
                 "HTTPMethod": "GET",
                 "URI": "/api/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -418,7 +418,7 @@
                     },
                     {
                         "Name": "group_id",
-                        "Required": "Y",
+                        "Required": "N",
                         "Type": "integer",
                         "Description": "Group id for which to retrieve information."
                     },
