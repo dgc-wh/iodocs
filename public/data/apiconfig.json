@@ -9,7 +9,7 @@
      "whitehat": {
         "name": "WhiteHat API",
         "protocol": "https",
-        "baseURL": "sentinel.whitehatsec.com",
+        "baseURL": "sentinel.localdomain.lan",
         "publicPath": "/api",
         "auth": "key",
         "keyParam":"key"
