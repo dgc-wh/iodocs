@@ -456,6 +456,159 @@
                             "Description": "Application id of application to be delete. | stub"
                         }
                     ]
+                },
+                {
+                    "MethodName": "Get collection of codebases",
+                    "Synopsis": "Get codebase collection. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get single codebase",
+                    "Synopsis": "Get information about a codebase. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify codebase",
+                    "Synopsis": "Modify an existing codebase. | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create a codebase",
+                    "Synopsis": "Create a new codebase. | stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/application/:app_id/codebase/",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete a codebase",
+                    "Synopsis": "Delete a codebase. | stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        }
+                    ]
                 }
 
            ]
