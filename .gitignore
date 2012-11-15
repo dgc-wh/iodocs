@@ -4,3 +4,4 @@ config.json
 logs/*
 pids/*
 *.swp
+public/data/_api_whitehat/

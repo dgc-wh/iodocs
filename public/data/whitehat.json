@@ -5,7 +5,44 @@
         "name": "Account API",
             "methods": [
                 {
-                    "MethodName": "/user/:username",
+                    "MethodName": "Get managed users",
+                    "Synopsis": "Returns information on Sentinel users the current user can manage",
+                    "HTTPMethod": "GET",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get user information by user id",
+                    "Synopsis": "Returns information on Sentinel user",
+                    "HTTPMethod": "GET",
+                    "URI": "/user/:user_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "user_id",
+                            "Required": "Y",
+                            "Type": "integer"   
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json", "text/xml"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get user information by user name",
                     "Synopsis": "Returns information on Sentinel user",
                     "HTTPMethod": "GET",
                     "URI": "/user/:username",
@@ -21,24 +58,80 @@
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "EnumeratedList": [ "application/json", "text/xml"]
                         }
                     ]
                 },
                 {
-                    "MethodName": "/user",
-                    "Synopsis": "Returns information on Sentinel users the current user can manage",
+                    "MethodName": "Find client privileges",
+                    "Synopsis": "| stub",
                     "HTTPMethod": "GET",
+                    "URI": "/:client_id/user/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "client_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Default":"",
+                            "Description": "client id | stub"
+                        },
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "text/x-json", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify existing user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "PUT",
                     "URI": "/user",
                     "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
                     "parameters": [
                         {
                             "Name": "format",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
+                            "EnumeratedList": ["text/xml", "text/x-json", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
                         }
+                    ]
+                },
+                {
+                    "MethodName": "Create new user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "text/x-json", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/user/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
                     ]
                 }
            ]
@@ -405,7 +498,84 @@
         "methods": [
             {
                 "MethodName": "Retrieve group details",
-                "Synopsis": "Report the list of groups under the control of client_id. If group_id is provided, details about that specific group will be reported.",
+                "Synopsis": "Report the list of groups under the control of client_id. ",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/group/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "5",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve. Default is set to 5."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["asc", "desc"],
+                        "Description": "Order results in ascending or descending order."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
+                        "Description": "Selects the requested response representation format."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Retrieve individual group details",
+                "Synopsis": "Reports specific group details.",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -769,6 +939,15 @@
     {
         "name": "Role API",
         "methods": [
+            {
+                "MethodName": "Retrieve all role collections",
+                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/role",
+                "RequiresOAuth": "N",
+                "parameters": [
+                ]
+            },
             {
                 "MethodName": "Retrieve role collection",
                 "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
@@ -1259,9 +1438,9 @@
                         "Description": "Time zone of schedule. Ex: America/New_York | stub"
                     },
                     {
-                        "Name": "job_target",
+                        "Name": "job",
                         "Required": "N",
-                        "Type": "string",
+                        "Type": "integer",
                         "Default":"",
                         "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
                     },
