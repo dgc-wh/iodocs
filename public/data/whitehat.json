@@ -212,14 +212,7 @@
                             "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/csv", "application/json", "text/xml"],
-                            "Description": "Not sure what this does. | stub"
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json"]
+                            "Description": "Choose format for results. | stub"
                         },
                         {
                             "Name": "display_scan_schedule",
@@ -255,8 +248,9 @@
                             "Name": "page:order_by",
                             "Required": "N",
                             "Default": "",
-                            "Type": "string",
-                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
+                            "Type": "enumerated",
+                            "EnumeratedList": ["total_findings", "total_findings_asc", "total_findings_desc", "label", "label_asc", "label_desc", "status", "status_asc", "status_desc"],
+                            "Description": "Order the reults."
                         }
                     ]
                 },
@@ -272,10 +266,6 @@
                             "Required": "Y",
                             "Type": "integer",
                             "Description": "Application id of application you want the users for. | stub"
-                        },
-                        {
-                            "root": "users",
-                            "Description": "xml parameter | stub, figure out xml parameters."
                         }
                     ]
                 },
@@ -324,8 +314,9 @@
                             "Name": "query_status",
                             "Required": "N",
                             "Default": "",
-                            "Type": "string",
-                            "Description":"Status values: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
+                            "Type": "enumerated",
+                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
+                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
                         },
                         {
                             "Name": "query_has_schedule",
@@ -341,14 +332,7 @@
                             "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/csv", "application/json", "text/xml"],
-                            "Description": "Not sure what this does. | stub"
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json"]
+                            "Description": "Format of results. | stub"
                         },
                         {
                             "Name": "display_scan_schedule",
@@ -424,10 +408,6 @@
                             "Required": "Y",
                             "Type": "integer",
                             "Description": "Application id of application to be uploaded. | stub"
-                        },
-                        {
-                            "Name": "appliance",
-                            "Description": "xml parameter | stub, figure out xml parameters."
                         }
                     ]
                 },
@@ -560,14 +540,6 @@
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"],
-                        "Description": "Selects the requested response representation format."
-                    },
-                    {
-                        "Name": "accept_fmt",
-                        "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
                         "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
                         "Description": "Selects the requested response representation format."
                     }
@@ -640,14 +612,6 @@
                     },
                     {
                         "Name": "format",
-                        "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"],
-                        "Description": "Selects the requested response representation format."
-                    },
-                    {
-                        "Name": "accept_fmt",
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
@@ -983,6 +947,99 @@
                         "Description": "Role resource "
                     }
 
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Schedule API",
+        "methods": [
+            {
+                "MethodName": "List schedules",
+                "Synopsis": "List all schedules owned by user. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Scan name. | stub"
+                    },
+                    {
+                        "Name": "start_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
+                    },
+                    {
+                        "Name": "end_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
+                    },
+                    {
+                        "Name": "duration",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time duration in seconds (I think). | stub"
+                    },
+                    {
+                        "Name": "timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
+                    },
+                    {
+                        "Name": "job",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
+                    },
+                    {
+                        "Name": "creator",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "Job schedule creator. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single schedule",
+                "Synopsis": "List a single schedule. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a schedule",
+                "Synopsis": "Delete a single schedule. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id"
+                    }
                 ]
             }
         ]
@@ -1387,99 +1444,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "Schedule API",
-        "methods": [
-            {
-                "MethodName": "List schedules",
-                "Synopsis": "List all schedules owned by user. | stub",
-                "HTTPMethod": "GET",
-                "URI": "/schedule",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "name",
-                        "Required": "N",
-                        "Type": "string",
-                        "Default":"",
-                        "Description": "Scan name. | stub"
-                    },
-                    {
-                        "Name": "start_date",
-                        "Required": "N",
-                        "Type": "string",
-                        "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
-                    },
-                    {
-                        "Name": "end_date",
-                        "Required": "N",
-                        "Type": "string",
-                        "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
-                    },
-                    {
-                        "Name": "duration",
-                        "Required": "N",
-                        "Type": "string",
-                        "Default":"",
-                        "Description": "Time duration in seconds (I think). | stub"
-                    },
-                    {
-                        "Name": "timezone",
-                        "Required": "N",
-                        "Type": "string",
-                        "Default":"",
-                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
-                    },
-                    {
-                        "Name": "job",
-                        "Required": "N",
-                        "Type": "integer",
-                        "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
-                    },
-                    {
-                        "Name": "creator",
-                        "Required": "N",
-                        "Type": "integer",
-                        "Default":"",
-                        "Description": "Job schedule creator. | stub"
-                    }
-                ]
-            },
-            {
-                "MethodName": "Get single schedule",
-                "Synopsis": "List a single schedule. | stub",
-                "HTTPMethod": "GET",
-                "URI": "/schedule/:id",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
-                    }
-                ]
-            },
-            {
-                "MethodName": "Delete a schedule",
-                "Synopsis": "Delete a single schedule. | stub",
-                "HTTPMethod": "DELETE",
-                "URI": "/schedule/:id",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Schedule id"
                     }
                 ]
             }
