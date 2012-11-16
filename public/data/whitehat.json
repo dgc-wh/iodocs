@@ -1015,6 +1015,14 @@
                 "URI": "/role",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
                 ]
             },
             {
@@ -1029,6 +1037,14 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Client id"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
                     }
                 ]
             },
@@ -1050,6 +1066,14 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Role resource "
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
                     }
 
                 ]
