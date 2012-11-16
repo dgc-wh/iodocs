@@ -218,14 +218,6 @@
                             "Description": "Checks whether there is a schedule. | stub"
                         },
                         {
-                            "Name": "format",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"],
-                            "Description": "Choose format for results. | stub"
-                        },
-                        {
                             "Name": "display_scan_schedule",
                             "Required": "N",
                             "Default": 0,
@@ -242,16 +234,22 @@
                             "Description": "Determines whether or not results will contain vuln statistics for given application.."
                         },
                         {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Choose format for results. | stub"
+                        },
+                        {
                             "Name": "page:limit",
                             "Required": "N",
-                            "Default": "5",
                             "Type": "integer",
                             "Description": "Limit results to n number of pages. Default is set to 5."
                         },
                         {
                             "Name": "page:offset",
                             "Required": "N",
-                            "Default": "0",
                             "Type": "integer",
                             "Description": "Begin showing results from page number n."
                         },
@@ -277,6 +275,13 @@
                             "Required": "Y",
                             "Type": "integer",
                             "Description": "Application id of application you want the users for. | stub"
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Choose format for results. | stub"
                         }
                     ]
                 },
@@ -338,14 +343,6 @@
                             "Description": "Checks whether there is a schedule. | stub"
                         },
                         {
-                            "Name": "format",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"],
-                            "Description": "Format of results. | stub"
-                        },
-                        {
                             "Name": "display_scan_schedule",
                             "Required": "N",
                             "Default": 0,
@@ -362,16 +359,22 @@
                             "Description": "Determines whether or not results will contain vuln statistics for given application.."
                         },
                         {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        },
+                        {
                             "Name": "page:limit",
                             "Required": "N",
-                            "Default": "5",
                             "Type": "integer",
                             "Description": "Limit results to n number of pages. Default is set to 5."
                         },
                         {
                             "Name": "page:offset",
                             "Required": "N",
-                            "Default": "0",
                             "Type": "integer",
                             "Description": "Begin showing results from page number n."
                         },
@@ -400,6 +403,93 @@
                             "Required": "Y",
                             "Type": "integer",
                             "Description": "Application id of application to be modified. | stub"
+                        },
+                        {
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for the label. | stub"
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for something like the given label. | stub"
+                        },
+                        {
+                            "Name": "query_application",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description":"Can be one or more comma-seperated application ids | stub"
+                        },
+                        {
+                            "Name": "query_client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Can be one or more comma-seperated client ids | stub"
+                        },
+                        {
+                            "Name": "query_status",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
+                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Checks whether there is a schedule. | stub"
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        },
+                        {
+                            "Name": "page:limit",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Limit results to n number of pages. Default is set to 5."
+                        },
+                        {
+                            "Name": "page:offset",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Begin showing results from page number n."
+                        },
+                        {
+                            "Name": "page:order_by",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
                         }
                     ]
                 },
@@ -451,7 +541,95 @@
                         "schema":{"type":"string"},
                         "contentType":["application/json","application/xml"]
                     },
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for the label. | stub"
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for something like the given label. | stub"
+                        },
+                        {
+                            "Name": "query_application",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description":"Can be one or more comma-seperated application ids | stub"
+                        },
+                        {
+                            "Name": "query_client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Can be one or more comma-seperated client ids | stub"
+                        },
+                        {
+                            "Name": "query_status",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
+                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Checks whether there is a schedule. | stub"
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Default": "xml",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        },
+                        {
+                            "Name": "page:limit",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Limit results to n number of pages. Default is set to 5."
+                        },
+                        {
+                            "Name": "page:offset",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Begin showing results from page number n."
+                        },
+                        {
+                            "Name": "page:order_by",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
+                        }
+                    ]
                 },
                 {
                     "MethodName": "Delete application",
@@ -488,11 +666,11 @@
                             "EnumeratedList": [0,1]
                         },
                         {
-                            "Name": "format",
+                            "Name": "accept_fmt",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json"]
+                            "EnumeratedList": ["application/json", "text/csv"]
                         }
                     ]
                 },
@@ -522,11 +700,11 @@
                             "EnumeratedList": [0,1]
                         },
                         {
-                            "Name": "format",
+                            "Name": "accept_fmt",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
-                            "EnumeratedList": [ "application/json"]
+                            "EnumeratedList": [ "application/json", "text/csv" ]
                         }
                     ]
                 },
@@ -560,7 +738,7 @@
                             "EnumeratedList": [0,1]
                         },
                         {
-                            "Name": "format",
+                            "Name": "accept_fmt",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
@@ -592,7 +770,7 @@
                             "EnumeratedList": [0,1]
                         },
                         {
-                            "Name": "format",
+                            "Name": "accept_fmt",
                             "Required": "N",
                             "Default": "xml",
                             "Type": "enumerated",
