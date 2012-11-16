@@ -14,7 +14,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv"],
                             "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
@@ -36,7 +35,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
                             "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
@@ -58,7 +56,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
                             "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
@@ -82,7 +79,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv" ],
                             "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
@@ -205,9 +201,10 @@
                         {
                             "Name": "query_status",
                             "Required": "N",
+                            "Type": "enumerated",
                             "Default": "",
-                            "Type": "string",
-                            "Description":"Status values: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
+                            "EnumeratedList": [ "not_configured", "site_disabled", "verify_in_progress", "need_scan_schedule", "config_in_progress", "scan_running", "active" ],
+                            "Description":"Status values: [not_configured (not yet configured), site_disabled (administratively disabled), verify_in_progress (has VVSCA open), need_scan_schedule,  config_in_progress (job is suspended for some reason), scan_running (has a scan running), active (none of the above, idle)] | stub"
                         },
                         {
                             "Name": "query_has_schedule",
@@ -256,7 +253,6 @@
                         {
                             "Name": "page:order_by",
                             "Required": "N",
-                            "Default": "",
                             "Type": "enumerated",
                             "EnumeratedList": ["total_findings", "total_findings_asc", "total_findings_desc", "label", "label_asc", "label_desc", "status", "status_asc", "status_desc"],
                             "Description": "Order the reults."
@@ -299,50 +295,6 @@
                             "Description": "Application id of application you are interested in. | stub"
                         },
                         {
-                            "Name": "query_label",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for the label. | stub"
-                        },
-                        {
-                            "Name": "query_label_like",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for something like the given label. | stub"
-                        },
-                        {
-                            "Name": "query_application",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "integer",
-                            "Description":"Can be one or more comma-seperated application ids | stub"
-                        },
-                        {
-                            "Name": "query_client_id",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Can be one or more comma-seperated client ids | stub"
-                        },
-                        {
-                            "Name": "query_status",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
-                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
-                        },
-                        {
-                            "Name": "query_has_schedule",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "Checks whether there is a schedule. | stub"
-                        },
-                        {
                             "Name": "display_scan_schedule",
                             "Required": "N",
                             "Default": 0,
@@ -365,25 +317,6 @@
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Format of results. | stub"
-                        },
-                        {
-                            "Name": "page:limit",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Limit results to n number of pages. Default is set to 5."
-                        },
-                        {
-                            "Name": "page:offset",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Begin showing results from page number n."
-                        },
-                        {
-                            "Name": "page:order_by",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
                         }
                     ]
                 },
@@ -405,50 +338,6 @@
                             "Description": "Application id of application to be modified. | stub"
                         },
                         {
-                            "Name": "query_label",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for the label. | stub"
-                        },
-                        {
-                            "Name": "query_label_like",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for something like the given label. | stub"
-                        },
-                        {
-                            "Name": "query_application",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "integer",
-                            "Description":"Can be one or more comma-seperated application ids | stub"
-                        },
-                        {
-                            "Name": "query_client_id",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Can be one or more comma-seperated client ids | stub"
-                        },
-                        {
-                            "Name": "query_status",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
-                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
-                        },
-                        {
-                            "Name": "query_has_schedule",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "Checks whether there is a schedule. | stub"
-                        },
-                        {
                             "Name": "display_scan_schedule",
                             "Required": "N",
                             "Default": 0,
@@ -471,25 +360,6 @@
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Format of results. | stub"
-                        },
-                        {
-                            "Name": "page:limit",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Limit results to n number of pages. Default is set to 5."
-                        },
-                        {
-                            "Name": "page:offset",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Begin showing results from page number n."
-                        },
-                        {
-                            "Name": "page:order_by",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
                         }
                     ]
                 },
@@ -543,50 +413,6 @@
                     },
                     "parameters": [
                         {
-                            "Name": "query_label",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for the label. | stub"
-                        },
-                        {
-                            "Name": "query_label_like",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Search for something like the given label. | stub"
-                        },
-                        {
-                            "Name": "query_application",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "integer",
-                            "Description":"Can be one or more comma-seperated application ids | stub"
-                        },
-                        {
-                            "Name": "query_client_id",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description":"Can be one or more comma-seperated client ids | stub"
-                        },
-                        {
-                            "Name": "query_status",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["provisioning_application", "site_disabled", "need_scan_schedule", "verify_in_progress", "scan_running", "config_in_progress", "active" ],
-                            "Description":"Status values descriptions: [provisioning_application (app does not have codebases, or is not associated to an appliance), site_disabled (administratively disabled), need_scan_schedule, verify_in_progress (has VVSCA open), scan_running (has a scan running), config_in_progress (job is suspended for some reason), active (none of the above, idle)] | stub"
-                        },
-                        {
-                            "Name": "query_has_schedule",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "Checks whether there is a schedule. | stub"
-                        },
-                        {
                             "Name": "display_scan_schedule",
                             "Required": "N",
                             "Default": 0,
@@ -609,25 +435,6 @@
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Format of results. | stub"
-                        },
-                        {
-                            "Name": "page:limit",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Limit results to n number of pages. Default is set to 5."
-                        },
-                        {
-                            "Name": "page:offset",
-                            "Required": "N",
-                            "Type": "integer",
-                            "Description": "Begin showing results from page number n."
-                        },
-                        {
-                            "Name": "page:order_by",
-                            "Required": "N",
-                            "Default": "",
-                            "Type": "string",
-                            "Description": "Possible values: [total_findings, total_findings_asc, total_findings_desc], [label, label_asc, label_desc], [status, status_asc, status_desc]"
                         }
                     ]
                 },
@@ -832,9 +639,29 @@
                         "Description": "Client id."
                     },
                     {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
                         "Name": "display_applications",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display applications assoicated with group id."
@@ -842,7 +669,6 @@
                     {
                         "Name": "display_roles",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display roles assoicated with group id."
@@ -850,17 +676,23 @@
                     {
                         "Name": "display_sites",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display sites associated with group id."
                     },
                     {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
+                    },
+                    {
                         "Name": "page:limit",
                         "Required": "N",
-                        "Default": "5",
+                        "Default": "",
                         "Type": "integer",
-                        "Description": "Number of pages to retrieve. Default is set to 5."
+                        "Description": "Number of pages to retrieve."
                     },
                     {
                         "Name": "page:offset",
@@ -872,18 +704,9 @@
                     {
                         "Name": "page:order_by",
                         "Required": "N",
-                        "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["asc", "desc"],
+                        "EnumeratedList": ["client_id", "name", "id", "description", "organization" ],
                         "Description": "Order results in ascending or descending order."
-                    },
-                    {
-                        "Name": "format",
-                        "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
-                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
-                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -907,9 +730,29 @@
                         "Description": "Group id for which to retrieve information."
                     },
                     {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
                         "Name": "display_applications",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display applications assoicated with group id."
@@ -917,7 +760,6 @@
                     {
                         "Name": "display_roles",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display roles assoicated with group id."
@@ -925,40 +767,17 @@
                     {
                         "Name": "display_sites",
                         "Required": "N",
-                        "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Display sites associated with group id."
                     },
                     {
-                        "Name": "page:limit",
-                        "Required": "N",
-                        "Default": "5",
-                        "Type": "integer",
-                        "Description": "Number of pages to retrieve. Default is set to 5."
-                    },
-                    {
-                        "Name": "page:offset",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
-                        "Description": "Begin retrieving pages from this index."
-                    },
-                    {
-                        "Name": "page:order_by",
+                        "Name": "accept_fmt",
                         "Required": "N",
                         "Default": "xml",
                         "Type": "enumerated",
-                        "EnumeratedList": ["asc", "desc"],
-                        "Description": "Order results in ascending or descending order."
-                    },
-                    {
-                        "Name": "format",
-                        "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
-                        "EnumeratedList": ["text/html", "text/csv", "application/json", "text/xml"],
-                        "Description": "Selects the requested response representation format."
+                        "EnumeratedList": ["application/json", "text/csv", "text/xml"],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
                     }
                 ]
             },
@@ -984,20 +803,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Group in which user will be updated."
-                    },
-                    {
-                        "Name": "user",
-                        "Required": "N",
-                        "Default": "new user name",
-                        "Type": "email address",
-                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
-                    },
-                    {
-                        "Name": "role",
-                        "Required": "N",
-                        "Default": "new user role",
-                        "Type": "string",
-                        "Description":"Content body example: \"role\":\"admin\""
                     }
                 ]
             },
@@ -1017,20 +822,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Client id"
-                    },
-                    {
-                        "Name": "name",
-                        "Required": "N",
-                        "Default": "new group name",
-                        "Type": "string",
-                        "Description":"Content body example: \"name\":\"iodocs_group\""
-                    },
-                    {
-                        "Name": "description",
-                        "Required": "N",
-                        "Default": "new group description",
-                        "Type": "string",
-                        "Description":"Content body example: \"description\":\"This group contains all IODocs related stuff.\""
                     }
                 ]
             },
@@ -1056,20 +847,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Group to which sites and/or applications will be added."
-                    },
-                    {
-                        "Name": "id",
-                        "Required": "N",
-                        "Default": "new site id",
-                        "Type": "integer",
-                        "Description":"Content body example: \"id\":\"42\""
-                    },
-                    {
-                        "Name": "application_id",
-                        "Required": "N",
-                        "Default": "new application id",
-                        "Type": "integer",
-                        "Description":"Content body example: \"application_id\":\"142\""
                     }
                 ]
             },
@@ -1095,20 +872,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Group to which user and role will be added."
-                    },
-                    {
-                        "Name": "user",
-                        "Required": "N",
-                        "Default": "new user name",
-                        "Type": "email address",
-                        "Description":"Content body example: \"user\":\"jack@nitz.com\""
-                    },
-                    {
-                        "Name": "role",
-                        "Required": "N",
-                        "Default": "new user role",
-                        "Type": "string",
-                        "Description":"Content body example: \"role\":\"Viewer\""
                     }
                 ]
             },
