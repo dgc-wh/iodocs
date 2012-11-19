@@ -233,7 +233,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Choose format for results. | stub"
@@ -313,10 +312,69 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Format of results. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get collection of codebases",
+                    "Synopsis": "Get codebase collection. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/csv"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get single codebase",
+                    "Synopsis": "Get information about a codebase. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json", "text/csv" ]
                         }
                     ]
                 },
@@ -356,7 +414,6 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                             "Description": "Format of results. | stub"
@@ -402,120 +459,6 @@
                     ]
                 },
                 {
-                    "MethodName": "Create new application",
-                    "Synopsis": "Create a new application | stub",
-                    "HTTPMethod": "POST",
-                    "URI": "/application/",
-                    "RequiresOAuth": "N",
-                    "content":{
-                        "schema":{"type":"string"},
-                        "contentType":["application/json","application/xml"]
-                    },
-                    "parameters": [
-                        {
-                            "Name": "display_scan_schedule",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "Determines whether or not results will contain scan schedule."
-                        },
-                        {
-                            "Name": "display_vuln_stats",
-                            "Required": "N",
-                            "Default": 0,
-                            "Type": "enumerated",
-                            "EnumeratedList": [0, 1],
-                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                            "Description": "Format of results. | stub"
-                        }
-                    ]
-                },
-                {
-                    "MethodName": "Delete application",
-                    "Synopsis": "Delete a single application. | stub",
-                    "HTTPMethod": "DELETE",
-                    "URI": "/application/:app_id",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "app_id",
-                            "Required": "Y",
-                            "Type": "integer",
-                            "Description": "Application id of application to be delete. | stub"
-                        }
-                    ]
-                },
-                {
-                    "MethodName": "Get collection of codebases",
-                    "Synopsis": "Get codebase collection. | stub",
-                    "HTTPMethod": "GET",
-                    "URI": "/application/:app_id/codebase/",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "app_id",
-                            "Required": "Y",
-                            "Type": "integer",
-                            "Description": "Application id. | stub"
-                        },
-                        {
-                            "Name": "display_exclude_dirs",
-                            "Required": "N",
-                            "Type": "enumerated",
-                            "EnumeratedList": [0,1]
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["application/json", "text/csv"]
-                        }
-                    ]
-                },
-                {
-                    "MethodName": "Get single codebase",
-                    "Synopsis": "Get information about a codebase. | stub",
-                    "HTTPMethod": "GET",
-                    "URI": "/application/:app_id/codebase/:codebase_id",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "app_id",
-                            "Required": "Y",
-                            "Type": "integer",
-                            "Description": "Application id. | stub"
-                        },
-                        {
-                            "Name": "codebase_id",
-                            "Required": "Y",
-                            "Type": "integer",
-                            "Description": "Codebase id. | stub"
-                        },
-                        {
-                            "Name": "display_exclude_dirs",
-                            "Required": "N",
-                            "Type": "enumerated",
-                            "EnumeratedList": [0,1]
-                        },
-                        {
-                            "Name": "accept_fmt",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": [ "application/json", "text/csv" ]
-                        }
-                    ]
-                },
-                {
                     "MethodName": "Modify codebase",
                     "Synopsis": "Modify an existing codebase. | stub",
                     "HTTPMethod": "PUT",
@@ -547,9 +490,44 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create new application",
+                    "Synopsis": "Create a new application | stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/application/",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
                         }
                     ]
                 },
@@ -579,9 +557,23 @@
                         {
                             "Name": "accept_fmt",
                             "Required": "N",
-                            "Default": "xml",
                             "Type": "enumerated",
                             "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete application",
+                    "Synopsis": "Delete a single application. | stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be delete. | stub"
                         }
                     ]
                 },
@@ -774,7 +766,6 @@
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
-                        "Default": "xml",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/csv", "text/xml"],
                         "Description": "Selects the requested response representation format. XML format is currently not supported/working."
@@ -1018,7 +1009,6 @@
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
-                        "Default": "xml",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                         "Description": "Format of results. | stub"
@@ -1041,7 +1031,6 @@
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
-                        "Default": "xml",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                         "Description": "Format of results. | stub"
@@ -1070,7 +1059,6 @@
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
-                        "Default": "xml",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
                         "Description": "Format of results. | stub"
@@ -1138,6 +1126,27 @@
                         "Type": "integer",
                         "Default":"",
                         "Description": "Job schedule creator. | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Begin retrieving pages from this index."
                     }
                 ]
             },
@@ -1153,6 +1162,13 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
                     }
                 ]
             },
