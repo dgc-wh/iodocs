@@ -313,7 +313,7 @@
                             "Name": "accept_fmt",
                             "Required": "N",
                             "Type": "enumerated",
-                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "EnumeratedList": ["application/json", "text/csv" ],
                             "Description": "Format of results. | stub"
                         }
                     ]
@@ -374,7 +374,7 @@
                             "Name": "accept_fmt",
                             "Required": "N",
                             "Type": "enumerated",
-                            "EnumeratedList": [ "application/json", "text/csv" ]
+                            "EnumeratedList": [ "application/json"]
                         }
                     ]
                 },
