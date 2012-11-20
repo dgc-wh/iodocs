@@ -1,5 +1,606 @@
 {
     "endpoints": [
+
+    {
+        "name": "Account API",
+            "methods": [
+                {
+                    "MethodName": "Get managed users",
+                    "Synopsis": "Returns information on Sentinel users the current user can manage",
+                    "HTTPMethod": "GET",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv"],
+                            "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get user information by user id",
+                    "Synopsis": "Returns information on Sentinel user",
+                    "HTTPMethod": "GET",
+                    "URI": "/user/:user_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "user_id",
+                            "Required": "Y",
+                            "Type": "integer"   
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
+                            "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get user information by user name",
+                    "Synopsis": "Returns information on Sentinel user",
+                    "HTTPMethod": "GET",
+                    "URI": "/user/:username",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "username",
+                            "Required": "Y",
+                            "Type": "email address"   
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
+                            "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Find client privileges",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/:client_id/user/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "client_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Default":"",
+                            "Description": "client id | stub"
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv" ],
+                            "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify existing user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create new user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/user",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete user",
+                    "Synopsis": "| stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/user/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "format",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                            "Description": "Selects the requested response representation format."
+                        }
+                    ]
+                }
+           ]
+    },
+    {
+        "name": "Admin API",
+        "methods": [
+            {
+                "MethodName": "/:client_id/",
+                "Synopsis": "Manage user access and site groups",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Application API",
+            "methods": [
+                {
+                    "MethodName": "Get application collection",
+                    "Synopsis": "Get application collection | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "query_label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for the label. | stub"
+                        },
+                        {
+                            "Name": "query_label_like",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Search for something like the given label. | stub"
+                        },
+                        {
+                            "Name": "query_application",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description":"Can be one or more comma-seperated application ids | stub"
+                        },
+                        {
+                            "Name": "query_client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description":"Can be one or more comma-seperated client ids | stub"
+                        },
+                        {
+                            "Name": "query_status",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "Default": "",
+                            "EnumeratedList": [ "not_configured", "site_disabled", "verify_in_progress", "need_scan_schedule", "config_in_progress", "scan_running", "active" ],
+                            "Description":"Status values: [not_configured (not yet configured), site_disabled (administratively disabled), verify_in_progress (has VVSCA open), need_scan_schedule,  config_in_progress (job is suspended for some reason), scan_running (has a scan running), active (none of the above, idle)] | stub"
+                        },
+                        {
+                            "Name": "query_has_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Checks whether there is a schedule. | stub"
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Choose format for results. | stub"
+                        },
+                        {
+                            "Name": "page:limit",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Limit results to n number of pages. Default is set to 5."
+                        },
+                        {
+                            "Name": "page:offset",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Begin showing results from page number n."
+                        },
+                        {
+                            "Name": "page:order_by",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["total_findings", "total_findings_asc", "total_findings_desc", "label", "label_asc", "label_desc", "status", "status_asc", "status_desc"],
+                            "Description": "Order the reults."
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get users of application",
+                    "Synopsis": "Get collection of users of a particular application. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/users",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application you want the users for. | stub"
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Choose format for results. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get single application",
+                    "Synopsis": "gets a single application| stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application you are interested in. | stub"
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get collection of codebases",
+                    "Synopsis": "Get codebase collection. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/csv"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Get single codebase",
+                    "Synopsis": "Get information about a codebase. | stub",
+                    "HTTPMethod": "GET",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify an application",
+                    "Synopsis": "Modify a single application | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be modified. | stub"
+                        },
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Put an appliance",
+                    "Synopsis": "Put an appliance. What's an appliance? | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/appliance",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be uploaded. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "New scan schedule for a application",
+                    "Synopsis": "Setup a scan schedule for a particular application. | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/scan_schedule",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id for which a new scan schedule will be created. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Modify codebase",
+                    "Synopsis": "Modify an existing codebase. | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create new application",
+                    "Synopsis": "Create a new application | stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/application/",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "display_scan_schedule",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain scan schedule."
+                        },
+                        {
+                            "Name": "display_vuln_stats",
+                            "Required": "N",
+                            "Default": 0,
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1],
+                            "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                            "Description": "Format of results. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Create a codebase",
+                    "Synopsis": "Create a new codebase. | stub",
+                    "HTTPMethod": "POST",
+                    "URI": "/application/:app_id/codebase/",
+                    "RequiresOAuth": "N",
+                    "content":{
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "display_exclude_dirs",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0,1]
+                        },
+                        {
+                            "Name": "accept_fmt",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ "application/json"]
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete application",
+                    "Synopsis": "Delete a single application. | stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be delete. | stub"
+                        }
+                    ]
+                },
+                {
+                    "MethodName": "Delete a codebase",
+                    "Synopsis": "Delete a codebase. | stub",
+                    "HTTPMethod": "DELETE",
+                    "URI": "/application/:app_id/codebase/:codebase_id",
+                    "RequiresOAuth": "N",
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "codebase_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        }
+                    ]
+                }
+
+           ]
+    },
     {
         "name": "Customer API",
         "methods": [
@@ -14,47 +615,580 @@
         ]
     },
     {
-            "name": "Account API",
-                "methods": [
-                {
-                    "MethodName": "/user/:username",
-                    "Synopsis": "Returns information on Sentinel user",
-                    "HTTPMethod": "GET",
-                    "URI": "/user/:username",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "username",
-                            "Required": "Y",
-                            "Type": "email address"   
-                        },
-                        {
-                            "Name": "format",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
-                        }
-                    ]
+        "name": "Group API",
+        "methods": [
+            {
+                "MethodName": "Retrieve group details",
+                "Synopsis": "Report the list of groups under the control of client_id. ",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/group/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["client_id", "name", "id", "description", "organization" ],
+                        "Description": "Order results in ascending or descending order."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Retrieve individual group details",
+                "Synopsis": "Reports specific group details.",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/group/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Group id for which to retrieve information."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/csv", "text/xml"],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update group information",
+                "Synopsis": "Update an existing user with a new role. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
                 },
-                {
-                    "MethodName": "/user",
-                    "Synopsis": "Returns information on Sentinel users the current user can manage",
-                    "HTTPMethod": "GET",
-                    "URI": "/user",
-                    "RequiresOAuth": "N",
-                    "parameters": [
-                        {
-                            "Name": "format",
-                            "Required": "N",
-                            "Default": "xml",
-                            "Type": "enumerated",
-                            "EnumeratedList": ["text/csv", "application/json", "text/xml"]
-                        }
-                    ]
-                }
-           ]
-        },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group in which user will be updated."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new group",
+                "Synopsis": "Create a new group and obtain the new group's id. (not sure if accurate) | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add application or site to group",
+                "Synopsis": "Add an application or site to a given group. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/:group_id/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which sites and/or applications will be added."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add user & role to group",
+                "Synopsis": "Associate a user and role to a group. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which user and role will be added."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove group",
+                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm:sub handle_delete) | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "group_id of group to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove user privilege",
+                "Synopsis": "Removes the given user's group privilege. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/role/:target_user_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which user will be removed."
+                    },
+                    {
+                        "Name": "target_user_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "user_id of user to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete site from group",
+                "Synopsis": "Delete the given site from the given group. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/site/:target_site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which site will be removed."
+                    },
+                    {
+                        "Name": "target_site_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "site_id of site to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete application from group.",
+                "Synopsis": "Delete the given application from the given group. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/application/:target_application_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which application will be removed."
+                    },
+                    {
+                        "Name": "target_application_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "application_id of application to be deleted/removed."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Job API",
+        "methods": [
+            {
+                "MethodName": "Fetch a Job",
+                "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "N",
+                        "Description":"The ID number of the desired Job resource",
+                        "Type":"integer"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Fetch a list of Jobs",
+                "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "name": "Role API",
+        "methods": [
+            {
+                "MethodName": "Retrieve all role collections",
+                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/role",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Retrieve role collection",
+                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/role",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Retrieve role resource",
+                "Synopsis": "Role resource containing a description of the role and associated privileges. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/role/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Role resource "
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Schedule API",
+        "methods": [
+            {
+                "MethodName": "List schedules",
+                "Synopsis": "List all schedules owned by user. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Scan name. | stub"
+                    },
+                    {
+                        "Name": "start_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
+                    },
+                    {
+                        "Name": "end_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
+                    },
+                    {
+                        "Name": "duration",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time duration in seconds (I think). | stub"
+                    },
+                    {
+                        "Name": "timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
+                    },
+                    {
+                        "Name": "job",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
+                    },
+                    {
+                        "Name": "creator",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "Job schedule creator. | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Begin retrieving pages from this index."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single schedule",
+                "Synopsis": "List a single schedule. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a schedule",
+                "Synopsis": "Delete a single schedule. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id"
+                    }
+                ]
+            }
+        ]
+    },
     {
         "name": "Site API",
         "methods": [
@@ -152,7 +1286,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-		   {
+                   {
                         "Name": "display_all",
                         "Required": "N",
                         "Default": 0,
@@ -160,7 +1294,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
                    },
-		   {
+                   {
                         "Name": "display_min",
                         "Required": "N",
                         "Default": 0,
@@ -270,7 +1404,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-		   {
+                   {
                         "Name": "display_all",
                         "Required": "N",
                         "Default": 0,
@@ -278,7 +1412,7 @@
                         "EnumeratedList": [0, 1],
 			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
                    },
-		   {
+                   {
                         "Name": "display_min",
                         "Required": "N",
                         "Default": 0,
@@ -289,16 +1423,16 @@
 		
                 ]
             },
-	                {
+            {
                 "MethodName": "/site/:site_id",
                 "Synopsis": "Update information for one site",
                 "HTTPMethod": "PUT",
                 "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
-		"content":{
-			"schema":{"type":"string"},
-			"contentType":["application/json","application/xml"]
-		},
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -339,52 +1473,128 @@
             }   
         ]
     },
-        {
-            "name": "Admin API",
-            "methods": [
-                {
-                    "MethodName": "/:client_id/",
-                    "Synopsis": "Manage user access and site groups",
-                    "HTTPMethod": "GET",
-                    "URI": "/:client_id/",
-                    "parameters": [
-                        {
-                            "Name": "client_id",
-                            "Required": "Y"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Job API",
-            "methods": [
-                {
-                    "MethodName": "Fetch a Job",
-                    "Synopsis": "GET /api/job/{id} returns a Job resource which describes a runnable configurations such as Scans and Retests",
-                    "HTTPMethod": "GET",
-                    "URI": "/job/:job_id",
-                    "parameters": [
-                        {
-                            "Name": "job_id",
-                            "Required": "N",
-                            "Description":"The ID number of the desired Job resource",
-                            "Type":"integer"
-                        }
-                    ]
-                },{
-                    "MethodName": "Fetch a list of Jobs",
-                    "Synopsis": "GET /api/job/ returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
-                    "HTTPMethod": "GET",
-                    "URI": "/job/",
-                    "parameters": [
-                    ]
-                }
-            ]
-             
-        }
+    {
+        "name": "VulnPolicy API",
+        "methods": [
+            {
+                "MethodName": "Get collection of policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get all vuln classes",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy/all_vuln_classes",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get particular vuln policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Can have a single id, or multiple comma-seperated ids."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Edit something existing",
+                "Synopsis": "Edit something related to Vuln_Policy. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Edit something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new something",
+                "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove Vuln_Policy something",
+                "Synopsis": "Something gets removed or deleted. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            }
+        ]
+    }
  
     ]
 }
-
 
