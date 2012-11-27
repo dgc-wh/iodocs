@@ -1659,6 +1659,832 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Vuln API",
+        "methods": [
+            {
+                "MethodName": "Return complete list of accessable vulnerabilities",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Can be one or more comma-seperated application ids | stub"
+                    },
+                    {
+                        "Name": "query_severity",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_start_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_end_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_site",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_tag_search_type",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["all", "any", "none"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_vulnerability",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "Default": 1,
+                        "EnumeratedList": [1, 0],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "open", "closed", "certified"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Regex looks for integer, no comma-seperated stuff | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_flagged",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_qanda",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_request",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_response",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_body",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_headers",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_abbr",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_param",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_has_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_cvss",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_tags",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages. Default is set to 5."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [],
+                        "Description": "Order the reults."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return chosen vulnerabilities",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id; Can be one, or comma-seperated list of ids | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Can be one or more comma-seperated application ids | stub"
+                    },
+                    {
+                        "Name": "query_severity",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_start_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_end_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_site",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"| stub"
+                    },
+                    {
+                        "Name": "query_tag_search_type",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["all", "any", "none"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_vulnerability",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "open", "closed", "certified"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Regex looks for integer, no comma-seperated stuff | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_flagged",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_qanda",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_request",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_response",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_body",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_headers",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_abbr",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_param",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_has_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_cvss",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "display_tags",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "| stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages. Default is set to 5."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [],
+                        "Description": "Order the reults."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return list of site vuln stats",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/stats",
+                "RequiresOAuth": "N",
+                "parameters": [
+                ]
+            },
+            {
+                "MethodName": "Return retest status for all vulnerabilities user has access to",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/retest",
+                "RequiresOAuth": "N",
+                "parameters": [
+                ]
+            },
+            {
+                "MethodName": "Return retest status for the given vulnerability id(s)",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/retest/:vuln_proto_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id; Can be one, or comma-seperated list of ids | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return the attack vectors list sub resource.",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id/attack_vector/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return the attack vector sub-resource",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "attack_vector_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Attack vector sub resource id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return a list of attack vector notes",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/note",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "attack_vector_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Attack vector sub resource id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return particular attack vector note",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/note/:note_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "attack_vector_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Attack vector sub resource id | stub"
+                    },
+                    {
+                        "Name": "note_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Note id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Return vulnerability tags",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/vuln/:vuln_proto_id/tag",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Post a note or some notes",
+                "Synopsis": "TBD",
+                "HTTPMethod": "POST",
+                "URI": "/vuln/:vuln_id/attack_vector/:attack_vector_id/note",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "attack_vector_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Post a question",
+                "Synopsis": "TBD",
+                "HTTPMethod": "POST",
+                "URI": "/vuln/:vuln_id/qanda",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new tags",
+                "Synopsis": "TBD",
+                "HTTPMethod": "POST",
+                "URI": "/vuln/:vuln_id/tag",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update retest for given vulnerability",
+                "Synopsis": "TBD",
+                "HTTPMethod": "PUT",
+                "URI": "/vuln/retest/:vuln_proto_id",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update an attack vector resource",
+                "Synopsis": "TBD",
+                "HTTPMethod": "PUT",
+                "URI": "/vuln/:vuln_proto_id/attack_vector/:vuln_test_id",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "vuln_test_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Answer a question",
+                "Synopsis": "TBD",
+                "HTTPMethod": "PUT",
+                "URI": "/vuln/:vuln_proto_id/qanda/:ticket_id/answer",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "vuln_proto_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "ticket_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Ticket id | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete tags",
+                "Synopsis": "TBD",
+                "HTTPMethod": "DELETE",
+                "URI": "/vuln/:vuln_id/tag/:target_tags",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "target_tags",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Tags to be deleted; Can be single tag, or multiple comma-seperated tags. | stub"
+                    }
+                ]
+            }
+
+        ]
     }
  
     ]
