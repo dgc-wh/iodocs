@@ -1674,92 +1674,92 @@
                         "Name": "query_threat",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
-                        "Description":"| stub"
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
-                        "Description":"Can be one or more comma-seperated application ids | stub"
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_start_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query by site id or site label. | stub"
                     },
                     {
                         "Name": "query_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"May be 'open','closed', 'certified', or some combination of the three. Ex. - \"open, closed\" | stub"
                     },
                     {
                         "Name": "query_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query by the short or long vulnerability classification name. | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Provide some portion of a url to search for. Ex. - Entering \"testsite\" will return any vulnerability with a url containing the string \"testsite\". | stub"
                     },
                     {
                         "Name": "query_tags",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Search tags | stub"
                     },
                     {
                         "Name": "query_tag_search_type",
@@ -1767,140 +1767,139 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": ["all", "any", "none"],
-                        "Description": "| stub"
+                        "Description": "Changes the behavior of query_tags when more than one tag is specified. If it's 'all' then all tags must be present to match, 'none' no tags must match, 'any' any tag may match. | stub"
                     },
                     {
                         "Name": "display_vulnerability",
                         "Required": "N",
                         "Type": "enumerated",
-                        "Default": 1,
                         "EnumeratedList": [1, 0],
-                        "Description": "| stub"
+                        "Description": "Display vulnervailities. | stub"
                     },
                     {
                         "Name": "display_attack_vectors",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "open", "closed", "certified"],
-                        "Description": "| stub"
+                        "Description": "Display attack vectors. | stub"
                     },
                     {
                         "Name": "display_attack_vectors_limit",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "Regex looks for integer, no comma-seperated stuff | stub"
+                        "Description": "Number of attack vectors to display per vulnerability. [NOT WORKING - 11/29/12] | stub"
                     },
                     {
                         "Name": "display_attack_vectors_notes",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display attack vector notes in full. | stub"
                     },
                     {
                         "Name": "display_attack_vectors_flagged",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "If attack vector is flagged, will display flag. | stub"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "| stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "| stub"
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
                     },
                     {
                         "Name": "display_qanda",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display Q & A | stub"
                     },
                     {
                         "Name": "display_request",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display request information. | stub"
                     },
                     {
                         "Name": "display_response",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display response information. | stub"
                     },
                     {
                         "Name": "display_body",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_response being 1, will not show if display_response is not 1. | stub"
                     },
                     {
                         "Name": "display_headers",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_request and display_response. If either is not chosen, respective headers will not be displayed. | stub"
                     },
                     {
                         "Name": "display_abbr",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display an abbreviated match as part of the response content. [NOT SURE IF WORKING] | stub"
                     },
                     {
                         "Name": "display_stats",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display statistics for all user-accessible sites. | stub"
                     },
                     {
                         "Name": "display_param",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_request, if display_request is not '1', then display_param will not be shown. | stub"
                     },
                     {
                         "Name": "display_has_notes",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Displays whether notes exist for vulnerabilities and attack vectors. | stub"
                     },
                     {
                         "Name": "display_cvss",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Displays cvss_score and cvss_vector (What are those?) | stub"
                     },
                     {
                         "Name": "display_tags",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display tags. | stub"
                     },
                     {
                         "Name": "page:limit",
                         "Required": "N",
                         "Type": "integer",
-                        "Description": "Limit results to n number of pages. Default is set to 5."
+                        "Description": "Limit results to n number of pages."
                     },
                     {
                         "Name": "page:offset",
@@ -1912,7 +1911,7 @@
                         "Name": "page:order_by",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [],
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
                         "Description": "Order the reults."
                     }
                 ]
@@ -1928,99 +1927,99 @@
                         "Name": "vuln_proto_id",
                         "Required": "Y",
                         "Default": "",
-                        "Type": "integer",
+                        "Type": "string",
                         "Description": "Vulnerability id; Can be one, or comma-seperated list of ids | stub"
                     },
                     {
                         "Name": "query_threat",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
-                        "Description":"| stub"
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
-                        "Description":"Can be one or more comma-seperated application ids | stub"
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
                     },
                     {
                         "Name": "query_start_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query by site id or site label. | stub"
                     },
                     {
                         "Name": "query_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"May be 'open','closed', 'certified', or some combination of the three. Ex. - \"open, closed\" | stub"
                     },
                     {
                         "Name": "query_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query by the short or long vulnerability classification name. | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Provide some portion of a url to search for. Ex. - Entering \"testsite\" will return any vulnerability with a url containing the string \"testsite\". | stub"
                     },
                     {
                         "Name": "query_tags",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"| stub"
+                        "Description":"Search tags | stub"
                     },
                     {
                         "Name": "query_tag_search_type",
@@ -2028,139 +2027,139 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": ["all", "any", "none"],
-                        "Description": "| stub"
+                        "Description": "Changes the behavior of query_tags when more than one tag is specified. If it's 'all' then all tags must be present to match, 'none' no tags must match, 'any' any tag may match. | stub"
                     },
                     {
                         "Name": "display_vulnerability",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "| stub"
+                        "Description": "Display vulnervailities. | stub"
                     },
                     {
                         "Name": "display_attack_vectors",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "open", "closed", "certified"],
-                        "Description": "| stub"
+                        "Description": "Display attack vectors. | stub"
                     },
                     {
                         "Name": "display_attack_vectors_limit",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "Regex looks for integer, no comma-seperated stuff | stub"
+                        "Description": "Number of attack vectors to display per vulnerability. [NOT WORKING - 11/29/12] | stub"
                     },
                     {
                         "Name": "display_attack_vectors_notes",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display attack vector notes in full. | stub"
                     },
                     {
                         "Name": "display_attack_vectors_flagged",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "If attack vector is flagged, will display flag. | stub"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "| stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "| stub"
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
                     },
                     {
                         "Name": "display_qanda",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display Q & A | stub"
                     },
                     {
                         "Name": "display_request",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display request information. | stub"
                     },
                     {
                         "Name": "display_response",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display response information. | stub"
                     },
                     {
                         "Name": "display_body",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_response being 1, will not show if display_response is not 1. | stub"
                     },
                     {
                         "Name": "display_headers",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_request and display_response. If either is not chosen, respective headers will not be displayed. | stub"
                     },
                     {
                         "Name": "display_abbr",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display an abbreviated match as part of the response content. [NOT SURE IF WORKING] | stub"
                     },
                     {
                         "Name": "display_stats",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display statistics for all user-accessible sites. | stub"
                     },
                     {
                         "Name": "display_param",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Dependent upon display_request, if display_request is not '1', then display_param will not be shown. | stub"
                     },
                     {
                         "Name": "display_has_notes",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Displays whether notes exist for vulnerabilities and attack vectors. | stub"
                     },
                     {
                         "Name": "display_cvss",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Displays cvss_score and cvss_vector (What are those?) | stub"
                     },
                     {
                         "Name": "display_tags",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "| stub"
+                        "Description": "Display tags. | stub"
                     },
                     {
                         "Name": "page:limit",
                         "Required": "N",
                         "Type": "integer",
-                        "Description": "Limit results to n number of pages. Default is set to 5."
+                        "Description": "Limit results to n number of pages."
                     },
                     {
                         "Name": "page:offset",
@@ -2172,11 +2171,14 @@
                         "Name": "page:order_by",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [],
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
                         "Description": "Order the reults."
                     }
                 ]
             },
+
+
+
             {
                 "MethodName": "Return list of site vuln stats",
                 "Synopsis": "TBD",
@@ -2211,6 +2213,10 @@
                     }
                 ]
             },
+
+
+
+
             {
                 "MethodName": "Return the attack vectors list sub resource.",
                 "Synopsis": "TBD",
@@ -2224,6 +2230,250 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Vulnerability id | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_severity",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_start_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_end_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_site",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query by site id or site label. | stub"
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"May be 'open','closed', 'certified', or some combination of the three. Ex. - \"open, closed\" | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query by the short or long vulnerability classification name. | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Provide some portion of a url to search for. Ex. - Entering \"testsite\" will return any vulnerability with a url containing the string \"testsite\". | stub"
+                    },
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Search tags | stub"
+                    },
+                    {
+                        "Name": "query_tag_search_type",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["all", "any", "none"],
+                        "Description": "Changes the behavior of query_tags when more than one tag is specified. If it's 'all' then all tags must be present to match, 'none' no tags must match, 'any' any tag may match. | stub"
+                    },
+                    {
+                        "Name": "display_vulnerability",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display vulnervailities. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "open", "closed", "certified"],
+                        "Description": "Display attack vectors. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of attack vectors to display per vulnerability. [NOT WORKING - 11/29/12] | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display attack vector notes in full. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_flagged",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "If attack vector is flagged, will display flag. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "display_qanda",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display Q & A | stub"
+                    },
+                    {
+                        "Name": "display_request",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display request information. | stub"
+                    },
+                    {
+                        "Name": "display_response",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display response information. | stub"
+                    },
+                    {
+                        "Name": "display_body",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_response being 1, will not show if display_response is not 1. | stub"
+                    },
+                    {
+                        "Name": "display_headers",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_request and display_response. If either is not chosen, respective headers will not be displayed. | stub"
+                    },
+                    {
+                        "Name": "display_abbr",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display an abbreviated match as part of the response content. [NOT SURE IF WORKING] | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display statistics for all user-accessible sites. | stub"
+                    },
+                    {
+                        "Name": "display_param",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_request, if display_request is not '1', then display_param will not be shown. | stub"
+                    },
+                    {
+                        "Name": "display_has_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Displays whether notes exist for vulnerabilities and attack vectors. | stub"
+                    },
+                    {
+                        "Name": "display_cvss",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Displays cvss_score and cvss_vector (What are those?) | stub"
+                    },
+                    {
+                        "Name": "display_tags",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display tags. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
+                        "Description": "Order the reults."
                     }
                 ]
             },
@@ -2247,9 +2497,257 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Attack vector sub resource id | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_severity",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                    },
+                    {
+                        "Name": "query_start_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_end_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_site",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query by site id or site label. | stub"
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"May be 'open','closed', 'certified', or some combination of the three. Ex. - \"open, closed\" | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query by the short or long vulnerability classification name. | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Provide some portion of a url to search for. Ex. - Entering \"testsite\" will return any vulnerability with a url containing the string \"testsite\". | stub"
+                    },
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Search tags | stub"
+                    },
+                    {
+                        "Name": "query_tag_search_type",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["all", "any", "none"],
+                        "Description": "Changes the behavior of query_tags when more than one tag is specified. If it's 'all' then all tags must be present to match, 'none' no tags must match, 'any' any tag may match. | stub"
+                    },
+                    {
+                        "Name": "display_vulnerability",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display vulnervailities. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "open", "closed", "certified"],
+                        "Description": "Display attack vectors. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of attack vectors to display per vulnerability. [NOT WORKING - 11/29/12] | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display attack vector notes in full. | stub"
+                    },
+                    {
+                        "Name": "display_attack_vectors_flagged",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "If attack vector is flagged, will display flag. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "display_qanda",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display Q & A | stub"
+                    },
+                    {
+                        "Name": "display_request",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display request information. | stub"
+                    },
+                    {
+                        "Name": "display_response",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display response information. | stub"
+                    },
+                    {
+                        "Name": "display_body",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_response being 1, will not show if display_response is not 1. | stub"
+                    },
+                    {
+                        "Name": "display_headers",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_request and display_response. If either is not chosen, respective headers will not be displayed. | stub"
+                    },
+                    {
+                        "Name": "display_abbr",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display an abbreviated match as part of the response content. [NOT SURE IF WORKING] | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display statistics for all user-accessible sites. | stub"
+                    },
+                    {
+                        "Name": "display_param",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Dependent upon display_request, if display_request is not '1', then display_param will not be shown. | stub"
+                    },
+                    {
+                        "Name": "display_has_notes",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Displays whether notes exist for vulnerabilities and attack vectors. | stub"
+                    },
+                    {
+                        "Name": "display_cvss",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Displays cvss_score and cvss_vector (What are those?) | stub"
+                    },
+                    {
+                        "Name": "display_tags",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display tags. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
+                        "Description": "Order the reults."
                     }
                 ]
             },
+
+
+
+
             {
                 "MethodName": "Return a list of attack vector notes",
                 "Synopsis": "TBD",
@@ -2319,6 +2817,10 @@
                     }
                 ]
             },
+
+
+
+
             {
                 "MethodName": "Post a note or some notes",
                 "Synopsis": "TBD",
