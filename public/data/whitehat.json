@@ -1675,21 +1675,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_start_date",
@@ -1935,21 +1935,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_start_date",
@@ -2233,21 +2233,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_start_date",
@@ -2500,21 +2500,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Threats have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Threats have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
                     },
                     {
                         "Name": "query_severity",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Severity have the following range: ?? to ?? | stub"
+                        "Description":"One value or multiple comma seperated values. Severity have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_start_date",
