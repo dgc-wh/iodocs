@@ -1540,6 +1540,2832 @@
         ]
     },
     {
+        "name": "SourceVuln API",
+        "methods": [
+            {
+                "MethodName": "Get vulns",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get vuln classes",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/vuln_class/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+
+                ]
+            },
+            {
+                "MethodName": "Get single vuln",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/:vuln_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get traces for given vulnerability",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/:vuln_id/trace",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single trace for given vulnerability",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/:vuln_id/trace/:trace_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "trace_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Trace id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get steps for a single trace of a given vulnerability",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/source_vuln/:vuln_id/trace/:trace_id/step",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "trace_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Trace id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get vulns for application",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get specific vulns for application",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln/:vuln_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get traces for a specific application vulnerability",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln/:vuln_id/trace",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single trace for given vulnerability of a given application",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "trace_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Trace id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get steps for a trace of a given vulnerability of an application",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id/step",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "trace_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Trace id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single step for a trace of a given vulnerability of an application",
+                "Synopsis": "TBD",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id/step/:step_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id"
+                    },
+                    {
+                        "Name": "vuln_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Vulnerability id"
+                    },
+                    {
+                        "Name": "trace_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Trace id"
+                    },
+                    {
+                        "Name": "step_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Step id"
+                    },
+                    {
+                        "Name": "query_opened",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_opened_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_closed_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_after",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_found_before",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                    },
+                    {
+                        "Name": "query_application_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated application ids| stub"
+                    },
+                    {
+                        "Name": "query_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                    },
+                    {
+                        "Name": "query_severity_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_dast_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                    },
+                    {
+                        "Name": "query_threat",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_score",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"One or more comma seperated severity ids| stub"
+                    },
+                    {
+                        "Name": "query_location",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query_location_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"uri regex | stub"
+                    },
+                    {
+                        "Name": "query__status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                    },
+                    {
+                        "Name": "query_trace_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                    },
+                    {
+                        "Name": "query_impact",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                    },
+                    {
+                        "Name": "query_class",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                    },
+                    {
+                        "Name": "query_instance_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Look for instance id | stub"
+                    },
+                    {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "Description": "Format of returned results."
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "VulnPolicy API",
         "methods": [
             {
