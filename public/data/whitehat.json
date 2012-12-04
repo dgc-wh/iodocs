@@ -1966,63 +1966,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -2196,63 +2196,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -2427,63 +2427,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -2657,63 +2657,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -2893,63 +2893,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -3129,63 +3129,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -3359,63 +3359,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -3595,63 +3595,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -3831,63 +3831,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -4073,63 +4073,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -4315,63 +4315,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -4563,63 +4563,63 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_application_id",
@@ -4934,14 +4934,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
@@ -4969,21 +4969,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8601  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
@@ -5194,14 +5194,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
@@ -5229,21 +5229,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8601  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
@@ -5492,14 +5492,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
@@ -5527,21 +5527,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8601  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
@@ -5759,14 +5759,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results after the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results after the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_end_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results before the given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results before the given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_site",
@@ -5794,21 +5794,21 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results found since a given date. Date format: Valid ISO8061  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results found since a given date. Date format: Valid ISO8601  (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_opened",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results opened since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results opened since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Query for results closed since a given date. Date format: Valid ISO8061 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Query for results closed since a given date. Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
                     },
                     {
                         "Name": "query_url",
