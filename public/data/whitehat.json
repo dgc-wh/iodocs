@@ -1259,7 +1259,7 @@
         "name": "Site API",
         "methods": [
             {
-                "MethodName": "/site",
+                "MethodName": "Get sites",
                 "Synopsis": "Returns information on sites user has access to",
                 "HTTPMethod": "GET",
                 "URI": "/site",
@@ -1372,7 +1372,7 @@
                 ]
             },
             {
-                "MethodName": "/site/:site_id",
+                "MethodName": "Get single site",
                 "Synopsis": "Returns information on one site",
                 "HTTPMethod": "GET",
                 "URI": "/site/:site_id",
@@ -1490,7 +1490,176 @@
                 ]
             },
             {
-                "MethodName": "/site/:site_id",
+                "MethodName": "Get multiple site lists",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get scan schedules for a site",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/scan_schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get users by site",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/user",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get entry points",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/entry_points",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get specific entry point",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/entry_points/:entry_point_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "entry_point_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Entry point id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get site credentials",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/site_credentials",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get specific site credentials",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/site_credentials/:site_credential_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "site_credential_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Obtain a singular credential, or multiple credentials by using comma-seperated list of credential ids."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get allowed hosts",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/allowed_hosts",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get specific allowed host",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "GET",
+                "URI": "/site/:site_id/allowed_hosts/:allowed_host_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "allowed_host_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Allowed host id."
+                    }
+                ]
+            },
+
+
+
+
+            {
+                "MethodName": "Update site",
                 "Synopsis": "Update information for one site",
                 "HTTPMethod": "PUT",
                 "URI": "/site/:site_id",
@@ -1536,7 +1705,250 @@
                         "Type": "integer"
                     } 
                 ]
-            }   
+            },   
+            {
+                "MethodName": "PUT scan schedule(s) for a site",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "PUT",
+                "URI": "/site/:site_id/scan_schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update specific site credentials",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "PUT",
+                "URI": "/site/:site_id/site_credentials/:site_credential_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "site_credential_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site credential id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create one or more sites",
+                "Synopsis": " (NOTE :REMOVE LATER: - ...uri...(,:site_id,...)[line 455 in pm, multiple sites? Don't remember seeing this in a POST request before)",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add entry points",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id/entry_points",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add site credentials",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id/site_credentials",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add specific site credentials",
+                "Synopsis": "T.B.D. -- NOTE: Can have multiple comma-seperated site credential ids in URI, how does that work?",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id/site_credentials/:site_credential_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "site_credential_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site credential id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add allowed hosts",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id/allowed_hosts",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add specific allowed host",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "POST",
+                "URI": "/site/:site_id/allowed_hosts/:allowed_host_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "allowed_host_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Allowed host id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete scan schedule",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "DELETE",
+                "URI": "/site/:site_id/scan_schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete site",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "DELETE",
+                "URI": "/site/:site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete entry points",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "DELETE",
+                "URI": "/site/:site_id/entry_points",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete specific site credentials",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "DELETE",
+                "URI": "/site/:site_id/site_credentials/:site_credential_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "site_credential_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site credential id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete specific allowed host",
+                "Synopsis": "T.B.D.",
+                "HTTPMethod": "DELETE",
+                "URI": "/site/:site_id/allowed_hosts/:allowed_host_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    },
+                    {
+                        "Name": "allowed_host_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Allowed host id."
+                    }
+                ]
+            }
         ]
     },
     {
