@@ -1266,83 +1266,228 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "format",
+                        "Name": "site_id",
                         "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"],
-			"Description": "Selects the requested response representation format."
+                        "Type": "integer",
+                        "Description": ""
                     },
                     {
-                        "Name": "client_id",
+                        "Name": "group_id",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "allowance",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_site_url_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_slot_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "url",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_client_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "Restricts sites to those in client_id to which the user has access."
+                        "Description":""
                     },
                     {
-                        "Name": "display_entry_points",
+                        "Name": "query_slot_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_weight",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Limited range: 0 to 10"
+                    },
+                    {
+                        "Name": "query_active_admin",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_active_consult",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_active_user",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_banner",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_speed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                    },
+                    {
+                        "Name": "query_sslciphers",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_notes",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_discovery",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_enable_scan_creds",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_scan_schedule_timezone",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_current_scan_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_last_completed_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_vuln_policy_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_description",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                    },
+                    {
+                        "Name": "display_min",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
+                    },
+                    {
+                        "Name": "display_entry_points_content",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                        "Description": "display_entry_points_content ??? Is it the same as display_entry_points??? ::: display_entry_points - Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
                     },
                     {
-                        "Name": "display_assessment_complete",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
-                    },
-                    {
-                        "Name": "display_vuln_policy",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
-                    },
-                    {
-                        "Name": "display_allowed_hosts",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
-                    },
-                    {
+                        
                         "Name": "display_scan_status",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
-                    },
-                    {
-                        "Name": "display_site_credentials",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
-                    },
-                    {
-                        "Name": "display_vuln_stats",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose simple statistics about the number of vulns on the Site."
-                    },
-                    {
-                        "Name": "display_scan_schedule",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                        "Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
                     },
                     {
                         "Name": "display_groups",
@@ -1350,25 +1495,140 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+            "Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-                   {
-                        "Name": "display_all",
+                    {
+                        "Name": "display_scans",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
-                   },
-                   {
-                        "Name": "display_min",
+            "Description":""
+                    },
+                    {
+                        "Name": "display_vuln_stats",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
-                   }
-		
+            "Description":"Expose simple statistics about the number of vulns on the Site."
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
+                    },
+                    {
+                        "Name": "display_contract_info",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_organization",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_host_links",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                    },
+                    {
+                        "Name": "display_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    }
+        
                 ]
             },
             {
@@ -1381,86 +1641,41 @@
                     {
                         "Name": "site_id",
                         "Required": "Y",
-                        "Type": "integer"
-                    },
-                    {
-                        "Name": "format",
-                        "Required": "N",
-                        "Default": "xml",
-                        "Type": "enumerated",
-                        "EnumeratedList": ["csv", "json", "xml"],
-			"Description": "Selects the requested response representation format."
-                    },
-                    {
-                        "Name": "client_id",
-                        "Required": "N",
-                        "Default": "",
                         "Type": "integer",
-                        "Description": "Restricts sites to those in client_id to which the user has access."
+                        "Description": ""
                     },
                     {
-                        "Name": "display_entry_points",
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                    },
+                    {
+                        "Name": "display_min",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                        "Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
                     },
                     {
-                        "Name": "display_assessment_complete",
+                        "Name": "display_entry_points_content",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
+                        "Description": "display_entry_points_content ??? Is it the same as display_entry_points??? ::: display_entry_points - Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
                     },
                     {
-                        "Name": "display_vuln_policy",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
-                    },
-                    {
-                        "Name": "display_allowed_hosts",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
-                    },
-                    {
+                        
                         "Name": "display_scan_status",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
-                    },
-                    {
-                        "Name": "display_site_credentials",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
-                    },
-                    {
-                        "Name": "display_vuln_stats",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose simple statistics about the number of vulns on the Site."
-                    },
-                    {
-                        "Name": "display_scan_schedule",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-			"Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                        "Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
                     },
                     {
                         "Name": "display_groups",
@@ -1468,25 +1683,140 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+            "Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
                    },
-                   {
-                        "Name": "display_all",
+                    {
+                        "Name": "display_scans",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
-                   },
-                   {
-                        "Name": "display_min",
+            "Description":""
+                    },
+                    {
+                        "Name": "display_vuln_stats",
                         "Required": "N",
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-			"Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
-                   }
-		
+            "Description":"Expose simple statistics about the number of vulns on the Site."
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
+                    },
+                    {
+                        "Name": "display_contract_info",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_organization",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_host_links",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                    },
+                    {
+                        "Name": "display_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    }
+        
                 ]
             },
             {
@@ -1500,11 +1830,372 @@
                         "Name": "site_id",
                         "Required": "Y",
                         "Default": "",
+                        "Type": "string",
+                        "Description": "One or more comma-seperated site ids."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "N",
                         "Type": "integer",
-                        "Description": "Site id."
+                        "Description": ""
+                    },
+                    {
+                        "Name": "allowance",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_site_url_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_slot_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "url",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_client_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_slot_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_weight",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Limited range: 0 to 10"
+                    },
+                    {
+                        "Name": "query_active_admin",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_active_consult",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_active_user",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_banner",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_speed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                    },
+                    {
+                        "Name": "query_sslciphers",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_notes",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_discovery",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_enable_scan_creds",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_scan_schedule_timezone",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_current_scan_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_last_completed_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_vuln_policy_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_description",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                    },
+                    {
+                        "Name": "display_min",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
+                    },
+                    {
+                        "Name": "display_entry_points_content",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "display_entry_points_content ??? Is it the same as display_entry_points??? ::: display_entry_points - Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                    },
+                    {
+                        
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
+                    },
+                    {
+                        "Name": "display_groups",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+                   },
+                    {
+                        "Name": "display_scans",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose simple statistics about the number of vulns on the Site."
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
+                    },
+                    {
+                        "Name": "display_contract_info",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_organization",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_host_links",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                    },
+                    {
+                        "Name": "display_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
+                        "Description": "Order the reults."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
+
+
+
             {
                 "MethodName": "Get scan schedules for a site",
                 "Synopsis": "T.B.D.",
@@ -1518,6 +2209,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Site id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1534,6 +2245,34 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Site id."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["first_name", "first_name asc", "first_name desc", "middle_initial", "middle_initial asc", "middle_initial desc", "last_name", "last_name asc", "last_name desc", "address", "address asc", "address desc", "city", "city asc", "city desc", "state", "state asc", "state desc", "country", "country asc", "country desc", "username", "username asc", "username desc", "email_address", "email_address asc", "email_address desc", "job_title", "job_title asc", "job_title desc", "created_by", "created_by asc", "created_by desc", "phone", "phone asc", "phone desc", "mobile", "mobile asc", "mobile desc", "fax", "fax asc", "fax desc", "timezone", "timezone asc", "timezone desc", "zipcode", "zipcode asc", "zipcode desc", "notes", "notes asc", "notes desc", "company", "company asc", "company desc", "creation_time", "creation_time asc", "creation_time desc", "expose_hostnames", "expose_hostnames asc", "expose_hostnames desc", "show_cvss", "show_cvss asc", "show_cvss desc", "immediate_email", "immediate_email asc", "immediate_email desc", "update_email", "update_email asc", "update_email desc", "weekly_email", "weekly_email asc", "weekly_email desc", "monthly_email", "monthly_email asc", "monthly_email desc", "require_mfa", "require_mfa asc", "require_mfa desc", "action_items_email", "action_items_email asc", "action_items_email desc", "last_login", "last_login asc", "last_login desc", "last_viewed_messages", "last_viewed_messages asc", "last_viewed_messages desc", "client_id", "client_id asc", "client_id desc", "type", "type asc", "type desc", "role", "role asc", "role desc" ],
+                        "Description": "Order the reults."
                     }
                 ]
             },
@@ -1550,6 +2289,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Site id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1573,6 +2332,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Entry point id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1589,6 +2368,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Site id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1612,6 +2411,26 @@
                         "Default": "",
                         "Type": "string",
                         "Description": "Obtain a singular credential, or multiple credentials by using comma-seperated list of credential ids."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1628,6 +2447,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Site id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
@@ -1651,6 +2490,26 @@
                         "Default": "",
                         "Type": "integer",
                         "Description": "Allowed host id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
                     }
                 ]
             },
