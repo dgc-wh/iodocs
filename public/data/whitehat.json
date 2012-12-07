@@ -669,6 +669,177 @@
         ]
     },
     {
+        "name": "Asset API",
+        "methods": [
+            { 
+                "MethodName": "Get Asset collection",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/asset", 
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for result with label containing given text."
+                    },
+                    {
+                        "Name": "query_client_id",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for one or more comma-seperated clients, by their client ids."
+                    },
+                    {
+                        "Name": "query_group_id",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for one or more comma-seperated groups, by their groups ids."
+                    },
+                    {
+                        "Name": "query_group_name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for group by its name."
+                    },
+                    {
+                        "Name": "query_has_schedule",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_schedule_timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_schedule_name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "display_asset",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": "0 to not display asset, 1 to display asset."
+                    },
+                    {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": "Display all information, or not."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [],
+                        "Description": "Order the reults."
+                    }
+                ]
+            },
+            { 
+                "MethodName": "Get single Asset",
+                "Synopsis": "Query parameters may not be of use here.",
+                "HTTPMethod": "GET",
+                "URI": "/asset/:asset_id", 
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "asset_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Asset id."
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for result with label containing given text."
+                    },
+                    {
+                        "Name": "query_client_id",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for one or more comma-seperated clients, by their client ids."
+                    },
+                    {
+                        "Name": "query_group_id",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for one or more comma-seperated groups, by their groups ids."
+                    },
+                    {
+                        "Name": "query_group_name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Query for group by its name."
+                    },
+                    {
+                        "Name": "query_has_schedule",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_schedule_timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_schedule_name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "display_asset",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": "0 to not display asset, 1 to display asset."
+                    },
+                    {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0,1 ],
+                        "Description": "Display all information, or not."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [],
+                        "Description": "Order the reults."
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Customer API",
         "methods": [
             { 
