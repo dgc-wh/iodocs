@@ -682,6 +682,82 @@
         ]
     },
     {
+        "name": "Event API",
+        "methods": [
+            { 
+                "MethodName": "Get Events collection",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/event", 
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_category",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "One or more comma-seperated categories."
+                    },
+                    {
+                        "Name": "query_type",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "NOTE: Get clarification here."
+                    },
+                    {
+                        "Name": "query_type_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Takes a word."
+                    },
+                    {
+                        "Name": "query_before",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Enter a date, and optionally a time, to search before."
+                    },
+                    {
+                        "Name": "query_after",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Enter a date, and optionally a time, to search after."
+                    },
+                    {
+                        "Name": "query_asset_type",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "site", "application", "user" ],
+                        "Description": "Query for this particular asset type."
+                    },
+                    {
+                        "Name": "query_asset_name_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Search for asset containing this string in its name."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id","id_asc","id_desc","time","time_asc","time_desc" ],
+                        "Description": "Order the reults."
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Group API",
         "methods": [
             {
