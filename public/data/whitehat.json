@@ -322,7 +322,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["total_findings", "total_findings_asc", "total_findings_desc", "label", "label_asc", "label_desc", "status", "status_asc", "status_desc"],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -747,7 +747,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -833,7 +833,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             }
@@ -922,7 +922,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id","id_asc","id_desc","time","time_asc","time_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             }
@@ -1725,7 +1725,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "display_entry_points_content ??? Is it the same as display_entry_points??? ::: display_entry_points - Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                        "Description": "Display request content for POST entry points."
                     },
                     {
                         
@@ -1865,7 +1865,7 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "format",
@@ -2053,7 +2053,7 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "format",
@@ -2428,7 +2428,7 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "format",
@@ -2519,7 +2519,7 @@
                         "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": ["first_name", "first_name asc", "first_name desc", "middle_initial", "middle_initial asc", "middle_initial desc", "last_name", "last_name asc", "last_name desc", "address", "address asc", "address desc", "city", "city asc", "city desc", "state", "state asc", "state desc", "country", "country asc", "country desc", "username", "username asc", "username desc", "email_address", "email_address asc", "email_address desc", "job_title", "job_title asc", "job_title desc", "created_by", "created_by asc", "created_by desc", "phone", "phone asc", "phone desc", "mobile", "mobile asc", "mobile desc", "fax", "fax asc", "fax desc", "timezone", "timezone asc", "timezone desc", "zipcode", "zipcode asc", "zipcode desc", "notes", "notes asc", "notes desc", "company", "company asc", "company desc", "creation_time", "creation_time asc", "creation_time desc", "expose_hostnames", "expose_hostnames asc", "expose_hostnames desc", "show_cvss", "show_cvss asc", "show_cvss desc", "immediate_email", "immediate_email asc", "immediate_email desc", "update_email", "update_email asc", "update_email desc", "weekly_email", "weekly_email asc", "weekly_email desc", "monthly_email", "monthly_email asc", "monthly_email desc", "require_mfa", "require_mfa asc", "require_mfa desc", "action_items_email", "action_items_email asc", "action_items_email desc", "last_login", "last_login asc", "last_login desc", "last_viewed_messages", "last_viewed_messages asc", "last_viewed_messages desc", "client_id", "client_id asc", "client_id desc", "type", "type asc", "type desc", "role", "role asc", "role desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -3273,7 +3273,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -3503,7 +3503,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -3734,7 +3734,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -3964,7 +3964,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -4200,7 +4200,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -4436,7 +4436,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -4666,7 +4666,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -4902,7 +4902,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -5138,7 +5138,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -5380,7 +5380,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -5622,7 +5622,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -5870,7 +5870,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "application_id", "application_id_asc", "application_id_desc", "class", "class_asc", "class_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc", "location", "location_asc", "location_desc" ],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     },
                     {
                         "Name": "accept_fmt",
@@ -6256,7 +6256,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -6516,7 +6516,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -6814,7 +6814,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
@@ -7081,7 +7081,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [ "id", "id_asc", "id_desc", "site", "site_asc", "site_desc", "class", "class_asc", "class_desc", "cvss", "cvss_asc", "cvss_desc", "retest_state", "retest_state_asc", "retest_state_desc", "severity", "severity_asc", "severity_desc", "threat", "threat_asc", "threat_desc", "score", "score_asc", "score_desc", "status", "status_asc", "status_desc", "date", "date_asc", "date_desc", "opened_date", "opened_date_asc", "opened_date_desc", "closed_date", "closed_date_asc", "closed_date_desc"],
-                        "Description": "Order the reults."
+                        "Description": "Order the results."
                     }
                 ]
             },
