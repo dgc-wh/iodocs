@@ -746,7 +746,7 @@
                         "Name": "page:order_by",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [],
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "client_id", "client_id_asc", "client_id_desc", "label", "label_asc", "label_desc", "schedule_timezone", "schedule_timezone_asc", "schedule_timezone_desc", "schedule_name", "schedule_name_asc", "schedule_name_desc" ],
                         "Description": "Order the results."
                     }
                 ]
@@ -832,7 +832,7 @@
                         "Name": "page:order_by",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [],
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "client_id", "client_id_asc", "client_id_desc", "label", "label_asc", "label_desc", "schedule_timezone", "schedule_timezone_asc", "schedule_timezone_desc", "schedule_name", "schedule_name_asc", "schedule_name_desc" ],
                         "Description": "Order the results."
                     }
                 ]
@@ -872,7 +872,7 @@
                         "Name": "query_type",
                         "Required": "N",
                         "Type": "string",
-                        "Description": "NOTE: Get clarification here."
+                        "Description": "Query a particular type. 'type' is a single value classification of an 'event'. An event may have multiple categories. Example: event \"user created\", has type \"new_user\", categories of \"new_user\" would be \"user\" and \"privilege\"."
                     },
                     {
                         "Name": "query_type_like",
