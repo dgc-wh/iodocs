@@ -3239,7 +3239,7 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
@@ -3279,7 +3279,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3301,7 +3301,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3320,13 +3320,6 @@
                         "Description": "Vulnerability id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3337,7 +3330,7 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
@@ -3370,7 +3363,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3389,13 +3382,6 @@
                         "Description": "Vulnerability id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3406,22 +3392,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3439,7 +3411,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3464,13 +3436,6 @@
                         "Description": "Trace id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3481,22 +3446,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3514,7 +3465,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3539,13 +3490,6 @@
                         "Description": "Trace id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3556,22 +3500,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3589,7 +3519,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3781,7 +3711,7 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
@@ -3821,7 +3751,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3846,13 +3776,6 @@
                         "Description": "Vulnerability id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3863,7 +3786,7 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
@@ -3896,7 +3819,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -3921,13 +3844,6 @@
                         "Description": "Vulnerability id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3938,22 +3854,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3971,7 +3873,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -4002,13 +3904,6 @@
                         "Description": "Trace id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -4019,22 +3914,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -4052,7 +3933,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -4083,13 +3964,6 @@
                         "Description": "Trace id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -4100,22 +3974,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -4133,7 +3993,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
@@ -4170,13 +4030,6 @@
                         "Description": "Step id"
                     },
                     {
-                        "Name": "display_stats",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
@@ -4187,22 +4040,8 @@
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
+                        "EnumeratedList": [0, 1],
                         "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
-                    },
-                    {
-                        "Name": "display_description",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
-                        "Name": "display_solution",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -4220,7 +4059,7 @@
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
-                        "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
+                        "EnumeratedList": [ "application/json", "application/xml", "text/csv" ],
                         "Description": "Format of returned results."
                     }
                 ]
