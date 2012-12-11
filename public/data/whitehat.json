@@ -3061,7 +3061,7 @@
         "name": "SourceVuln API",
         "methods": [
             {
-                "MethodName": "Get vulns",
+                "MethodName": "Get vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/",
@@ -3285,7 +3285,7 @@
                 ]
             },
             {
-                "MethodName": "Get vuln classes",
+                "MethodName": "Get vulnerability classes",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/vuln_class/",
@@ -3307,7 +3307,7 @@
                 ]
             },
             {
-                "MethodName": "Get single vuln",
+                "MethodName": "Get particular vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/:vuln_id",
@@ -3324,7 +3324,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display stats. | stub"
+                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "display_traces",
@@ -3338,7 +3338,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display steps. | stub"
+                        "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
                         "Name": "display_description",
@@ -3376,7 +3376,7 @@
                 ]
             },
             {
-                "MethodName": "Get traces for given vulnerability",
+                "MethodName": "Get traces for a vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/:vuln_id/trace",
@@ -3393,21 +3393,35 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display stats. | stub"
+                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display steps. | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3431,7 +3445,7 @@
                 ]
             },
             {
-                "MethodName": "Get single trace for given vulnerability",
+                "MethodName": "Get particular trace for a vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/:vuln_id/trace/:trace_id",
@@ -3450,11 +3464,39 @@
                         "Description": "Trace id"
                     },
                     {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
+                    },
+                    {
+                        "Name": "display_steps",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3478,7 +3520,7 @@
                 ]
             },
             {
-                "MethodName": "Get steps for a single trace of a given vulnerability",
+                "MethodName": "Get steps for a trace of a vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/source_vuln/:vuln_id/trace/:trace_id/step",
@@ -3497,11 +3539,39 @@
                         "Description": "Trace id"
                     },
                     {
+                        "Name": "display_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display stats. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_traces",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [1, 0],
+                        "Description": "Display traces. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display steps. | stub"
+                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. (Doesn't seem to make a difference here) | stub"
+                    },
+                    {
+                        "Name": "display_solution",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "custom"],
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3527,7 +3597,7 @@
 
 
             {
-                "MethodName": "Get vulns for application",
+                "MethodName": "Get application vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln",
@@ -3614,7 +3684,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated (vuln type?) ids| stub"
+                        "Description":"One or more comma seperated vulnerability ids | stub"
                     },
                     {
                         "Name": "query_severity_id",
@@ -3635,31 +3705,31 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated severity ids| stub"
+                        "Description":"One or more comma seperated values. Threats have the following range: 1 to 5 | stub"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated severity ids| stub"
+                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 15 | stub"
                     },
                     {
                         "Name": "query_location",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"uri regex | stub"
+                        "Description":"Search for exact file (provide file uri) | stub"
                     },
                     {
                         "Name": "query_location_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"uri regex | stub"
+                        "Description":"Search for file locations containing this string of text (provide partial match to file uri) | stub"
                     },
                     {
-                        "Name": "query__status",
+                        "Name": "query_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
@@ -3712,7 +3782,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display steps. | stub"
+                        "Description": "Display steps. (Can be very, very slow.) | stub"
                     },
                     {
                         "Name": "display_description",
@@ -3726,7 +3796,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                        "Description": "Display vulnerability solution information. 'custom' option will display custom solutions. | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3757,7 +3827,7 @@
                 ]
             },
             {
-                "MethodName": "Get specific vulnerability for application",
+                "MethodName": "Get particular application vulnerablity",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln/:vuln_id",
@@ -3832,7 +3902,7 @@
                 ]
             },
             {
-                "MethodName": "Get traces for a specific application vulnerability",
+                "MethodName": "Get traces for particular application vulnerablity",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln/:vuln_id/trace",
@@ -3907,7 +3977,7 @@
                 ]
             },
             {
-                "MethodName": "Get single trace for given vulnerability of a given application",
+                "MethodName": "Get particular trace for an application vulnerablity",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id",
@@ -3950,7 +4020,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display steps. | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "display_description",
@@ -3988,7 +4058,7 @@
                 ]
             },
             {
-                "MethodName": "Get steps for a trace of a given vulnerability of an application",
+                "MethodName": "Get steps for a trace of an application vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id/step",
@@ -4069,7 +4139,7 @@
                 ]
             },
             {
-                "MethodName": "Get single step for a trace of a given vulnerability of an application",
+                "MethodName": "Get single step for a trace of an application vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/vuln/:vuln_id/trace/:trace_id/step/:step_id",
@@ -4152,127 +4222,6 @@
                         "Type": "enumerated",
                         "EnumeratedList": [ "application/xml", "application/json", "text/csv" ],
                         "Description": "Format of returned results."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "VulnPolicy API",
-        "methods": [
-            {
-                "MethodName": "Get collection of policies",
-                "Synopsis": "| stub",
-                "HTTPMethod": "GET",
-                "URI": "/:client_id/vuln_policy",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    }
-                ]
-            },
-            {
-                "MethodName": "Get all vuln classes",
-                "Synopsis": "| stub",
-                "HTTPMethod": "GET",
-                "URI": "/:client_id/vuln_policy/all_vuln_classes",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    }
-                ]
-            },
-            {
-                "MethodName": "Get particular vuln policies",
-                "Synopsis": "| stub",
-                "HTTPMethod": "GET",
-                "URI": "/:client_id/vuln_policy/:id",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    },
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Can have a single id, or multiple comma-seperated ids."
-                    }
-                ]
-            },
-            {
-                "MethodName": "Edit something existing",
-                "Synopsis": "Edit something related to Vuln_Policy. | stub",
-                "HTTPMethod": "PUT",
-                "URI": "/:client_id/vuln_policy/:id",
-                "RequiresOAuth": "N",
-                "content": {
-                    "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
-                },
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    },
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Edit something related to Vuln_Policy. Find more documentation. | stub"
-                    }
-                ]
-            },
-            {
-                "MethodName": "Create new something",
-                "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
-                "HTTPMethod": "POST",
-                "URI": "/:client_id/vuln_policy",
-                "RequiresOAuth": "N",
-                "content": {
-                    "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
-                },
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    }
-                ]
-            },
-            {
-                "MethodName": "Remove Vuln_Policy something",
-                "Synopsis": "Something gets removed or deleted. | stub",
-                "HTTPMethod": "DELETE",
-                "URI": "/:client_id/vuln_policy/:id",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "client_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Client id"
-                    },
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
                     }
                 ]
             }
@@ -5599,6 +5548,127 @@
 
         ]
     }
+    {
+        "name": "VulnPolicy API",
+        "methods": [
+            {
+                "MethodName": "Get collection of policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get all vuln classes",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy/all_vuln_classes",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get particular vuln policies",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Can have a single id, or multiple comma-seperated ids."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Edit something existing",
+                "Synopsis": "Edit something related to Vuln_Policy. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Edit something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new something",
+                "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/vuln_policy",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove Vuln_Policy something",
+                "Synopsis": "Something gets removed or deleted. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/vuln_policy/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
+                    }
+                ]
+            }
+        ]
+    },
  
     ]
 }
