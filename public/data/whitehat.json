@@ -4070,7 +4070,7 @@
         "name": "Vuln API",
         "methods": [
             {
-                "MethodName": "Get all accessable vulnerabilites",
+                "MethodName": "Get all accessible vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/vuln/",
@@ -4326,11 +4326,11 @@
                 "MethodName": "Get specific vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id",
+                "URI": "/vuln/:vuln_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "string",
@@ -4594,7 +4594,7 @@
                 ]
             },
             {
-                "MethodName": "Get retest status for accessbile vulnerabilities",
+                "MethodName": "Get retest status for accessible vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
                 "URI": "/vuln/retest",
@@ -4606,11 +4606,11 @@
                 "MethodName": "Get retest status for one or more specific vulnerabilities",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/retest/:vuln_proto_id",
+                "URI": "/vuln/retest/:vuln_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "string",
@@ -4624,11 +4624,11 @@
                 "MethodName": "Get attack vectors for specific vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id/attack_vector/",
+                "URI": "/vuln/:vuln_id/attack_vector/",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -4884,11 +4884,11 @@
                 "MethodName": "Get specific attack vector for specific vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/",
+                "URI": "/vuln/:vuln_id/attack_vector/:attack_vector_id/",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5153,11 +5153,11 @@
                 "MethodName": "Get attack vector notes",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/note",
+                "URI": "/vuln/:vuln_id/attack_vector/:attack_vector_id/note",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5176,11 +5176,11 @@
                 "MethodName": "Get specific attack vector note",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id/attack_vector/:attack_vector_id/note/:note_id",
+                "URI": "/vuln/:vuln_id/attack_vector/:attack_vector_id/note/:note_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5206,11 +5206,11 @@
                 "MethodName": "Get vulnerability tags",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/vuln/:vuln_proto_id/tag",
+                "URI": "/vuln/:vuln_id/tag",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5291,7 +5291,7 @@
                 "MethodName": "Update retest for given vulnerability",
                 "Synopsis": "TBD",
                 "HTTPMethod": "PUT",
-                "URI": "/vuln/retest/:vuln_proto_id",
+                "URI": "/vuln/retest/:vuln_id",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -5299,7 +5299,7 @@
                 },
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5311,7 +5311,7 @@
                 "MethodName": "Update an attack vector resource",
                 "Synopsis": "TBD",
                 "HTTPMethod": "PUT",
-                "URI": "/vuln/:vuln_proto_id/attack_vector/:vuln_test_id",
+                "URI": "/vuln/:vuln_id/attack_vector/:vuln_test_id",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -5319,7 +5319,7 @@
                 },
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
@@ -5338,7 +5338,7 @@
                 "MethodName": "Answer a question",
                 "Synopsis": "TBD",
                 "HTTPMethod": "PUT",
-                "URI": "/vuln/:vuln_proto_id/qanda/:ticket_id/answer",
+                "URI": "/vuln/:vuln_id/qanda/:ticket_id/answer",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
@@ -5346,7 +5346,7 @@
                 },
                 "parameters": [
                     {
-                        "Name": "vuln_proto_id",
+                        "Name": "vuln_id",
                         "Required": "Y",
                         "Default": "",
                         "Type": "integer",
