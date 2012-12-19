@@ -1513,6 +1513,86 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
+                        "Name": "query_industry",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_service_level",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Enterprise", "Flex" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_create_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_activation_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notes_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_next_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_global_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_market_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
                         "Name": "site_id",
                         "Required": "N",
                         "Type": "integer",
@@ -2073,6 +2153,86 @@
                 "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "query_industry",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_service_level",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Enterprise", "Flex" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_create_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_activation_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notes_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_next_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_global_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_market_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
                     {
                         "Name": "site_id",
                         "Required": "Y",
