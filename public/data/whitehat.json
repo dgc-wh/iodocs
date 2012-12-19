@@ -1513,86 +1513,6 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "query_industry",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_service_level",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_service_type",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "Enterprise", "Flex" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_create_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_activation_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_notes_updated_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_next_scan",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_cred_updated_by",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_cred_updated_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_global_rank",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_market_rank",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
                         "Name": "site_id",
                         "Required": "N",
                         "Type": "integer",
@@ -1611,60 +1531,11 @@
                         "Description": ""
                     },
                     {
-                        "Name": "query_label_like",
+                        "Name": "query_activation_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
                         "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_schedule_name",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_schedule_name_like",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_site_url_like",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_slot_url",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "url",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_client_id",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_slot_label",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_weight",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
-                        "Description":"Limited range: 0 to 10"
                     },
                     {
                         "Name": "query_active_admin",
@@ -1698,39 +1569,31 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_speed",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
-                    },
-                    {
-                        "Name": "query_sslciphers",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_notes",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_satellite",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_satellite_id",
+                        "Name": "query_client_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_create_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_current_scan_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_description",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
                         "Description":""
                     },
                     {
@@ -1750,6 +1613,106 @@
                         "Description":""
                     },
                     {
+                        "Name": "query_global_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_industry",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_last_completed_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_market_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_next_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notes",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_notes_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_satellite",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
                         "Name": "query_scan_schedule_timezone",
                         "Required": "N",
                         "Default": "",
@@ -1757,17 +1720,54 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_current_scan_id",
+                        "Name": "query_service_level",
                         "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
                         "Description":""
                     },
                     {
-                        "Name": "query_last_completed_scan",
+                        "Name": "query_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Enterprise", "Flex" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_site_url_like",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_slot_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_slot_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "url",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_speed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                    },
+                    {
+                        "Name": "query_sslciphers",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
                         "Description":""
                     },
                     {
@@ -1778,11 +1778,11 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_description",
+                        "Name": "query_weight",
                         "Required": "N",
                         "Default": "",
-                        "Type": "string",
-                        "Description":""
+                        "Type": "integer",
+                        "Description":"Limited range: 0 to 10"
                     },
                     {
                         "Name": "display_all",
@@ -2154,91 +2154,10 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "query_industry",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_service_level",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_service_type",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [ "Enterprise", "Flex" ],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_create_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_activation_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_notes_updated_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_next_scan",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_cred_updated_by",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_cred_updated_date",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_global_rank",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_market_rank",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
                         "Name": "site_id",
-                        "Required": "Y",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": "One or more comma-seperated site ids."
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
                     },
                     {
                         "Name": "group_id",
@@ -2253,60 +2172,11 @@
                         "Description": ""
                     },
                     {
-                        "Name": "query_label_like",
+                        "Name": "query_activation_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
                         "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_schedule_name",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_scan_schedule_name_like",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_site_url_like",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description": ""
-                    },
-                    {
-                        "Name": "query_slot_url",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "url",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_client_id",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_slot_label",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_weight",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
-                        "Description":"Limited range: 0 to 10"
                     },
                     {
                         "Name": "query_active_admin",
@@ -2340,39 +2210,31 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_speed",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
-                    },
-                    {
-                        "Name": "query_sslciphers",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_notes",
-                        "Required": "N",
-                        "Default": "",
-                        "Type": "string",
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_satellite",
-                        "Required": "N",
-                        "Default": 0,
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
-                    },
-                    {
-                        "Name": "query_satellite_id",
+                        "Name": "query_client_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_create_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_current_scan_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_description",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
                         "Description":""
                     },
                     {
@@ -2392,6 +2254,106 @@
                         "Description":""
                     },
                     {
+                        "Name": "query_global_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_industry",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_last_completed_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_market_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_next_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notes",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_notes_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_satellite",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_satellite_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
                         "Name": "query_scan_schedule_timezone",
                         "Required": "N",
                         "Default": "",
@@ -2399,17 +2361,54 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_current_scan_id",
+                        "Name": "query_service_level",
                         "Required": "N",
-                        "Default": "",
-                        "Type": "integer",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
                         "Description":""
                     },
                     {
-                        "Name": "query_last_completed_scan",
+                        "Name": "query_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Enterprise", "Flex" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_site_url_like",
                         "Required": "N",
                         "Default": "",
-                        "Type": "integer",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_slot_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_slot_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "url",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_speed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                    },
+                    {
+                        "Name": "query_sslciphers",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
                         "Description":""
                     },
                     {
@@ -2420,11 +2419,11 @@
                         "Description":""
                     },
                     {
-                        "Name": "query_description",
+                        "Name": "query_weight",
                         "Required": "N",
                         "Default": "",
-                        "Type": "string",
-                        "Description":""
+                        "Type": "integer",
+                        "Description":"Limited range: 0 to 10"
                     },
                     {
                         "Name": "display_all",
