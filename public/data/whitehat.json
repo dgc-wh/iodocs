@@ -3451,12 +3451,6 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "app_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Application id"
-                    },
-                    {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3552,7 +3546,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here [API bug]) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3602,13 +3596,6 @@
                         "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
                     },
                     {
-                        "Name": "display_steps",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "page:limit",
                         "Required": "N",
                         "Type": "integer",
@@ -3647,13 +3634,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Trace id"
-                    },
-                    {
-                        "Name": "display_traces",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display traces. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "display_steps",
