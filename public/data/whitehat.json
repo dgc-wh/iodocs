@@ -170,17 +170,77 @@
                 "URI": "/appliance",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "query_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_type",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "sast", "dast" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_hardware",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "true", "false" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "connected", "disconnected", "hardware-pending" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Choose format for results. | stub"
+                    }
                 ]
             },
             {
                 "MethodName": "Get appliance status",
                 "Synopsis": "TBD",
                 "HTTPMethod": "GET",
-                "URI": "/appliance/:id",
+                "URI": "/appliance/:appliance_id",
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "id",
+                        "Name": "appliance_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Appliance id. | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Choose format for results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Download appliance",
+                "Synopsis": "Use this method to download a VM image assigned to you. The requested appliance may not be a hardware image.",
+                "HTTPMethod": "GET",
+                "URI": "/appliance/:appliance_id/download",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "appliance_id",
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Appliance id. | stub"
@@ -188,14 +248,18 @@
                 ]
             },
             {
-                "MethodName": "Get appliance collection",
+                "MethodName": "Put appliance ship status",
                 "Synopsis": "TBD",
                 "HTTPMethod": "PUT",
-                "URI": "/appliance/:id",
+                "URI": "/appliance/:appliance_id",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
-                        "Name": "id",
+                        "Name": "appliance_id",
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Appliance id. | stub"
@@ -208,22 +272,11 @@
                 "HTTPMethod": "POST",
                 "URI": "/appliance/",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
-                ]
-            },
-            {
-                "MethodName": "Download appliance (or something)",
-                "Synopsis": "TBD",
-                "HTTPMethod": "???",
-                "URI": "/appliance/:id/download",
-                "RequiresOAuth": "N",
-                "parameters": [
-                    {
-                        "Name": "id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Appliance id. | stub"
-                    }
                 ]
             }
         ]
@@ -1288,6 +1341,71 @@
         "name": "Job API",
         "methods": [
             {
+                "MethodName": "Fetch a list of Jobs",
+                "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/",
+                "parameters": [
+                    {
+                        "Name": "target",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"",
+                    },
+                    {
+                        "Name": "site",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"",
+                    },
+                    {
+                        "Name": "user",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"",
+                    },
+                    {
+                        "Name": "jobtype",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "scan", "vuln_retest", "scan_satellite", "vuln_retest_satellite", "lh_train", "lh_train_satellite", "scan_sca" ]
+                        "Description":"Parameters taken from table, don't know if they're likely to change.",
+                    },
+                    {
+                        "Name": "display_instances",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
                 "MethodName": "Fetch a Job",
                 "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
                 "HTTPMethod": "GET",
@@ -1295,18 +1413,506 @@
                 "parameters": [
                     {
                         "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "display_instances",
                         "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Job Instances",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "begin",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"Begin time",
+                    },
+                    {
+                        "Name": "end",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"End time",
+                    },
+                    {
+                        "Name": "timestamp",
+                        "Required": "N",
+                        "Type":"string"
+                        "Description":"Timestamp",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Single Job Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance/:instance_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "instance_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Instance resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "(Client) Fetch a Job",
+                "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    },
+                    {
+                        "Name": "display_instances",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ]
+                        "Description":"",
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Modify job",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
                         "Description":"The ID number of the desired Job resource",
                         "Type":"integer"
                     }
                 ]
             },
             {
-                "MethodName": "Fetch a list of Jobs",
-                "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
-                "HTTPMethod": "GET",
-                "URI": "/job/",
-                "parameters": []
+                "MethodName": "(Client) Modify job",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Put Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Put Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Post/Create job",
+                "Synopsis": "",
+                "httpmethod": "post",
+                "URI": "/job",
+                "parameters": [
+                ]
+            },
+            {
+                "MethodName": "Run job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Post Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Post/Create job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Run job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Post Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"Client ID",
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Delete Job",
+                "Synopsis": "Abort any running instances of a given job. The job resource itself will not be deleted.",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id/whitelist/:whitelist_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Job resource",
+                    },
+                    {
+                        "Name": "whitelist_id",
+                        "Required": "Y",
+                        "Type":"integer"
+                        "Description":"The ID number of the desired Whitelist resource",
+                    }
+                ]
             }
         ]
     },
@@ -1535,7 +2141,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "The date the scanning of th site was activated."
                     },
                     {
                         "Name": "query_active_admin",
@@ -1543,7 +2149,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 for sites that lack administrative approval, 1 for sites that have administrative approval. Administrative approval refers to things such as service contracts being signed or payment approval."
                     },
                     {
                         "Name": "query_active_consult",
@@ -1551,7 +2157,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_consult' refers to decisions made by TRC in the operation of scanning or evaluating a site. This is used to disable scans when there are technical issues."
                     },
                     {
                         "Name": "query_active_user",
@@ -1559,7 +2165,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_user' refers to the customer's approval of the site being scanned. This is used by customer support to disable scans at the customer's request."
                     },
                     {
                         "Name": "query_banner",
@@ -1573,14 +2179,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":""
+                        "Description":"A Client ID"
                     },
                     {
                         "Name": "query_create_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "The date the site was created/added to the list of sites scanned."
                     },
                     {
                         "Name": "query_current_scan_id",
@@ -1594,7 +2200,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":""
+                        "Description":"Query matching text in descriptions."
                     },
                     {
                         "Name": "query_discovery",
@@ -1602,7 +2208,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"Deprecated"
                     },
                     {
                         "Name": "query_enable_scan_creds",
@@ -1610,14 +2216,14 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 for scans that do not use credentials, 1 for scans that do use credentials."
                     },
                     {
                         "Name": "query_global_rank",
                         "Required": "N",
                         "Default": "",
-                        "Type": "string",
-                        "Description": ""
+                        "Type": "integer",
+                        "Description": "Query the global rank rating. Global rank rates the security of a site compared to other sites under WhiteHat service. Range is between 1 and 100."
                     },
                     {
                         "Name": "query_industry",
@@ -1625,14 +2231,14 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
-                        "Description":""
+                        "Description":"Query the vertical market the site belongs to."
                     },
                     {
                         "Name": "query_label_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by site labels."
                     },
                     {
                         "Name": "query_last_completed_scan",
@@ -1646,7 +2252,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query the industry rank rating. Market rank rates the security of a site compared to other sites under WhiteHat service that are in the same industry. Range is between 1 and 100."
                     },
                     {
                         "Name": "query_next_scan",
@@ -1675,7 +2281,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"Indicates whether this site is scanned through a satellite device (for internal intranet and development sites)."
                     },
                     {
                         "Name": "query_satellite_id",
@@ -1689,14 +2295,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by person who updated the scanning crednetials."
                     },
                     {
                         "Name": "query_scan_cred_updated_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by the date that the scanning credentials were updated."
                     },
                     {
                         "Name": "query_scan_schedule_name",
@@ -1725,7 +2331,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
-                        "Description":""
+                        "Description":"Indicates whether this site is monitored by the Premium, Standard, Baseline Sentinel, Discovery Edition (deprecated), or Pre-Launch Service."
                     },
                     {
                         "Name": "query_service_type",
@@ -1761,7 +2367,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                        "Description":"Accepts any positive decimal number (representing seconds). The scanning speed, measured by the request delay, in seconds."
                     },
                     {
                         "Name": "query_sslciphers",
@@ -1782,7 +2388,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":"Limited range: 0 to 10"
+                        "Description":"Limited range: 0 to 10; weight represents a site's priority level."
                     },
                     {
                         "Name": "display_all",
@@ -2176,7 +2782,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "The date the scanning of the site was activated."
                     },
                     {
                         "Name": "query_active_admin",
@@ -2184,7 +2790,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 for sites that lack administrative approval, 1 for sites that have administrative approval. Administrative approval refers to things such as service contracts being signed or payment approval."
                     },
                     {
                         "Name": "query_active_consult",
@@ -2192,7 +2798,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_consult' refers to decisions made by TRC in the operation of scanning or evaluating a site. This is used to disable scans when there are technical issues."
                     },
                     {
                         "Name": "query_active_user",
@@ -2200,7 +2806,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_user' refers to the customer's approval of the site being scanned. This is used by customer support to disable scans at the customer's request."
                     },
                     {
                         "Name": "query_banner",
@@ -2214,14 +2820,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":""
+                        "Description":"A Client ID"
                     },
                     {
                         "Name": "query_create_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "The date the site was created/added to the list of sites scanned."
                     },
                     {
                         "Name": "query_current_scan_id",
@@ -2235,7 +2841,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":""
+                        "Description":"Query matching text in descriptions."
                     },
                     {
                         "Name": "query_discovery",
@@ -2243,7 +2849,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"Deprecated"
                     },
                     {
                         "Name": "query_enable_scan_creds",
@@ -2251,14 +2857,14 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"0 for scans that do not use credentials, 1 for scans that do use credentials."
                     },
                     {
                         "Name": "query_global_rank",
                         "Required": "N",
                         "Default": "",
-                        "Type": "string",
-                        "Description": ""
+                        "Type": "integer",
+                        "Description": "Query the global rank rating. Global rank rates the security of a site compared to other sites under WhiteHat service. Range is between 1 and 100."
                     },
                     {
                         "Name": "query_industry",
@@ -2266,14 +2872,14 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
-                        "Description":""
+                        "Description":"Query the vertical market the site belongs to."
                     },
                     {
                         "Name": "query_label_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by site labels."
                     },
                     {
                         "Name": "query_last_completed_scan",
@@ -2287,7 +2893,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query the industry rank rating. Market rank rates the security of a site compared to other sites under WhiteHat service that are in the same industry. Range is between 1 and 100."
                     },
                     {
                         "Name": "query_next_scan",
@@ -2316,7 +2922,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
-                        "Description":""
+                        "Description":"Indicates whether this site is scanned through a satellite device (for internal intranet and development sites)."
                     },
                     {
                         "Name": "query_satellite_id",
@@ -2330,14 +2936,14 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by person who updated the scanning crednetials."
                     },
                     {
                         "Name": "query_scan_cred_updated_date",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description": ""
+                        "Description": "Query by the date that the scanning credentials were updated."
                     },
                     {
                         "Name": "query_scan_schedule_name",
@@ -2366,7 +2972,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
-                        "Description":""
+                        "Description":"Indicates whether this site is monitored by the Premium, Standard, Baseline Sentinel, Discovery Edition (deprecated), or Pre-Launch Service."
                     },
                     {
                         "Name": "query_service_type",
@@ -2402,7 +3008,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Format: unnecessary-number.number, guess minutes.seconds"
+                        "Description":"Accepts any positive decimal number (representing seconds). The scanning speed, measured by the request delay, in seconds."
                     },
                     {
                         "Name": "query_sslciphers",
@@ -2423,7 +3029,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":"Limited range: 0 to 10"
+                        "Description":"Limited range: 0 to 10; weight represents a site's priority level."
                     },
                     {
                         "Name": "display_all",
@@ -3012,7 +3618,7 @@
             },
             {
                 "MethodName": "Create one or more sites",
-                "Synopsis": " (NOTE :REMOVE LATER: - ...uri...(,:site_id,...)[line 455 in pm, multiple sites? Don't remember seeing this in a POST request before)",
+                "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
@@ -3022,7 +3628,7 @@
                         "Required": "Y",
                         "Default": "",
                         "Type": "string",
-                        "Description": "Site id."
+                        "Description": "Site id, can be one or more comma-seperated site ids."
                     }
                 ]
             },
@@ -3329,7 +3935,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_location",
@@ -3451,12 +4057,6 @@
                 "RequiresOAuth": "N",
                 "parameters": [
                     {
-                        "Name": "app_id",
-                        "Required": "Y",
-                        "Type": "integer",
-                        "Description": "Application id"
-                    },
-                    {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
@@ -3552,7 +4152,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here [API bug]) | stub"
                     },
                     {
                         "Name": "page:limit",
@@ -3602,13 +4202,6 @@
                         "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
                     },
                     {
-                        "Name": "display_steps",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
-                    },
-                    {
                         "Name": "page:limit",
                         "Required": "N",
                         "Type": "integer",
@@ -3647,13 +4240,6 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Description": "Trace id"
-                    },
-                    {
-                        "Name": "display_traces",
-                        "Required": "N",
-                        "Type": "enumerated",
-                        "EnumeratedList": [1, 0],
-                        "Description": "Display traces. (Doesn't seem to make a difference here) | stub"
                     },
                     {
                         "Name": "display_steps",
@@ -3801,7 +4387,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_location",
@@ -4247,7 +4833,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_severity",
@@ -4507,7 +5093,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_severity",
@@ -4805,7 +5391,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_severity",
@@ -5072,7 +5658,7 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 15 | stub"
+                        "Description":"One value or multiple comma seperated values. Scores have the following range: 3 to 20 | stub"
                     },
                     {
                         "Name": "query_severity",
