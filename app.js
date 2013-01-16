@@ -148,12 +148,23 @@ app.configure(function() {
     app.use(express.static(__dirname + '/public'));
 });
 
+// Catch all error handler.
+// See following links for more info:
+// http://expressjs.com/guide.html#error-handling
+// https://github.com/visionmedia/express/tree/master/examples/error-pages
+function errorHandler(err, req, res, next) {
+    res.status(500);
+    console.error(err.stack);
+    res.render('error');
+}
+
 app.configure('development', function() {
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function() {
-    app.use(express.errorHandler());
+    app.disable('verbose errors');
+    app.use(errorHandler);
 });
 
 //
@@ -657,6 +668,7 @@ function processRequest(req, res, next) {
     }
 }
 
+var cachedApiInfo = [];
 
 // Dynamic Helpers
 // Passes variables to the view
@@ -694,11 +706,173 @@ app.dynamicHelpers({
     apiDefinition: function(req, res) {
         if (req.params.api) {
             var data = fs.readFileSync(__dirname + '/public/data/' + req.params.api + '.json');
-            return JSON.parse(data);
+            data = JSON.parse(data);
+            processApiIncludes(data);
+            cachedApiInfo = data;
+            return data;
         }
     }
 })
 
+// This function was developed with the assumption that the starting input
+// would be the main api file, which would look like the following:
+//    { "endpoints":
+//        [...]
+//    }
+//
+// The include statement syntax looks like this:
+//    {
+//        "external":
+//        {
+//            "href": "./public/data/desired/data.json",
+//            "type": "list"
+//        }
+//    }
+// "type": "list" is used only when the contents of the file to be included is a list object 
+// that will be merged into an existing list. 
+// An example would be storing all the get methods for an endpoint as a list of objects in 
+// an external file.
+function processApiIncludes (jsonData) {
+    // used to determine object types in a more readable manner
+    var what = Object.prototype.toString;
+    var includeKeyword = 'external';
+    var includeLocation = 'href';
+
+    if (typeof jsonData === "object") {
+        for (var key in jsonData) {
+            // If an object's property contains an array, go through the objects in the array
+            //  Endpoints and Methods are examples of this
+            //  Endpoints contains a list of javascript objects, which are easily split into individual files.
+            //      Each endpoint is basically a 1 to 1 javascript object relationship
+            //  Methods aren't quite as nice.
+            //      It could be convenient to split methods into get/put/post/delete externals.
+            //      This then creates a 1 to many javascript object relationship
+            if (what.call(jsonData[key]) === '[object Array]') {
+                var i = jsonData[key].length;
+
+                // Iterating through the array in reverse so that if an element needs to be replaced
+                // by multiple elements, the array index does not need to be updated. 
+                while (i--) {
+                    var arrayObj = jsonData[key][i];
+                    if ( includeKeyword in arrayObj ) {
+                        var someFile = processUri(arrayObj[includeKeyword][includeLocation]);
+                        // 1 include request to be replaced by multiple objects (methods)
+                        if (arrayObj[includeKeyword]['type'] == 'list') {
+
+                            var tempArray = JSON.parse(fs.readFileSync(someFile));
+                            // recurse here to replace values of properties that may need replacing
+                            processApiIncludes(tempArray);
+                            // why isn't this jsonData[key][i]?
+                            //  Because the array itself is being replaced with an updated version
+                            jsonData[key] = mergeExternal(i, jsonData[key], tempArray);
+
+                        }
+                        // 1 include request to be replaced by 1 object (endpoint)
+                        else {
+                            jsonData[key][i] = JSON.parse(fs.readFileSync(someFile));
+                            processApiIncludes(jsonData[key][i]);
+                        }
+                    }
+                }
+            }
+
+            // If an object's property contains an include statement, this will handle it.
+            if (what.call(jsonData[key]) === '[object Object]') {
+                for (var property in jsonData[key]) {
+                    if (what.call(jsonData[key][property]) === '[object Object]') {
+                        if (includeKeyword in jsonData[key][property]) {
+                            var someFile = processUri(jsonData[key][property][includeKeyword][includeLocation]);
+                            jsonData[key][property] = JSON.parse(fs.readFileSync(someFile));
+                            processApiIncludes(jsonData[key][property]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Takes the array position of an element in array1, removes that element, 
+// and in its place, the contents of array2 are merged in.
+function mergeExternal (arrayPos, array1, array2) {
+    var a1_tail = array1.splice(arrayPos, array1.length);
+    a1_tail.splice(0, 1);
+    return array1.concat(array2).concat(a1_tail);
+}
+
+// Stub function for possible future functionality:
+// Given a URI, this function should process the URI, then obtain and process the contents of the URI.
+// Ex. - If we have the following:
+//  { "href": "file:///user/home/data.json" }
+//  The function would return the parsed JSON data from the data.json file.
+//  { "href": "http://www.example.com/foo.json" }
+//  The function would return the parsed JSON data from foo.json, dealing with file retrieval from the web by parsing the URI.
+function processUri (href) {
+    // Currently, the URI for the file is a directory relative to the iodocs installation directory
+    // because the proposed functionality is not implemented; full directory information is excessive.
+    // Ex. - { "href": "./public/data/whitehat/_api_.json" }
+    return href;
+}
+
+// Search function.
+// Expects processed API json data and a search term.
+// There should be no 'external' link objects present.
+function search (jsonData, searchTerm) {
+    // From: http://simonwillison.net/2006/Jan/20/escape/#p-6
+    var regexFriendly = (function(text) {
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    });
+    regex = new RegExp( regexFriendly(searchTerm), "i" );
+
+    // Get a list of all methods from the data.
+    var searchMatches = [];
+
+    // Iterate through endpoints
+    for (var i = 0; i < jsonData.endpoints.length; i++) {
+        var object = jsonData.endpoints[i];
+
+        // Iterate through methods
+        for (var j = 0; j < object.methods.length; j++) {
+            if ( filterSearchObject(object.methods[j], regex) ) {
+                searchMatches.push({"label":object.methods[j]['MethodName'], "category": object.name});
+            }
+        }
+    }
+
+    return searchMatches;
+}
+
+// Method searching function
+// Recursively check properties of a method object for a match to the given search term.
+function filterSearchObject (randomThing, regex) {
+    var what = Object.prototype.toString;
+    if (what.call(randomThing) === '[object Array]') {
+        for (var i = 0; i < randomThing.length; i++) {
+            if (filterSearchObject(randomThing[i], regex)) {
+                return true;
+            }
+        }
+    }
+    else if (what.call(randomThing) === '[object Object]') {
+        for (var methodProperty in randomThing) {
+            if (randomThing.hasOwnProperty(methodProperty)) {
+                if (filterSearchObject(randomThing[methodProperty], regex)) {
+                    return true;
+                }
+            }
+        }
+    }
+    else if (what.call(randomThing) === '[object String]' || what.call(randomThing) === '[object Number]' ) {
+        if ( regex.test(randomThing)) {
+            return true;
+        }
+    }
+    else {
+        return false;
+    }
+
+    return false;
+}
 
 //
 // Routes
@@ -708,6 +882,21 @@ app.get('/', function(req, res) {
         title: config.title
     });
 });
+
+//
+// Search function
+//
+// Note: If a change is made to app.js, the node process restarted, and the search 
+// function  is used immediately without restart, there will be an error coming from the 
+// search() function regarding the use of '.length'. Refresh the page, and the error 
+// will go away. A page refresh is necessary to create a cached version of the api 
+// which this route uses.
+//  Not sure what the fix for this is.
+app.get('/search', function(req, res) {
+    var searchTerm = decodeURIComponent(req.query.term);
+    res.send( search(cachedApiInfo, searchTerm) );
+});
+
 
 // Process the API request
 app.post('/processReq', oauth, processRequest, function(req, res) {

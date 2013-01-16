@@ -1,0 +1,122 @@
+
+    {
+        "name": "Schedule API",
+        "methods": [
+            {
+                "MethodName": "List schedules",
+                "Synopsis": "List all schedules owned by user. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "name",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Scan name. | stub"
+                    },
+                    {
+                        "Name": "start_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
+                    },
+                    {
+                        "Name": "end_date",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
+                    },
+                    {
+                        "Name": "duration",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time duration in seconds (I think). | stub"
+                    },
+                    {
+                        "Name": "timezone",
+                        "Required": "N",
+                        "Type": "string",
+                        "Default":"",
+                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
+                    },
+                    {
+                        "Name": "job",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
+                    },
+                    {
+                        "Name": "creator",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "Job schedule creator. | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Begin retrieving pages from this index."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single schedule",
+                "Synopsis": "List a single schedule. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id; enter one schedule id only, putting more than one (or none) will result in all schedules being displayed."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml"],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a schedule",
+                "Synopsis": "Delete a single schedule. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/schedule/:id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Schedule id"
+                    }
+                ]
+            }
+        ]
+    }

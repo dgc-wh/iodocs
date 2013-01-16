@@ -1,0 +1,446 @@
+                [
+                    {
+                        "Name": "site_id",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "allowance",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_activation_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "The date the scanning of th site was activated."
+                    },
+                    {
+                        "Name": "query_active_admin",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"0 for sites that lack administrative approval, 1 for sites that have administrative approval. Administrative approval refers to things such as service contracts being signed or payment approval."
+                    },
+                    {
+                        "Name": "query_active_consult",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_consult' refers to decisions made by TRC in the operation of scanning or evaluating a site. This is used to disable scans when there are technical issues."
+                    },
+                    {
+                        "Name": "query_active_user",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_user' refers to the customer's approval of the site being scanned. This is used by customer support to disable scans at the customer's request."
+                    },
+                    {
+                        "Name": "query_banner",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_client_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"A Client ID"
+                    },
+                    {
+                        "Name": "query_create_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "The date the site was created/added to the list of sites scanned."
+                    },
+                    {
+                        "Name": "query_current_scan_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_description",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Query matching text in descriptions."
+                    },
+                    {
+                        "Name": "query_discovery",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"Deprecated"
+                    },
+                    {
+                        "Name": "query_enable_scan_creds",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"0 for scans that do not use credentials, 1 for scans that do use credentials."
+                    },
+                    {
+                        "Name": "query_global_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Query the global rank rating. Global rank rates the security of a site compared to other sites under WhiteHat service. Range is between 1 and 100."
+                    },
+                    {
+                        "Name": "query_industry",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
+                        "Description":"Query the vertical market the site belongs to."
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Query by site labels."
+                    },
+                    {
+                        "Name": "query_last_completed_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_market_rank",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Query the industry rank rating. Market rank rates the security of a site compared to other sites under WhiteHat service that are in the same industry. Range is between 1 and 100."
+                    },
+                    {
+                        "Name": "query_next_scan",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notes",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_notes_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_satellite",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1, "true", "false"],
+                        "Description":"Indicates whether this site is scanned through a satellite device (for internal intranet and development sites)."
+                    },
+                    {
+                        "Name": "query_satellite_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Query by person who updated the scanning crednetials."
+                    },
+                    {
+                        "Name": "query_scan_cred_updated_date",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": "Query by the date that the scanning credentials were updated."
+                    },
+                    {
+                        "Name": "query_scan_schedule_name",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_name_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_scan_schedule_timezone",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_service_level",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
+                        "Description":"Indicates whether this site is monitored by the Premium, Standard, Baseline Sentinel, Discovery Edition (deprecated), or Pre-Launch Service."
+                    },
+                    {
+                        "Name": "query_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "Enterprise", "Flex" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_site_url_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_slot_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_slot_url",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "url",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_speed",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Accepts any positive decimal number (representing seconds). The scanning speed, measured by the request delay, in seconds."
+                    },
+                    {
+                        "Name": "query_sslciphers",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_vuln_policy_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "query_weight",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Limited range: 0 to 10; weight represents a site's priority level."
+                    },
+                    {
+                        "Name": "display_all",
+                        "Required": "N",
+                        "Default": 1,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes all of the properties which may be exposed by display parameters."
+                    },
+                    {
+                        "Name": "display_min",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
+                    },
+                    {
+                        "Name": "display_entry_points_content",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Display request content for POST entry points."
+                    },
+                    {
+                        
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
+                    },
+                    {
+                        "Name": "display_groups",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
+                   },
+                    {
+                        "Name": "display_scans",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose simple statistics about the number of vulns on the Site."
+                    },
+                    {
+                        "Name": "display_vuln_policy",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
+                    },
+                    {
+                        "Name": "display_assessment_complete",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
+                    },
+                    {
+                        "Name": "display_contract_info",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_organization",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_host_links",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_entry_points",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                    },
+                    {
+                        "Name": "display_site_credentials",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
+                    },
+                    {
+                        "Name": "display_allowed_hosts",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":"Expose the scan schedule which indicates when automated scanning will take place."
+                    },
+                    {
+                        "Name": "display_service_type",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "display_description",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+            "Description":""
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "id", "id_asc", "id_desc", "label", "label_asc", "label_desc", "vuln_stats", "vuln_stats_asc", "vuln_stats_desc", "scan_status", "scan_status_asc", "scan_status_desc", "scan_schedule_name", "scan_schedule_name_asc", "scan_schedule_name_desc", "scan_schedule_timezone", "scan_schedule_timezone_asc", "scan_schedule_timezone_desc", "create_date", "create_date_asc", "create_date_desc", "activation_date", "activation_date_asc", "activation_date_desc", "weight", "weight_asc", "weight_desc", "satellite", "satellite_asc", "satellite_desc", "satellite_id", "satellite_id_asc", "satellite_id_desc", "industry", "industry_asc", "industry_desc", "enable_scan_creds", "enable_scan_creds_asc", "enable_scan_creds_desc", "scan_cred_updated_by", "scan_cred_updated_by_asc", "scan_cred_updated_by_desc", "scan_cred_updated_date", "scan_cred_updated_date_asc", "scan_cred_updated_date_desc", "global_rank", "global_rank_asc", "global_rank_desc", "market_rank", "market_rank_asc", "market_rank_desc", "service_level", "service_level_asc", "service_level_desc", "service_type", "service_type_asc", "service_type_desc" ],
+                        "Description": "Order the results."
+                    },
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Default": "xml",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["csv", "json", "xml"],
+                        "Description": "Selects the requested response representation format."
+                    }
+        
+                ]

@@ -1,0 +1,143 @@
+
+    {
+        "name": "Account API",
+        "methods": [
+            {
+                "MethodName": "Get managed users",
+                "Synopsis": "Returns information on Sentinel users the current user can manage",
+                "HTTPMethod": "GET",
+                "URI": "/user",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv"],
+                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get user information by user id",
+                "Synopsis": "Returns information on Sentinel user",
+                "HTTPMethod": "GET",
+                "URI": "/user/:user_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "user_id",
+                        "Required": "Y",
+                        "Type": "integer"   
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
+                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get user information by user name",
+                "Synopsis": "Returns information on Sentinel user",
+                "HTTPMethod": "GET",
+                "URI": "/user/:username",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "username",
+                        "Required": "Y",
+                        "Type": "email address"   
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
+                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Find client privileges",
+                "Synopsis": "| stub",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/user/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "client id | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv" ],
+                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Modify existing user",
+                "Synopsis": "| stub",
+                "HTTPMethod": "PUT",
+                "URI": "/user",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                        "Description": "Selects the requested response representation format."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new user",
+                "Synopsis": "| stub",
+                "HTTPMethod": "POST",
+                "URI": "/user",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                        "Description": "Selects the requested response representation format."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete user",
+                "Synopsis": "| stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/user/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "format",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["text/xml", "application/json", "text/csv" ],
+                        "Description": "Selects the requested response representation format."
+                    }
+                ]
+            }
+        ]
+    }
