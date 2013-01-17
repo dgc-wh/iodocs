@@ -1,0 +1,357 @@
+
+    {
+        "name": "Group API",
+        "methods": [
+            {
+                "MethodName": "Retrieve group details",
+                "Synopsis": "Report the list of groups under the control of client_id. ",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/group/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["client_id", "name", "id", "description", "organization" ],
+                        "Description": "Order results in ascending or descending order."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Retrieve individual group details",
+                "Synopsis": "Reports specific group details.",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/group/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Group id for which to retrieve information."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total something."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/csv", "text/xml"],
+                        "Description": "Selects the requested response representation format. XML format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Update group information",
+                "Synopsis": "Update an existing user with a new role. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group in which user will be updated."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new group",
+                "Synopsis": "Create a new group and obtain the new group's id. (not sure if accurate) | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add application or site to group",
+                "Synopsis": "Add an application or site to a given group. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/:group_id/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which sites and/or applications will be added."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add user & role to group",
+                "Synopsis": "Associate a user and role to a group. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/group/:group_id/role",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group to which user and role will be added."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove group",
+                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm:sub handle_delete) | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "group_id of group to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove user privilege",
+                "Synopsis": "Removes the given user's group privilege. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/role/:target_user_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which user will be removed."
+                    },
+                    {
+                        "Name": "target_user_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "user_id of user to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete site from group",
+                "Synopsis": "Delete the given site from the given group. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/site/:target_site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which site will be removed."
+                    },
+                    {
+                        "Name": "target_site_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "site_id of site to be deleted/removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete application from group.",
+                "Synopsis": "Delete the given application from the given group. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/:client_id/group/:group_id/application/:target_application_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id"
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group from which application will be removed."
+                    },
+                    {
+                        "Name": "target_application_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "application_id of application to be deleted/removed."
+                    }
+                ]
+            }
+        ]
+    }

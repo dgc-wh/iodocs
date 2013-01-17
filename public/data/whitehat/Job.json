@@ -1,0 +1,580 @@
+
+    {
+        "name": "Job API",
+        "methods": [
+            {
+                "MethodName": "Fetch a list of Jobs",
+                "Synopsis": "Returns a collection of Job resources which describe runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/",
+                "parameters": [
+                    {
+                        "Name": "target",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "site",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "user",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":""
+                    },
+                    {
+                        "Name": "jobtype",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "scan", "vuln_retest", "scan_satellite", "vuln_retest_satellite", "lh_train", "lh_train_satellite", "scan_sca" ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_instances",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Fetch a Job",
+                "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "display_instances",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Job Instances",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "begin",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":"Begin time"
+                    },
+                    {
+                        "Name": "end",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":"End time"
+                    },
+                    {
+                        "Name": "timestamp",
+                        "Required": "N",
+                        "Type":"string",
+                        "Description":"Timestamp"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Single Job Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance/:instance_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "instance_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Instance resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "(Client) Fetch a Job",
+                "Synopsis": "Returns a Job resource which describes a runnable configurations such as Scans and Retests",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Default": "",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    },
+                    {
+                        "Name": "display_instances",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_services",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "display_schedule",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ 0, 1 ],
+                        "Description":""
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Get Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Modify job",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Current Instance",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/instance/current",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Modify job",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Put Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Put Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Post/Create job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/job",
+                "parameters": [
+                ]
+            },
+            {
+                "MethodName": "Run job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Post Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Post/Create job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Run job",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/:job_id/instance",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+            {
+                "MethodName": "(Client) Post Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/:client_id/job/:job_id/whitelist",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"Client ID"
+                    }
+                ]
+            },
+
+            {
+                "MethodName": "Delete Job",
+                "Synopsis": "Abort any running instances of a given job. The job resource itself will not be deleted.",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete Schedule",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id/schedule",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete Whitelist",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/job/:job_id/whitelist/:whitelist_id",
+                "parameters": [
+                    {
+                        "Name": "job_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Job resource"
+                    },
+                    {
+                        "Name": "whitelist_id",
+                        "Required": "Y",
+                        "Type":"integer",
+                        "Description":"The ID number of the desired Whitelist resource"
+                    }
+                ]
+            }
+        ]
+    }

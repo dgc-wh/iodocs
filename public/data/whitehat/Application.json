@@ -1,0 +1,441 @@
+
+    {
+        "name": "Application API",
+        "methods": [
+            {
+                "MethodName": "Get application collection",
+                "Synopsis": "Get application collection | stub",
+                "HTTPMethod": "GET",
+                "URI": "/application/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_label",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Search for the label. | stub"
+                    },
+                    {
+                        "Name": "query_label_like",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Search for something like the given label. | stub"
+                    },
+                    {
+                        "Name": "query_application",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description":"Can be one or more comma-seperated application ids | stub"
+                    },
+                    {
+                        "Name": "query_client_id",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "string",
+                        "Description":"Can be one or more comma-seperated client ids | stub"
+                    },
+                    {
+                        "Name": "query_status",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "Default": "",
+                        "EnumeratedList": [ "not_configured", "site_disabled", "verify_in_progress", "need_scan_schedule", "config_in_progress", "scan_running", "active" ],
+                        "Description":"Status values: [not_configured (not yet configured), site_disabled (administratively disabled), verify_in_progress (has VVSCA open), need_scan_schedule,  config_in_progress (job is suspended for some reason), scan_running (has a scan running), active (none of the above, idle)] | stub"
+                    },
+                    {
+                        "Name": "query_has_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Checks whether there is a schedule. | stub"
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain scan schedule."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Choose format for results. | stub"
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Limit results to n number of pages. Default is set to 5."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Type": "integer",
+                        "Description": "Begin showing results from page number n."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["total_findings", "total_findings_asc", "total_findings_desc", "label", "label_asc", "label_desc", "status", "status_asc", "status_desc"],
+                        "Description": "Order the results."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get users of application",
+                "Synopsis": "Get collection of users of a particular application. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/users",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id of application you want the users for. | stub"
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Choose format for results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single application",
+                "Synopsis": "gets a single application| stub",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id of application you are interested in. | stub"
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain scan schedule."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get collection of codebases",
+                "Synopsis": "Get codebase collection. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/codebase/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id. | stub"
+                    },
+                    {
+                        "Name": "display_exclude_dirs",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0,1]
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/csv"]
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get single codebase",
+                "Synopsis": "Get information about a codebase. | stub",
+                "HTTPMethod": "GET",
+                "URI": "/application/:app_id/codebase/:codebase_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id. | stub"
+                    },
+                    {
+                        "Name": "codebase_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Codebase id. | stub"
+                    },
+                    {
+                        "Name": "display_exclude_dirs",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0,1]
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json"]
+                    }
+                ]
+            },
+            {
+                "MethodName": "Modify an application",
+                "Synopsis": "Modify a single application | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/application/:app_id",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id of application to be modified. | stub"
+                    },
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain scan schedule."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Put an appliance",
+                "Synopsis": "Put an appliance. What's an appliance? | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/application/:app_id/appliance",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id of application to be uploaded. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "New scan schedule for a application",
+                "Synopsis": "Setup a scan schedule for a particular application. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/application/:app_id/scan_schedule",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id for which a new scan schedule will be created. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Modify codebase",
+                "Synopsis": "Modify an existing codebase. | stub",
+                "HTTPMethod": "PUT",
+                "URI": "/application/:app_id/codebase/:codebase_id",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id. | stub"
+                    },
+                    {
+                        "Name": "codebase_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Codebase id. | stub"
+                    },
+                    {
+                        "Name": "display_exclude_dirs",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0,1]
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json"]
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new application",
+                "Synopsis": "Create a new application | stub",
+                "HTTPMethod": "POST",
+                "URI": "/application/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "display_scan_schedule",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain scan schedule."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": 0,
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
+                        "Description": "Format of results. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create a codebase",
+                "Synopsis": "Create a new codebase. | stub",
+                "HTTPMethod": "POST",
+                "URI": "/application/:app_id/codebase/",
+                "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id. | stub"
+                    },
+                    {
+                        "Name": "display_exclude_dirs",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0,1]
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json"]
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete application",
+                "Synopsis": "Delete a single application. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/application/:app_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id of application to be delete. | stub"
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a codebase",
+                "Synopsis": "Delete a codebase. | stub",
+                "HTTPMethod": "DELETE",
+                "URI": "/application/:app_id/codebase/:codebase_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "app_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id. | stub"
+                    },
+                    {
+                        "Name": "codebase_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Codebase id. | stub"
+                    }
+                ]
+            }
+        ]
+    }

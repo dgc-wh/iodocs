@@ -1,0 +1,14 @@
+
+    {
+        "name": "Customer API",
+        "methods": [
+            { 
+                "MethodName": "/",
+                "Synopsis": "Returns user and client information",
+                "HTTPMethod": "GET",
+                "URI": "/", 
+                "RequiresOAuth": "N",
+                "parameters": []
+            }
+        ]
+    }
