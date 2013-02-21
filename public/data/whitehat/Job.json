@@ -322,9 +322,13 @@
 
             {
                 "MethodName": "Modify job",
-                "Synopsis": "",
+                "Synopsis": "Not yet implemented, won't do anything. Shouldn't anyway.",
                 "HTTPMethod": "PUT",
                 "URI": "/job/:job_id",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -336,9 +340,23 @@
             },
             {
                 "MethodName": "Put Current Instance",
-                "Synopsis": "",
+                "Synopsis": "If there is no current instance, create one. This will run the job on an immediate single-run schedule. If there is a current instance and the \"requested_status\" parameter is given, then the system will attempt to change the status of the current instance to the requested status. This is not guaranteed as there are a number of conditions which might prevent an instance from, e.g. achieving a running state when currently \"suspended\". The client should poll the current instance with a GET to determine whether the requested state has been achieved.",
                 "HTTPMethod": "PUT",
                 "URI": "/job/:job_id/instance/current",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "requested_status",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"enumerated",
+                            "EnumeratedList": ["", "running", "aborted", "suspended", "paused"],
+                            "Description":""
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -353,6 +371,223 @@
                 "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/job/:job_id/schedule",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "job",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters":[
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "jobtype",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "creator",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "target",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: This is a thing. It has two possibilities, type or id. Not sure that this is necessary in PUT.",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "parameters": [
+                                                {
+                                                    "Name": "user",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "username",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "site",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "id",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "integer",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "disco",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Name": "id",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "services",
+                                    "Required": "N",
+                                    "Type": "collection",
+                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value. Not sure that this is necessary in PUT.",
+                                    "parameters": [
+                                        {
+                                            "Name": "service",
+                                            "Required": "N",
+                                            "Type": "collection",
+                                            "Description": "",
+                                            "parameters": [
+                                                {
+                                                    "Name": "parameter",
+                                                    "Required": "N",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                        },
+                                                        {
+                                                            "Name": "value",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "schedule",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Change collection to object.",
+                                    "parameters": [
+                                        {
+                                            "Name": "timezone",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "start_date",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": "should work for HTTP::Date::parse_date"
+                                        },
+                                        {
+                                            "Name": "end_date",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "name",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "",
+                                            "parameters": [
+                                                {
+                                                    "Name": "type",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "cron_spec",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "duration",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "This probably shouldn't be string."
+                                                },
+                                                {
+                                                    "Name": "timezone",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "weekday",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -367,6 +602,37 @@
                 "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/job/:job_id/whitelist",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "whitelist",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "object",
+                            "Description": "TODO: Changed to object, but want to TODO anyway.",
+                            "parameters": [
+                                {
+                                    "Name": "use_patterns",
+                                    "Required": "Y",
+                                    "Default": "",
+                                    "Type": "enumerated",
+                                    "EnumeratedList": [ true, false ],
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "use_urls",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "enumerated",
+                                    "EnumeratedList": [ true, false ],
+                                    "Description": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -378,9 +644,13 @@
             },
             {
                 "MethodName": "(Client) Modify job",
-                "Synopsis": "",
+                "Synopsis": "Not yet implemented, won't do anything. Shouldn't anyway.",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/job/:job_id",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -401,6 +671,232 @@
                 "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/job/:job_id/schedule",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "job",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters":[
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "jobtype",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "creator",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "target",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: This is a thing. It has two possibilities, type or id. Not sure that this is necessary in PUT.",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "parameters": [
+                                                {
+                                                    "Name": "user",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "username",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "site",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "id",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "integer",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "disco",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Name": "id",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "services",
+                                    "Required": "N",
+                                    "Type": "collection",
+                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value. Not sure that this is necessary in PUT.",
+                                    "parameters": [
+                                        {
+                                            "Name": "service",
+                                            "Required": "N",
+                                            "Type": "collection",
+                                            "Description": "",
+                                            "parameters": [
+                                                {
+                                                    "Name": "parameter",
+                                                    "Required": "N",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                        },
+                                                        {
+                                                            "Name": "value",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "schedule",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "Collection or object? Looks like an object.",
+                                    "parameters": [
+                                        {
+                                            "Name": "schedule",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
+                                            "parameters": [
+                                                {
+                                                    "Name": "timezone",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "start_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "should work for HTTP::Date::parse_date"
+                                                },
+                                                {
+                                                    "Name": "end_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "spec",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "cron_spec",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "duration",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": "This probably shouldn't be string."
+                                                        },
+                                                        {
+                                                            "Name": "timezone",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "weekday",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "enumerated",
+                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -421,6 +917,66 @@
                 "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/job/:job_id/whitelist",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "job",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "Should be an object, not a collection. Should this property appear here? Should it contain all the stuff that it has in say 'Put Schedule'? Should it contain 'whitelist' in 'Put Schedule' and 'Post/Create Job'?",
+                            "parameters":[
+                                {
+                                    "Name": "whitelist",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Not a collection, it's an object.",
+                                    "parameters": [
+                                        {
+                                            "Name": "use_urls",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "boolean",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "use_patterns",
+                                            "Required": "Y",
+                                            "Default": "",
+                                            "Type": "boolean",
+                                            "Description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "whitelist",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Not a collection, it's an object.",
+                            "parameters": [
+                                {
+                                    "Name": "use_urls",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "boolean",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "use_patterns",
+                                    "Required": "Y",
+                                    "Default": "",
+                                    "Type": "boolean",
+                                    "Description": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -442,12 +998,238 @@
                 "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/job",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "job",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters":[
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "jobtype",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "creator",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "target",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: This is a thing. It has two possibilities, type or id",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "parameters": [
+                                                {
+                                                    "Name": "user",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "username",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "site",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "id",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "integer",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "disco",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Name": "id",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "services",
+                                    "Required": "N",
+                                    "Type": "collection",
+                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value.",
+                                    "parameters": [
+                                        {
+                                            "Name": "service",
+                                            "Required": "N",
+                                            "Type": "collection",
+                                            "Description": "",
+                                            "parameters": [
+                                                {
+                                                    "Name": "parameter",
+                                                    "Required": "N",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                        },
+                                                        {
+                                                            "Name": "value",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "schedule",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "Collection or object? Looks like an object. Not sure this is necessary in POST.",
+                                    "parameters": [
+                                        {
+                                            "Name": "schedule",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
+                                            "parameters": [
+                                                {
+                                                    "Name": "timezone",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "start_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "should work for HTTP::Date::parse_date"
+                                                },
+                                                {
+                                                    "Name": "end_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "spec",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "cron_spec",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "duration",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": "This probably shouldn't be string."
+                                                        },
+                                                        {
+                                                            "Name": "timezone",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "weekday",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "enumerated",
+                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                 ]
             },
             {
                 "MethodName": "Run job",
-                "Synopsis": "",
+                "Synopsis": "Provide the Job ID of the job you wish to run. This method has no content to post.",
                 "HTTPMethod": "POST",
                 "URI": "/job/:job_id/instance",
                 "parameters": [
@@ -464,6 +1246,26 @@
                 "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/job/:job_id/whitelist",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "patterns",
+                            "Required": "N",
+                            "Type":"collection",
+                            "Description": "It's actually a collection!",
+                            "parameters": [
+                                {
+                                    "Name": "pattern",
+                                    "Required": "N",
+                                    "Type":"string",
+                                    "Description": "I don't know what this is supposed to look like, need to find out."
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",
@@ -478,6 +1280,232 @@
                 "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/job/",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "job",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters":[
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "jobtype",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "creator",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "target",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: This is a thing. It has two possibilities, type or id",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "parameters": [
+                                                {
+                                                    "Name": "user",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "username",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "site",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "id",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "integer",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Name": "disco",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Name": "id",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "services",
+                                    "Required": "N",
+                                    "Type": "collection",
+                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value.",
+                                    "parameters": [
+                                        {
+                                            "Name": "service",
+                                            "Required": "N",
+                                            "Type": "collection",
+                                            "Description": "",
+                                            "parameters": [
+                                                {
+                                                    "Name": "parameter",
+                                                    "Required": "N",
+                                                    "Type": "collection",
+                                                    "Description": "",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                        },
+                                                        {
+                                                            "Name": "value",
+                                                            "Required": "N",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Name": "schedule",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "Collection or object? Looks like an object. Not sure this is necessary in POST.",
+                                    "parameters": [
+                                        {
+                                            "Name": "schedule",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
+                                            "parameters": [
+                                                {
+                                                    "Name": "timezone",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "start_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "should work for HTTP::Date::parse_date"
+                                                },
+                                                {
+                                                    "Name": "end_date",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "spec",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "collection",
+                                                    "Description": "'cron_spec' or 'cron_string'? It looks like cron_string is ",
+                                                    "parameters": [
+                                                        {
+                                                            "Name": "type",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "cron_spec",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "duration",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": "This probably shouldn't be string."
+                                                        },
+                                                        {
+                                                            "Name": "timezone",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "string",
+                                                            "Description": ""
+                                                        },
+                                                        {
+                                                            "Name": "weekday",
+                                                            "Required": "N",
+                                                            "Default": "",
+                                                            "Type": "enumerated",
+                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                                            "Description": ""
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "client_id",
@@ -512,6 +1540,26 @@
                 "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/job/:job_id/whitelist",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "patterns",
+                            "Required": "N",
+                            "Type":"collection",
+                            "Description": "It's actually a collection!",
+                            "parameters": [
+                                {
+                                    "Name": "pattern",
+                                    "Required": "N",
+                                    "Type":"string",
+                                    "Description": "Will match entered text (probably)."
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "job_id",

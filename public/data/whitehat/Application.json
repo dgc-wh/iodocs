@@ -225,7 +225,89 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "label",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "| stub"
+                        },
+                        {
+                            "Name": "scan_schedule",
+                            "Required": "N",
+                            "Type": "object",
+                            "Description": "TODO: Change from 'collection' to 'object'. | stub",
+                            "parameters": [
+                                {
+                                    "Name": "specs",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "cron_spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": " word word word word word (optional word) [where 'word' stands for any set of non-whitespace character| stub"
+                                        },
+                                        {
+                                            "Name": "duration",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": "This probably shouldn't be string."
+                                        },
+                                        {
+                                            "Name": "timezone",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "weekday",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "provisioning",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["", 0, false],
+                            "Description": "Provisioning can not be set to true. | stub"
+                        },
+                        {
+                            "Name": "appliance",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "TODO: Change from 'collection' to 'object'. | stub",
+                            "parameters": [
+                                {
+                                    "Name": "id",
+                                    "Required": "N",
+                                    "Type": "integer",
+                                    "Description": "Appliance id | stub"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "parameters": [
                     {
@@ -267,7 +349,15 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Appliance id | stub"
+                        }
+                    ]
                 },
                 "parameters": [
                     {
@@ -286,7 +376,55 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "specs",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters": [
+                                {
+                                    "Name": "type",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "cron_spec",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": " word word word word word (optional word) [where 'word' stands for any set of non-whitespace character| stub"
+                                },
+                                {
+                                    "Name": "duration",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "This probably shouldn't be string."
+                                },
+                                {
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "weekday",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "enumerated",
+                                    "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                    "Description": ""
+                                }
+                            ]
+                        }
+                    ]
+
                 },
                 "parameters": [
                     {
@@ -305,7 +443,76 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "application_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. | stub"
+                        },
+                        {
+                            "Name": "id",
+                            "Required": "N",
+                            "Type": "integer",
+                            "Description": "Codebase id. | stub"
+                        },
+                        {
+                            "Name": "exclude_dirs",
+                            "Required": "N",
+                            "Type": "list",
+                            "Description": "List of directories to be excluded. | stub",
+                            "parameters": [
+                                {
+                                    "Required": "N",
+                                    "Type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "label",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "repository_uri",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "repository_type",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "auth_type",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["none", "password", "certificate"],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "username",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "password",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "certificate",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        }
+                    ]
                 },
                 "parameters": [
                     {
@@ -342,7 +549,30 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "appliance",
+                            "Required": "N",
+                            "Type": "collection",
+                            "Description": "TODO: Change from 'collection' to 'object'. | stub ",
+                            "parameters": [
+                                {
+                                    "Name": "id",
+                                    "Required": "N",
+                                    "Type": "integer",
+                                    "Description": ""
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "parameters": [
                     {
@@ -378,7 +608,71 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "application_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id. Must match app_id.| stub"
+                        },
+                        {
+                            "Name": "exclude_dirs",
+                            "Required": "N",
+                            "Type": "list",
+                            "Description": "List of directories to be excluded. | stub",
+                            "parameters": [
+                                {
+                                    "Required": "N",
+                                    "Type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "label",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "repository_url",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "repository_type",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "auth_type",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["none", "password", "certificate"],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "username",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "password",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "certificate",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        }
+                    ]
+
                 },
                 "parameters": [
                     {

@@ -9,8 +9,6 @@
                 }
             },
 
-
-
             {
                 "MethodName": "Update site",
                 "Synopsis": "Update information for one site",
@@ -19,43 +17,220 @@
                 "RequiresOAuth": "N",
                 "content": {
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "description",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "enable_scan_creds",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "industry",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                "Automotive",
+                                "Banking",
+                                "Education",
+                                "Energy",
+                                "Entertainment & Media",
+                                "Financial Services",
+                                "Food & Beverage",
+                                "Gaming",
+                                "Government",
+                                "Healthcare",
+                                "IT",
+                                "Insurance",
+                                "Manufacturing",
+                                "Non Profit",
+                                "Pharmaceutical",
+                                "Retail",
+                                "Social Networking",
+                                "Technology",
+                                "Telecommunications",
+                                "Transport & Distribution"
+                             ],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "speed",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                0.0, 0.125, 0.25, 0.5
+                             ],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "vuln_policy_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": ""
+                        }, 
+                        {
+                            "Name": "weight",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                             ],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "active_admin",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "active_consult",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "active_user",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "banner",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "current_scan_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "discovery",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "last_completed_scan",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "notes",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "satellite",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "satellite_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "integer",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "scan_schedule_name",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "scan_schedule_timezone",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "service_level",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["None", "PE", "SE", "BE", "DE", "PL"],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "service_type",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": ["", "Enterprise", "Flex"],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "slot_label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "slot_url",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "A url"
+                        },
+                        {
+                            "Name": "sslciphers",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        }
+                    ]
                 },
                 "parameters": [
                     {
                         "Name": "site_id",
                         "Required": "Y",
-                        "Type": "integer"
-                    },
-                    {
-                        "Name": "weight",
-                        "Type": "enumerated",
-                        "EnumeratedList": [
-                            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                         ]
-                    },
-                    {
-                        "Name": "industry",
-                        "Type": "enumerated",
-                        "EnumeratedList": [
-                            "Banking"
-                         ]
-                    },
-                    {
-                        "Name": "speed",
-                        "Type": "enumerated",
-                        "EnumeratedList": [
-                            0.0, 0.125, 0.25, 0.5
-                         ]
-                    },
-                    {
-                        "Name": "enable_scan_creds",
-                        "Type": "enumerated",
-                        "EnumeratedList": [0, 1]
-                    },
-                    {
-                        "Name": "vuln_policy_id",
-                        "Type": "integer"
+                        "Type": "integer",
+                        "Description": ""
                     } 
                 ]
             },   
@@ -65,6 +240,94 @@
                 "HTTPMethod": "PUT",
                 "URI": "/site/:site_id/scan_schedule",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "schedule",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "",
+                            "parameters": [
+                                {
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "should work for HTTP::Date::parse_date"
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "spec",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "",
+                                    "parameters": [
+                                        {
+                                            "Name": "type",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "cron_spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "duration",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": "This probably shouldn't be string."
+                                        },
+                                        {
+                                            "Name": "timezone",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "weekday",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -81,6 +344,96 @@
                 "HTTPMethod": "PUT",
                 "URI": "/site/:site_id/site_credentials/:site_credential_id",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "site_credentials",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Object, not collection",
+                                    "parameters": [
+                                        {
+                                            "Name": "credential",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "TODO: Object, not collection",
+                                            "parameters": [
+                                                {
+                                                    "Name": "username",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "cred_group_name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "Less than 64 characters"
+                                                },
+                                                {
+                                                    "Name": "scanning_cred",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "boolean",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "password",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_valid_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "notes",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "status",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": ["good", "bad", "new"],
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -98,12 +451,262 @@
                     }
                 ]
             },
+
             {
                 "MethodName": "Create one or more sites",
                 "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id",
                 "RequiresOAuth": "N",
+                "content":{
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "activation_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "active_consult",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description":""
+                        },
+                        {
+                            "Name": "active_user",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description":""
+                        },
+                        {
+                            "Name": "allowed_addresses",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"collection",
+                            "Description":"",
+                            "parmeters": [
+                                {
+                                    "Name": "cidr",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type":"string",
+                                    "Description":""
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "allowed_hosts",
+                            "Required": "N",
+                            "Type":"collection",
+                            "Description":"",
+                            "parameters": [
+                                {
+                                    "Name": "scheme",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type":"enumerated",
+                                    "EnumeratedList": ["http", "https"],
+                                    "Description":""
+                                },
+                                {
+                                    "Name": "hostname",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type":"string",
+                                    "Description":""
+                                },
+                                {
+                                    "Name": "address",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type":"string",
+                                    "Description":""
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "client_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"integer",
+                            "Description":""
+                        },
+                        {
+                            "Name": "create_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "description",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "discovery",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description":""
+                        },
+                        {
+                            "Name": "enable_scan_creds",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [0, 1, true, false],
+                            "Description":""
+                        },
+                        {
+                            "Name": "global_rank",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "industry",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                "Automotive",
+                                "Banking",
+                                "Education",
+                                "Energy",
+                                "Entertainment & Media",
+                                "Financial Services",
+                                "Food & Beverage",
+                                "Gaming",
+                                "Government",
+                                "Healthcare",
+                                "IT",
+                                "Insurance",
+                                "Manufacturing",
+                                "Non Profit",
+                                "Pharmaceutical",
+                                "Retail",
+                                "Social Networking",
+                                "Technology",
+                                "Telecommunications",
+                                "Transport & Distribution"
+                             ],
+                            "Description":""
+                        },
+                        {
+                            "Name": "label",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "market_rank",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "satellite",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "satellite_id",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"integer",
+                            "Description":""
+                        },
+                        {
+                            "Name": "scan_cred_updated_by",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "scan_cred_updated_date",
+                            "Required": "N",
+                            "Default": "string",
+                            "Type":"",
+                            "Description":""
+                        },
+                        {
+                            "Name": "service_level",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"enumerated",
+                            "EnumeratedList": ["None", "PE", "SE", "BE", "DE", "PL"],
+                            "Description":""
+                        },
+                        {
+                            "Name": "service_type",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"enumerated",
+                            "EnumeratedList": ["", "Enterprise", "Flex"],
+                            "Description":""
+                        },
+                        {
+                            "Name": "site_url",
+                            "Required": "N",
+                            "Default": "string",
+                            "Type":"string",
+                            "Description":""
+                        },
+                        {
+                            "Name": "speed",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                0.0, 0.125, 0.25, 0.5
+                             ],
+                            "Description":""
+                        },
+                        {
+                            "Name": "vuln_policy",
+                            "Required": "N",
+                            "Default": "",
+                            "Type":"collection",
+                            "Description":"TODO: object instead of collection",
+                            "parameters": [
+                                {
+                                    "Name": "id",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type":"integer",
+                                    "Description":""
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "weight",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "enumerated",
+                            "EnumeratedList": [
+                                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                             ],
+                            "Description":""
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -120,6 +723,58 @@
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id/entry_points",
                 "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType": ["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "entry_points",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "",
+                                    "parameters": [
+                                        {
+                                            "Name": "method",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "uri",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "header",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "content",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -136,6 +791,96 @@
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id/site_credentials",
                 "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType": ["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "site_credentials",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Object, not collection",
+                                    "parameters": [
+                                        {
+                                            "Name": "credential",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "TODO: Object, not collection",
+                                            "parameters": [
+                                                {
+                                                    "Name": "username",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "cred_group_name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "Less than 64 characters"
+                                                },
+                                                {
+                                                    "Name": "scanning_cred",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "boolean",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "password",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_valid_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "notes",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "status",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": ["good", "bad", "new"],
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -148,10 +893,100 @@
             },
             {
                 "MethodName": "Add specific site credentials",
-                "Synopsis": "T.B.D. -- NOTE: Can have multiple comma-seperated site credential ids in URI, how does that work?",
+                "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id/site_credentials/:site_credential_id",
                 "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType": ["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "site_credentials",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Object, not collection",
+                                    "parameters": [
+                                        {
+                                            "Name": "credential",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "TODO: Object, not collection",
+                                            "parameters": [
+                                                {
+                                                    "Name": "username",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "cred_group_name",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": "Less than 64 characters"
+                                                },
+                                                {
+                                                    "Name": "scanning_cred",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "boolean",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "password",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "login_valid_url",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "notes",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "string",
+                                                    "Description": ""
+                                                },
+                                                {
+                                                    "Name": "status",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": ["good", "bad", "new"],
+                                                    "Description": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -175,6 +1010,61 @@
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id/allowed_hosts",
                 "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType": ["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "allowed_hosts",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Object, not collection",
+                                    "parameters": [
+                                        {
+                                            "Name": "host",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "TODO: Object, not collection",
+                                            "parameters": [
+                                                {
+                                                    "Name": "scheme",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"enumerated",
+                                                    "EnumeratedList": ["http", "https"],
+                                                    "Description":""
+                                                },
+                                                {
+                                                    "Name": "hostname",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"string",
+                                                    "Description":""
+                                                },
+                                                {
+                                                    "Name": "address",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"string",
+                                                    "Description":""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -191,6 +1081,61 @@
                 "HTTPMethod": "POST",
                 "URI": "/site/:site_id/allowed_hosts/:allowed_host_id",
                 "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType": ["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "site",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "collection",
+                            "Description": "TODO: Object, not collection",
+                            "parameters": [
+                                {
+                                    "Name": "allowed_hosts",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "collection",
+                                    "Description": "TODO: Object, not collection",
+                                    "parameters": [
+                                        {
+                                            "Name": "host",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "collection",
+                                            "Description": "TODO: Object, not collection",
+                                            "parameters": [
+                                                {
+                                                    "Name": "scheme",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"enumerated",
+                                                    "EnumeratedList": ["http", "https"],
+                                                    "Description":""
+                                                },
+                                                {
+                                                    "Name": "hostname",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"string",
+                                                    "Description":""
+                                                },
+                                                {
+                                                    "Name": "address",
+                                                    "Required": "N",
+                                                    "Default": "",
+                                                    "Type":"string",
+                                                    "Description":""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 "parameters": [
                     {
                         "Name": "site_id",
@@ -208,6 +1153,7 @@
                     }
                 ]
             },
+
             {
                 "MethodName": "Delete scan schedule",
                 "Synopsis": "T.B.D.",
