@@ -87,13 +87,162 @@
                 "MethodName": "Modify existing user",
                 "Synopsis": "| stub",
                 "HTTPMethod": "PUT",
-                "URI": "/user",
+                "URI": "/user/:user_id",
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "address",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "city",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "company",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "country",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "first_name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "last_name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "phone",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "state",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "zipcode",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "fax",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "job_title",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "notes",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "middle_initial",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "Single character only, entry will be rejected if entry is longer than one character."
+                        },
+                        {
+                            "Name": "timezone",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "Timezone type, if not in that form, entry will be rejected. Ex: 'America/New_York'"
+                        },
+                        {
+                            "Name": "expose_hostnames",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "show_cvss",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "immediate_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "update_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "weekly_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "monthly_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "require_mfa",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "action_items_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1, false, true],
+                            "Description": ""
+                        }
+                    ]
                 },
                 "parameters": [
+                    {
+                        "Name": "user_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "user id | stub"
+                    },
                     {
                         "Name": "format",
                         "Required": "N",
@@ -111,7 +260,167 @@
                 "RequiresOAuth": "N",
                 "content":{
                     "schema":{"type":"string"},
-                    "contentType":["application/json","application/xml"]
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "username",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "New user's username, should be an email address."
+                        },
+                        {
+                            "Name": "client_id",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "Client id."
+                        },
+                        {
+                            "Name": "type",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "User's type, 'sentinel' for instance."
+                        },
+                        {
+                            "Name": "address",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "city",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "company",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "country",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "first_name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "last_name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "phone",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "state",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "zipcode",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "fax",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "job_title",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "notes",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "middle_initial",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "Single character only, entry will be rejected if entry is longer than one character."
+                        },
+                        {
+                            "Name": "timezone",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "Timezone type, if not in that form, entry will be rejected. Ex: 'America/New_York'"
+                        },
+                        {
+                            "Name": "expose_hostnames",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "show_cvss",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "immediate_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "update_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "weekly_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "monthly_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "require_mfa",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1],
+                            "Description": ""
+                        },
+                        {
+                            "Name": "action_items_email",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "EnumeratedList": [ 0, 1, true, false],
+                            "Description": ""
+                        }
+                    ]
                 },
                 "parameters": [
                     {
@@ -127,9 +436,16 @@
                 "MethodName": "Delete user",
                 "Synopsis": "| stub",
                 "HTTPMethod": "DELETE",
-                "URI": "/user/",
+                "URI": "/user/:user_id",
                 "RequiresOAuth": "N",
                 "parameters": [
+                    {
+                        "Name": "user_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Default":"",
+                        "Description": "user id | stub"
+                    },
                     {
                         "Name": "format",
                         "Required": "N",

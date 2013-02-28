@@ -1,0 +1,108 @@
+mixin content(apiInfo, contentArray, className, contentType)
+    table.parameters
+        thead
+            tr
+                - if (contentType == 'collection')
+                    th Collection Parameter
+                    th Value
+                    th Type
+                    th Description
+                - else if (contentType == 'object')
+                    th Obj. Parameter Name
+                    th Obj. Parameter Value
+                    th Obj. Parameter Type
+                    th Obj. Parameter Description
+                - else if (contentType == 'list')
+                    th Value (Type: #{contentArray.parameters[0]['Type']})
+                - else 
+                    th Parameter
+                    th Value
+                    th Type
+                    th Description
+        tbody
+            - var paramCount =0
+            - if (contentType == 'collection' || contentType == 'list' )
+                tr
+                    td
+                        a(href='#', onclick='return false', class='#{contentType}-minimize') Minimize #{contentType}
+            - each parameter in contentArray
+                - paramCount++
+                div(id='param' + paramCount)
+                  - if (parameter.Required =='Y')
+                      - var required =true
+                      - var className ='required'
+                  - else
+                      - var required =false
+                      - var className =''
+                  - if (contentType == 'object')
+                      tr(class=className).jsobj-element
+                          mixin trCells(apiInfo, parameter, className, contentType)
+                  - else if (contentType == 'collection')
+                      tr(class=className).collection-original
+                          mixin trCells(apiInfo, parameter, className, contentType)
+                  - else if (contentType == 'list')
+                      tr(class=className).list-element
+                          mixin trCells(apiInfo, parameter, className, contentType)
+                  - else
+                      tr(class=className)
+                          mixin trCells(apiInfo, parameter, className, contentType)
+
+
+// Enforces possible list parameter types, don't want to have objects, or 
+// collections as possibilities for list type. A list of objects is a collection
+// anyway.
+mixin trCells(apiInfo, parameter, className, contentType)
+    -if (contentType == 'list')
+        td.parameter
+            - if (parameter.Type =='enumerated')
+                mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+            - else if (parameter.Type =='boolean')
+                mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+            - else
+                input(name='params[' + parameter.Name + ']', value=parameter.Default, placeholder=className)
+    -else
+        td.name=parameter.Name
+        td.parameter
+            mixin parameters(apiInfo, parameter, className)
+        td.type=parameter.Type
+        td.description
+            mixin description(parameter)
+
+mixin parameters(apiInfo, parameter, className)
+    - if (parameter.Type =='enumerated')
+        mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+    - else if (parameter.Type =='boolean')
+        mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+    - else if (parameter.Type =='list')
+        mixin content(apiInfo, parameter, className, parameter.Type)
+    - else if (parameter.Type =='object' || parameter.Type =='collection')
+        - if (parameter.parameters != undefined)
+            - if (parameter.parameters.length > 0)
+              mixin content(apiInfo, parameter.parameters, className, parameter.Type)
+    - else
+        input(name='params[' + parameter.Name + ']', value=parameter.Default, placeholder=className)
+
+mixin enumeratedOrBoolean(parameter, className, paramType)
+     select(name='params[' + parameter.Name + ']', placeholder=className)
+          - if (parameter.Default =='')
+                  option(value='') 
+          - if (paramType == 'boolean')
+              - each choice in [apiInfo.booleanTrueVal,apiInfo.booleanFalseVal]
+                 - if (parameter.Default ==choice)
+                         option(value=choice, selected=true) #{choice}
+                 - else
+                         option(value=choice) #{choice}
+          - else if (paramType == 'enumerated')
+              - each choice in parameter.EnumeratedList
+                 - if (parameter.Default ==choice)
+                         option(value=choice, selected=true) #{choice}
+                 - else
+                         option(value=choice) #{choice}
+
+mixin description(parameter)
+    p=parameter.Description || 'No description'
+    - if (parameter.Type =='enumerated' && parameter.EnumeratedDescription)
+        dl.clearfix
+            - each description, choice in parameter.EnumeratedDescription
+                dt #{choice}
+                dd #{description}
