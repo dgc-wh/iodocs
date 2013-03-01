@@ -38,8 +38,7 @@ var express     = require('express'),
 
 // Configuration
 try {
-    var configJSON = fs.readFileSync(__dirname + "/config.json");
-    var config = JSON.parse(configJSON.toString());
+    var config = require('./config.json');
 } catch(e) {
     console.error("File config.json not found or is invalid.  Try: `cp config.json.sample config.json`");
     process.exit(1);
@@ -69,14 +68,16 @@ db.on("error", function(err) {
 //
 // Load API Configs
 //
-var apisConfig;
-fs.readFile(__dirname +'/public/data/apiconfig.json', 'utf-8', function(err, data) {
-    if (err) throw err;
-    apisConfig = JSON.parse(data);
+
+try {
+    var apisConfig = require('./public/data/apiconfig.json');
     if (config.debug) {
-         console.log(util.inspect(apisConfig));
+        console.log(util.inspect(apisConfig));
     }
-});
+} catch(e) {
+    console.error("File apiconfig.json not found or is invalid.");
+    process.exit(1);
+}
 
 //
 // Determine if we should launch as http/s and get keys and certs if needed
@@ -315,9 +316,9 @@ function processRequest(req, res, next) {
     };
 
     var reqQuery = req.body,
+        customHeaders = {},
         params = reqQuery.params || {},
-        content = reqQuery.requestContent || '',
-        contentType = reqQuery.contentType || '',
+        locations = reqQuery.locations || {},
         methodURL = reqQuery.methodUri,
         httpMethod = reqQuery.httpMethod,
         apiKey = reqQuery.apiKey,
@@ -325,6 +326,19 @@ function processRequest(req, res, next) {
         apiName = reqQuery.apiName
         apiConfig = apisConfig[apiName],
         key = req.sessionID + ':' + apiName;
+
+    // Extract custom headers from the params
+    for( var param in params ) 
+    {
+         if (params.hasOwnProperty(param)) 
+         {
+            if (params[param] !== '' && locations[param] == 'header' ) 
+            {
+                customHeaders[param] = params[param];
+                delete params[param];
+            }
+         }
+    }
 
     // Replace placeholders in the methodURL with matching params
     for (var param in params) {
@@ -347,11 +361,16 @@ function processRequest(req, res, next) {
     var baseHostInfo = apiConfig.baseURL.split(':');
     var baseHostUrl = baseHostInfo[0],
         baseHostPort = (baseHostInfo.length > 1) ? baseHostInfo[1] : "";
+    var headers = {};
+    for( header in apiConfig.headers )
+        headers[header] = apiConfig.headers[header];
+    for( header in customHeaders )
+        headers[header] = customHeaders[header];
 
     var paramString = query.stringify(params),
         privateReqURL = apiConfig.protocol + '://' + apiConfig.baseURL + apiConfig.privatePath + methodURL + ((paramString.length > 0) ? '?' + paramString : ""),
         options = {
-            headers: apiConfig.headers,
+            headers: headers,
             protocol: apiConfig.protocol + ':',
             host: baseHostUrl,
             port: baseHostPort,
@@ -693,8 +712,7 @@ app.dynamicHelpers({
     },
     apiDefinition: function(req, res) {
         if (req.params.api) {
-            var data = fs.readFileSync(__dirname + '/public/data/' + req.params.api + '.json');
-            return JSON.parse(data);
+            return require(__dirname + '/public/data/' + req.params.api + '.json');
         }
     }
 })
@@ -746,6 +764,8 @@ app.get('/:api([^\.]+)', function(req, res) {
 
 if (!module.parent) {
     var port = process.env.PORT || config.port;
-    app.listen(port);
-    console.log("Express server listening on port %d", app.address().port);
+    var l = app.listen(port);
+    l.on('listening', function(err) {
+        console.log("Express server listening on port %d", app.address().port);
+    });
 }
