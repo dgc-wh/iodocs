@@ -819,7 +819,7 @@ div.clickable a {
 
             // For 'ul' with the following classes, make their list elements in-line.
             // Rows!
-            &.header, &.string, &.integer, &.enumerated, &.list {
+            &.header, &.string, &.integer, &.enumerated, &.list, &.list-only {
                 @extend %border-spacing;
 
                 & > li {
@@ -857,6 +857,14 @@ div.clickable a {
                 }
             }
 
+            /* For list and list-only type parameters, add a bit of margin
+                for spacing between the added boxes. */
+            &.list-only, &.list {
+                & > li.parameter > ul > li {
+                    margin-bottom: 4%;
+                }
+            }
+
             // Spacing between list elements.
             // Don't think text is wrapped like it would be in table cells,
             // should check on this. 
@@ -878,6 +886,7 @@ div.clickable a {
             }
         }
 
+        /* Darkening the background for collection parameters by nesting level, only goes 3 deep */
         ul.collection ul.parameters {
             background-color: saturate(darken($color, 5%), 30%);
             @include border-radius(5px);

@@ -45,7 +45,7 @@ mixin row(apiInfo, parameter, className)
                 mixin description(parameter)
             li.parameter
                 mixin parameters(apiInfo, parameter, className)
-        - else if (parameter.Type == 'list')
+        - else if (parameter.Type == 'list' || parameter.Type == 'list-only')
             li.name=parameter.Name
                 a(href='#', class='add-list button add', onclick='return false')
                     img(src='/images/plus.png', style='margin-left: 10px;')
