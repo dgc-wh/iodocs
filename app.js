@@ -861,7 +861,12 @@ function search (jsonData, searchTerm) {
         regex = new RegExp ( "("+terms[0]+"|"+terms[1]+")" , "i");
     }
     else {
-        regex = new RegExp( regexFriendly(searchTerm), "i" );
+        var terms = searchTerm.split(/\s+/);
+        var regexString = "";
+        for (var t = 0; t < terms.length; t++) {
+            regexString += "(?=.*" + regexFriendly(terms[t]) + ")";
+        }
+        regex = new RegExp( regexString, "i" );
     }
 
     // Get a list of all methods from the data.
@@ -874,7 +879,7 @@ function search (jsonData, searchTerm) {
         // Iterate through methods
         for (var j = 0; j < object.methods.length; j++) {
             if ( filterSearchObject(object.methods[j], regex) ) {
-                searchMatches.push({"label":object.methods[j]['MethodName'], "category": object.name});
+                searchMatches.push({"label":object.methods[j]['MethodName'], "category": object.name, "type":object.methods[j]['HTTPMethod']});
             }
         }
     }
