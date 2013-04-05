@@ -1,0 +1,988 @@
+
+    {
+        "name": "Group API v2",
+        "methods": [
+            {
+                "MethodName": "Get group collection",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notags",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_contains_site",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the site id or site label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_app",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the app id or app label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_asset",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the asset id or asset label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_user",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the user id or username. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_name_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Look for a name that contains or matches what is given."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_has_asset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display whether or not there are assets."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get group collection for a client",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/:client_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "query_tags",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_notags",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "query_contains_site",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the site id or site label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_app",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the app id or app label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_asset",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the asset id or asset label. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_contains_user",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Can be the user id or username. Query by id is not yet supported."
+                    },
+                    {
+                        "Name": "query_name_like",
+                        "Required": "N",
+                        "Type": "string",
+                        "Description": "Look for a name that contains or matches what is given."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_has_asset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display whether or not there are assets."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get a single group",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/:client_id/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "display_sites",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display sites associated with group id."
+                    },
+                    {
+                        "Name": "display_applications",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display applications assoicated with group id."
+                    },
+                    {
+                        "Name": "display_roles",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display roles assoicated with group id."
+                    },
+                    {
+                        "Name": "display_vuln_stats",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display vuln stats."
+                    },
+                    {
+                        "Name": "display_total",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display total. TODO: Don't think this belongs here."
+                    },
+                    {
+                        "Name": "display_scan_status",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display scan status."
+                    },
+                    {
+                        "Name": "display_has_asset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "enumerated",
+                        "EnumeratedList": [0, 1],
+                        "Description":"Display whether or not there are assets."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get group roles",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/:client_id/:group_id/role",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get group sites",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/:client_id/:group_id/site",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Get group applications",
+                "Synopsis": "",
+                "HTTPMethod": "GET",
+                "URI": "/v2/group/:client_id/:group_id/application",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "page:limit",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Number of pages to retrieve."
+                    },
+                    {
+                        "Name": "page:offset",
+                        "Required": "N",
+                        "Default": "",
+                        "Type": "integer",
+                        "Description": "Begin retrieving pages from this index."
+                    },
+                    {
+                        "Name": "page:order_by",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "name", "name_asc", "name_desc", "id", "id_asc", "id_desc", "description", "description_asc", "description_desc" ],
+                        "Description": "Order results in ascending or descending order by name, id, or description."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Modify group",
+                "Synopsis": "",
+                "HTTPMethod": "PUT",
+                "URI": "/v2/group/:client_id/:group_id",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "description",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "tags",
+                            "Required": "N",
+                            "Type": "list",
+                            "Description": "",
+                            "parameters": [
+                                {
+                                    "Required": "N",
+                                    "Type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Create new group",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/v2/group/:client_id",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "name",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "Change name of the group."
+                        },
+                        {
+                            "Name": "description",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": "Change description of the group."
+                        },
+                        {
+                            "Name": "sites",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "applications",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "roles",
+                            "Required": "N",
+                            "Type": "string",
+                            "Description": ""
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add tag to group",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/v2/group/:client_id/:group_id/tag",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "tag",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "Tag to be added. TODO: Determine what proper input looks like."
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add roles to group",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/v2/group/:client_id/:group_id/role",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "user_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "User id"
+                        },
+                        {
+                            "Name": "username",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "Username (should be an email address)."
+                        },
+                        {
+                            "Name": "role",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Description": "Role to add."
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add sites to group",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/v2/group/:client_id/:group_id/site",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "collection",
+                            "Required": "Y",
+                            "Type": "collection",
+                            "Description": "Set of sites to add. TODO: Determine proper format.",
+                            "parameters": [
+                                {
+                                    "Name": "id",
+                                    "Required": "Y",
+                                    "Type": "integer",
+                                    "Description": "Site id"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Add applications to group",
+                "Synopsis": "",
+                "HTTPMethod": "POST",
+                "URI": "/v2/group/:client_id/:group_id/application",
+                "RequiresOAuth": "N",
+                "content": {
+                    "schema":{"type":"string"},
+                    "contentType":["application/json","application/xml"],
+                    "parameters": [
+                        {
+                            "Name": "collection",
+                            "Required": "Y",
+                            "Type": "collection",
+                            "Description": "Set of applications to add. TODO: Determine proper format.",
+                            "parameters": [
+                                {
+                                    "Name": "id",
+                                    "Required": "Y",
+                                    "Type": "integer",
+                                    "Description": "Application id"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "accept_fmt",
+                        "Required": "N",
+                        "Type": "enumerated",
+                        "EnumeratedList": [ "application/json", "text/csv", "text/xml" ],
+                        "Description": "Selects the requested response representation format. CSV format is currently not supported/working."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Delete a tag from a group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id/tag/:target_tag",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "target_tag",
+                        "Required": "Y",
+                        "Type": "string",
+                        "Description": "Tag to be deleted."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove user from group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id/role/:user_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "user_id",
+                        "Required": "Y",
+                        "Type": "string",
+                        "Description": "User id of user to be removed."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove all sites from group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id/site",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove single site from group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id/site/:site_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "site_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Site id."
+                    }
+                ]
+            },
+            {
+                "MethodName": "Remove single application from group",
+                "Synopsis": "",
+                "HTTPMethod": "DELETE",
+                "URI": "/v2/group/:client_id/:group_id/application/:application_id",
+                "RequiresOAuth": "N",
+                "parameters": [
+                    {
+                        "Name": "client_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Client id."
+                    },
+                    {
+                        "Name": "group_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Group id."
+                    },
+                    {
+                        "Name": "application_id",
+                        "Required": "Y",
+                        "Type": "integer",
+                        "Description": "Application id."
+                    }
+                ]
+            }
+        ]
+    }

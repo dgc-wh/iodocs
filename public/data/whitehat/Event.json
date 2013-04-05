@@ -47,7 +47,7 @@
                         "Description": "Query for this particular asset type."
                     },
                     {
-                        "Name": "query_asset_name_like",
+                        "Name": "query_asset_string_like",
                         "Required": "N",
                         "Type": "string",
                         "Description": "Search for asset containing this string in its name."

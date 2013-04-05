@@ -25,6 +25,9 @@
             { "href": "./public/data/whitehat/Group.json" }
         },
         { "external":
+            { "href": "./public/data/whitehat/Group2.json" }
+        },
+        { "external":
             { "href": "./public/data/whitehat/Job.json" }
         },
         { "external":

@@ -14,189 +14,189 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_application_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated application ids| stub"
+                        "Description":"One or more comma seperated application ids"
                     },
                     {
                         "Name": "query_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated vulnerability ids | stub"
+                        "Description":"One or more comma seperated vulnerability ids"
                     },
                     {
                         "Name": "query_severity_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated severity ids| stub"
+                        "Description":"One or more comma seperated severity ids"
                     },
                     {
                         "Name": "query_dast_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                        "Description":"One or more comma seperated dast_class entries."
                     },
                     {
                         "Name": "query_threat",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Threats have the following range: 1 to 5 | stub"
+                        "Description":"One or more comma seperated values. Threats have the following range: 1 to 5"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20 | stub"
+                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20"
                     },
                     {
                         "Name": "query_location",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for exact file (provide file uri) | stub"
+                        "Description":"Search for exact file (provide file uri)"
                     },
                     {
                         "Name": "query_location_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for file locations containing this string of text (provide partial match to file uri) | stub"
+                        "Description":"Search for file locations containing this string of text (provide partial match to file uri)"
                     },
                     {
                         "Name": "query_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered'"
                     },
                     {
                         "Name": "query_trace_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                        "Description":"Combinable options: 'open', 'closed', 'false'"
                     },
                     {
                         "Name": "query_impact",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low'"
                     },
                     {
                         "Name": "query_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                        "Description":"Looks for Java class: \"com.java.class.example\""
                     },
                     {
                         "Name": "query_instance_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":"Look for instance id | stub"
+                        "Description":"Look for instance id"
                     },
                     {
                         "Name": "display_stats",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display stats. | stub"
+                        "Description": "Display stats."
                     },
                     {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Can be very, very slow.) | stub"
+                        "Description": "Display steps. (Can be very, very slow.)"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions."
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                        "Description": "Display vulnerability solution information. 'custom' option will display custom solutions."
                     },
                     {
                         "Name": "page:limit",
@@ -260,28 +260,28 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Can be very, very slow.) | stub"
+                        "Description": "Display steps. (Can be very, very slow.)"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions."
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions."
                     },
                     {
                         "Name": "page:limit",
@@ -322,14 +322,14 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here [API bug]) | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here [API bug])"
                     },
                     {
                         "Name": "page:limit",
@@ -376,7 +376,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag."
                     },
                     {
                         "Name": "page:limit",
@@ -423,7 +423,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
+                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1"
                     },
                     {
                         "Name": "page:limit",
@@ -466,189 +466,189 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_opened_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_opened_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_closed_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found_after",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_found_before",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z') | stub"
+                        "Description":"Date format: Valid ISO8601 (that means UTC (aka GMT)) (Ex. 'YYYY-MM-DDThh:mm:ssZ' -> '2008-12-12T21:35:59Z')"
                     },
                     {
                         "Name": "query_application_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated application ids| stub"
+                        "Description":"One or more comma seperated application ids"
                     },
                     {
                         "Name": "query_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated vulnerability ids | stub"
+                        "Description":"One or more comma seperated vulnerability ids"
                     },
                     {
                         "Name": "query_severity_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated severity ids| stub"
+                        "Description":"One or more comma seperated severity ids"
                     },
                     {
                         "Name": "query_dast_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated dast_class thingsdast_class (???) | stub"
+                        "Description":"One or more comma seperated dast_class entries."
                     },
                     {
                         "Name": "query_threat",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Threats have the following range: 1 to 5 | stub"
+                        "Description":"One or more comma seperated values. Threats have the following range: 1 to 5"
                     },
                     {
                         "Name": "query_score",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20 | stub"
+                        "Description":"One or more comma seperated values. Scores have the following range: 3 to 20"
                     },
                     {
                         "Name": "query_location",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for exact file (provide file uri) | stub"
+                        "Description":"Search for exact file (provide file uri)"
                     },
                     {
                         "Name": "query_location_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for file locations containing this string of text (provide partial match to file uri) | stub"
+                        "Description":"Search for file locations containing this string of text (provide partial match to file uri)"
                     },
                     {
                         "Name": "query_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered' | stub"
+                        "Description":"Combinable options: 'open', 'closed', 'false', 'discovered'"
                     },
                     {
                         "Name": "query_trace_status",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'open', 'closed', 'false' | stub"
+                        "Description":"Combinable options: 'open', 'closed', 'false'"
                     },
                     {
                         "Name": "query_impact",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low' | stub"
+                        "Description":"Combinable options: 'urgent', 'critical', 'high', 'medium', 'low'"
                     },
                     {
                         "Name": "query_class",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Looks for Java class: \"com.java.class.example\" | stub"
+                        "Description":"Looks for Java class: \"com.java.class.example\""
                     },
                     {
                         "Name": "query_instance_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":"Look for instance id | stub"
+                        "Description":"Look for instance id"
                     },
                     {
                         "Name": "display_stats",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display stats. | stub"
+                        "Description": "Display stats."
                     },
                     {
                         "Name": "display_traces",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Can be very, very slow.) | stub"
+                        "Description": "Display steps. (Can be very, very slow.)"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions."
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                        "Description": "Display vulnerability solution information. 'custom' option will display custom solutions."
                     },
                     {
                         "Name": "page:limit",
@@ -702,28 +702,28 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. | stub"
+                        "Description": "Display traces."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Can be very, very slow.) | stub"
+                        "Description": "Display steps. (Can be very, very slow.)"
                     },
                     {
                         "Name": "display_description",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions. | stub"
+                        "Description": "Display general information about vulnerability. 'custom' option will display custom descriptions."
                     },
                     {
                         "Name": "display_solution",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "custom"],
-                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions. | stub"
+                        "Description": "Display general vulnerability solution information. 'custom' option will display custom solutions."
                     },
                     {
                         "Name": "page:limit",
@@ -770,14 +770,14 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here)"
                     },
                     {
                         "Name": "page:limit",
@@ -830,14 +830,14 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag. | stub"
+                        "Description": "Display traces. If 0, will show steps and vuln tags, if 1, only steps tag."
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display steps. (Doesn't seem to make a difference here)"
                     },
                     {
                         "Name": "page:limit",
@@ -890,14 +890,14 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display traces. (Doesn't seem to make a difference here)"
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
+                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1"
                     },
                     {
                         "Name": "page:limit",
@@ -956,14 +956,14 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [1, 0],
-                        "Description": "Display traces. (Doesn't seem to make a difference here) | stub"
+                        "Description": "Display traces. (Doesn't seem to make a difference here)"
                     },
                     {
                         "Name": "display_steps",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1 | stub"
+                        "Description": "Display steps. If 0, will show detailed information about step, will be abbreviated if 1"
                     },
                     {
                         "Name": "page:limit",

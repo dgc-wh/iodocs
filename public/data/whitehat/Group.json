@@ -20,7 +20,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description":"Display total something."
+                        "Description":"Display total."
                     },
                     {
                         "Name": "display_vuln_stats",
@@ -111,7 +111,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description":"Display total something."
+                        "Description":"Display total."
                     },
                     {
                         "Name": "display_vuln_stats",
@@ -159,7 +159,7 @@
             },
             {
                 "MethodName": "Update group information",
-                "Synopsis": "Update group information. | stub",
+                "Synopsis": "Update group information.",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -197,8 +197,8 @@
                 ]
             },
             {
-                "MethodName": "Update user in group",
-                "Synopsis": "Update an existing user with a new role. | stub",
+                "MethodName": "Update user permissions in group",
+                "Synopsis": "Update an existing user with a new role.",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/group/:group_id/role/:user_id",
                 "RequiresOAuth": "N",
@@ -237,7 +237,7 @@
             },
             {
                 "MethodName": "Create new group",
-                "Synopsis": "Create a new group and obtain the new group's id. (not sure if accurate) | stub",
+                "Synopsis": "Create a new group and obtain the new group's id.",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/group/",
                 "RequiresOAuth": "N",
@@ -270,7 +270,7 @@
             },
             {
                 "MethodName": "Add application or site to group",
-                "Synopsis": "Add an application or site to a given group. | stub",
+                "Synopsis": "Add an application or site to a given group.",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/group/:group_id/",
                 "RequiresOAuth": "N",
@@ -309,7 +309,7 @@
             },
             {
                 "MethodName": "Add user & role to group",
-                "Synopsis": "Associate a user and role to a group. | stub",
+                "Synopsis": "Associate a user and role to a group.",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/group/:group_id/role",
                 "RequiresOAuth": "N",
@@ -348,7 +348,7 @@
             },
             {
                 "MethodName": "Remove group",
-                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted. (From Group.pm:sub handle_delete) | stub",
+                "Synopsis": "Will remove the group listed. The sites themselves within the group will not be deleted.",
                 "HTTPMethod": "DELETE",
                 "URI": "/:client_id/group/:group_id",
                 "RequiresOAuth": "N",
@@ -369,7 +369,7 @@
             },
             {
                 "MethodName": "Remove user privilege",
-                "Synopsis": "Removes the given user's group privilege. | stub",
+                "Synopsis": "Removes the given user's group privilege.",
                 "HTTPMethod": "DELETE",
                 "URI": "/:client_id/group/:group_id/role/:target_user_id",
                 "RequiresOAuth": "N",
@@ -396,7 +396,7 @@
             },
             {
                 "MethodName": "Delete site from group",
-                "Synopsis": "Delete the given site from the given group. | stub",
+                "Synopsis": "Delete the given site from the given group.",
                 "HTTPMethod": "DELETE",
                 "URI": "/:client_id/group/:group_id/site/:target_site_id",
                 "RequiresOAuth": "N",
@@ -423,7 +423,7 @@
             },
             {
                 "MethodName": "Delete application from group.",
-                "Synopsis": "Delete the given application from the given group. | stub",
+                "Synopsis": "Delete the given application from the given group.",
                 "HTTPMethod": "DELETE",
                 "URI": "/:client_id/group/:group_id/application/:target_application_id",
                 "RequiresOAuth": "N",

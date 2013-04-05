@@ -245,84 +245,68 @@
                     "contentType":["application/json","application/xml"],
                     "parameters": [
                         {
-                            "Name": "schedule",
+                            "Name": "timezone",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "start_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "should work for HTTP::Date::parse_date"
+                        },
+                        {
+                            "Name": "end_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "name",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "specs",
                             "Required": "N",
                             "Default": "",
                             "Type": "collection",
                             "Description": "",
                             "parameters": [
                                 {
-                                    "Name": "timezone",
+                                    "Name": "type",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "string",
                                     "Description": ""
                                 },
                                 {
-                                    "Name": "start_date",
+                                    "Name": "cron_spec",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "string",
-                                    "Description": "should work for HTTP::Date::parse_date"
-                                },
-                                {
-                                    "Name": "end_date",
-                                    "Required": "N",
-                                    "Default": "",
-                                    "Type": "",
                                     "Description": ""
                                 },
                                 {
-                                    "Name": "name",
+                                    "Name": "duration",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "",
-                                    "Description": ""
+                                    "Type": "integer",
+                                    "Description": "The unit of measure is 'seconds'."
                                 },
                                 {
-                                    "Name": "spec",
+                                    "Name": "weekday",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "",
-                                    "parameters": [
-                                        {
-                                            "Name": "type",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "string",
-                                            "Description": ""
-                                        },
-                                        {
-                                            "Name": "cron_spec",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "string",
-                                            "Description": ""
-                                        },
-                                        {
-                                            "Name": "duration",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "string",
-                                            "Description": "This probably shouldn't be string."
-                                        },
-                                        {
-                                            "Name": "timezone",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "string",
-                                            "Description": ""
-                                        },
-                                        {
-                                            "Name": "weekday",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "enumerated",
-                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-                                            "Description": ""
-                                        }
-                                    ]
+                                    "Type": "enumerated",
+                                    "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                    "Description": ""
                                 }
                             ]
                         }
@@ -352,22 +336,22 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "site_credentials",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Object, not collection",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "credential",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "TODO: Object, not collection",
+                                            "Type": "object",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "username",
@@ -387,7 +371,8 @@
                                                     "Name": "scanning_cred",
                                                     "Required": "N",
                                                     "Default": "",
-                                                    "Type": "boolean",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": [true, false],
                                                     "Description": ""
                                                 },
                                                 {
@@ -491,7 +476,7 @@
                             "Default": "",
                             "Type":"collection",
                             "Description":"",
-                            "parmeters": [
+                            "parameters": [
                                 {
                                     "Name": "cidr",
                                     "Required": "N",
@@ -642,8 +627,8 @@
                         {
                             "Name": "scan_cred_updated_date",
                             "Required": "N",
-                            "Default": "string",
-                            "Type":"",
+                            "Default": "",
+                            "Type":"string",
                             "Description":""
                         },
                         {
@@ -665,7 +650,7 @@
                         {
                             "Name": "site_url",
                             "Required": "N",
-                            "Default": "string",
+                            "Default": "",
                             "Type":"string",
                             "Description":""
                         },
@@ -683,8 +668,8 @@
                             "Name": "vuln_policy",
                             "Required": "N",
                             "Default": "",
-                            "Type":"collection",
-                            "Description":"TODO: object instead of collection",
+                            "Type":"object",
+                            "Description":"",
                             "parameters": [
                                 {
                                     "Name": "id",
@@ -731,8 +716,8 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "entry_points",
@@ -799,22 +784,22 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "site_credentials",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Object, not collection",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "credential",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "TODO: Object, not collection",
+                                            "Type": "object",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "username",
@@ -834,7 +819,8 @@
                                                     "Name": "scanning_cred",
                                                     "Required": "N",
                                                     "Default": "",
-                                                    "Type": "boolean",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": [true, false],
                                                     "Description": ""
                                                 },
                                                 {
@@ -905,22 +891,22 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "site_credentials",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Object, not collection",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "credential",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "TODO: Object, not collection",
+                                            "Type": "object",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "username",
@@ -940,7 +926,8 @@
                                                     "Name": "scanning_cred",
                                                     "Required": "N",
                                                     "Default": "",
-                                                    "Type": "boolean",
+                                                    "Type": "enumerated",
+                                                    "EnumeratedList": [true, false],
                                                     "Description": ""
                                                 },
                                                 {
@@ -1018,22 +1005,22 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "allowed_hosts",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Object, not collection",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "host",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "TODO: Object, not collection",
+                                            "Type": "object",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "scheme",
@@ -1089,22 +1076,22 @@
                             "Name": "site",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Object, not collection",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "allowed_hosts",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Object, not collection",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "host",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "TODO: Object, not collection",
+                                            "Type": "object",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "scheme",

@@ -14,7 +14,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv"],
-                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        "Description": ""
                     }
                 ]
             },
@@ -35,7 +35,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
-                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        "Description": ""
                     }
                 ]
             },
@@ -56,13 +56,13 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json" ],
-                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        "Description": ""
                     }
                 ]
             },
             {
                 "MethodName": "Find client privileges",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/user/",
                 "RequiresOAuth": "N",
@@ -72,20 +72,20 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Default":"",
-                        "Description": "client id | stub"
+                        "Description": "client id"
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["text/xml", "application/xml", "xml", "application/json", "json", "text/csv" ],
-                        "Description": "text/csv - provides a list with the following items - username, role, sites (I think), and what I'm guessing is company (WhiteHat). application/json - returns user and sub-user info (only seeing user info, guessing there are no sub-users setup.), including user capabilities. text/xmll - same as application/json, except without user capabilities."
+                        "Description": ""
                     }
                 ]
             },
             {
                 "MethodName": "Modify existing user",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/user/:user_id",
                 "RequiresOAuth": "N",
@@ -241,7 +241,7 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Default":"",
-                        "Description": "user id | stub"
+                        "Description": "user id"
                     },
                     {
                         "Name": "format",
@@ -254,7 +254,7 @@
             },
             {
                 "MethodName": "Create new user",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/user",
                 "RequiresOAuth": "N",
@@ -434,7 +434,7 @@
             },
             {
                 "MethodName": "Delete user",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "DELETE",
                 "URI": "/user/:user_id",
                 "RequiresOAuth": "N",
@@ -444,7 +444,7 @@
                         "Required": "Y",
                         "Type": "integer",
                         "Default":"",
-                        "Description": "user id | stub"
+                        "Description": "user id"
                     },
                     {
                         "Name": "format",

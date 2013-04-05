@@ -46,7 +46,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "display_entry_points_content ??? Is it the same as display_entry_points??? ::: display_entry_points - Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
+                        "Description": ""
                     },
                     {
                         

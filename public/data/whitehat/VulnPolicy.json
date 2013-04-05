@@ -4,7 +4,7 @@
         "methods": [
             {
                 "MethodName": "Get collection of policies",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/vuln_policy",
                 "RequiresOAuth": "N",
@@ -19,7 +19,7 @@
             },
             {
                 "MethodName": "Get all vuln classes",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/vuln_policy/all_vuln_classes",
                 "RequiresOAuth": "N",
@@ -34,7 +34,7 @@
             },
             {
                 "MethodName": "Get particular vuln policies",
-                "Synopsis": "| stub",
+                "Synopsis": "",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
@@ -54,8 +54,8 @@
                 ]
             },
             {
-                "MethodName": "Edit something existing",
-                "Synopsis": "Edit something related to Vuln_Policy. | stub",
+                "MethodName": "Edit existing policy",
+                "Synopsis": "",
                 "HTTPMethod": "PUT",
                 "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
@@ -105,13 +105,13 @@
                         "Name": "id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Edit something related to Vuln_Policy. Find more documentation. | stub"
+                        "Description": ""
                     }
                 ]
             },
             {
-                "MethodName": "Create new something",
-                "Synopsis": "Probably creates new something related to Vuln_Policy. | stub",
+                "MethodName": "Create new policy",
+                "Synopsis": "",
                 "HTTPMethod": "POST",
                 "URI": "/:client_id/vuln_policy",
                 "RequiresOAuth": "N",
@@ -160,8 +160,8 @@
                 ]
             },
             {
-                "MethodName": "Remove Vuln_Policy something",
-                "Synopsis": "Something gets removed or deleted. | stub",
+                "MethodName": "Remove a policy",
+                "Synopsis": "",
                 "HTTPMethod": "DELETE",
                 "URI": "/:client_id/vuln_policy/:id",
                 "RequiresOAuth": "N",
@@ -176,7 +176,7 @@
                         "Name": "id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Remove something related to Vuln_Policy. Find more documentation. | stub"
+                        "Description": ""
                     }
                 ]
             }
