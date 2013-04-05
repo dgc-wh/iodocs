@@ -57,6 +57,32 @@ blockquote:before,blockquote:after,q:before,q:after {
   content: none;
 }
 
+#io-footer {
+  margin-top: 25px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+            color: inherit;
+        }
+    }
+}
+
+.f-left {
+  font-size: 8pt;
+  text-align: left;
+  float: left;
+}
+
+.f-right {
+  font-size: 8pt;
+  text-align: right;
+  float: right;
+}
+
 ins {
   background-color: #ff9;
   color: #000;
@@ -232,6 +258,7 @@ textarea {
 
 textarea {
   overflow: auto;
+  width: 60%;
 }
 
 input::-moz-focus-inner,
@@ -251,16 +278,18 @@ textarea:invalid {
   background-color: #f0dddd;
 }
 
-::-moz-selection {
-  background: #ff5e99;
-  color: #fff;
+%selection {
+  background: #f6f5c1;
+  color: #444;
   text-shadow: none;
 }
 
 ::selection {
-  background: #ff5e99;
-  color: #fff;
-  text-shadow: none;
+    @extend %selection;
+}
+
+::-moz-selection {
+    @extend %selection;
 }
 
 .ie7 img {
@@ -287,6 +316,7 @@ html {
 body {
   width: 960px;
   margin: 15px auto;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -296,11 +326,14 @@ h1 {
 }
 
 h2 {
-    font-weight: normal;
-    font-size: 18px;
-    margin-bottom: 15px;
+  font-weight: normal;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
-
+h4 {
+  font-weight: normal;
+  font-size: 14px;
+}
 ul {
     margin: 0;
 }
@@ -317,13 +350,31 @@ li {
     @include clearfix;
     padding: 15px;
 
-    h2 img {
+    &.authed {
+        background-color: #d6f6bd;
+        border-color: #86bf6a;
+        padding: 10px;
+    }
+
+    &.authed form {
+        display: none;
+    }
+
+    img {
         margin-left: 10px;
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 
     div {
         float: left;
         margin-right: 15px;
+    }
+
+    form {
+        margin-top: 10px;
     }
 
     label {
@@ -334,6 +385,10 @@ li {
 
     input {
         width: 200px;
+    }
+
+    #oauth-auth {
+        margin-top: 20px;
     }
 }
 
@@ -357,11 +412,20 @@ li {
 
 .endpoint {
     margin: 0;
+    background-color: #f9f9f9;
     border-bottom: 1px solid #eee;
     @include clearfix;
+    @include transition-property(background-color);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease);
+
+    &.expanded {
+        background-color: #fff;                                                                   
+    }
 
     & > .title {
-        padding: 20px 0 10px;
+        font-weight: normal;
+        padding: 20px 0 10px 10px;
         @include clearfix;
 
         & .name {
@@ -400,6 +464,40 @@ li {
     @include border-radius(5px);
     margin: 10px 0;
 
+    div.headers {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-bottom: 15px;
+    
+        h4 {
+          margin-top: 0;
+        }
+                                                                                                                                                                                                               
+        .fields {
+          display: none;
+          padding: 0 15px;
+          margin-bottom: 15px;
+        }
+                                                                                                                                                                                                               
+        .indicator {
+          border-width: 5px;
+          border-color: transparent transparent transparent #333;
+          border-style: solid;
+          display: block;
+          float: left;
+          margin: 11px 0 0 10px;
+        }
+                                                                                                                                                                                                               
+        &.expanded .indicator {
+          border-color: #333 transparent transparent transparent;
+          margin-top: 14px;
+        }
+    }
+                                                                                                                                                                                                       
+    &:first-of-type {
+      margin-top: 0;
+    }
+
     .title {
         overflow: hidden;
         @include border-radius(5px);
@@ -422,6 +520,10 @@ li {
             margin: 0 10px 0;
             line-height: 33px;
             float: left;
+        }
+
+        .uri {
+            color: #777;
         }
 
         .name {
@@ -460,6 +562,17 @@ li {
         clear: both;
         padding: 15px;
         display: none;
+
+        a.clear-results {
+            color: red;
+            margin-left: 20px;
+            font-size: 12px;
+
+            &:hover {
+                background-color: red;
+                color: #fff;
+            }
+        }
     }
 
     table {
@@ -485,9 +598,25 @@ li {
         @include monospace;
     }
 
-    h2 {
+    td {
+        &.description {
+            font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        &.type  {
+            font-size: 12px;
+        }
+    }
+
+    h4 {
         margin-top: 15px;
         margin-bottom: 3px;
+
+        a.select-all {
+            font-size: 12px;
+            margin-left: 15px;
+        }
     }
 
     pre {
@@ -500,8 +629,14 @@ li {
             max-height: 500px;
         }
 
+        &.prettyprint {
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
         &.error {
             background-color: rgba(255,66,66,0.2);
+            border-color: rgba(255, 100, 100,0.5);
         }
     }
 }
@@ -563,7 +698,7 @@ li {
 }
 
 dl {
-  display: block;
+  display: inline-block;
   margin-bottom: 10px;
   font-weight: normal;
 }
@@ -584,6 +719,201 @@ dd {
   float: left;
 }
 
+/**/
+/* Seemingly newish stuff and my additions. */
+/**/
+
+/* Type-ahead search css */
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+}
+
+/* Used to hide endpoints and methods that do not match for a given search */
+.hide-this {
+    display: none;
+}
+
+/* Bookmark css */
+/* http://blog.avtex.com/2012/01/27/how-to-make-an-entire-div-clickable-with-css/ */
+div.clickable { /* Containing div must have a position value */
+    position:relative;
+}
+
+div.clickable a {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    text-decoration:none; /* Makes sure the link   doesn't get underlined */
+    /* Commenting out z-index as it is causing problems with search results
+    which also makes use of z-index. Can probably resolve conflict with 
+    different values.
+    z-index:10; */ /* raises anchor tag above everything else in div */
+    background-color:white; /*workaround to make clickable in IE */
+    opacity: 0; /*workaround to make clickable in IE */
+    filter: alpha(opacity=1); /*workaround to make clickable in IE */
+}
+
+/* Rotating minimize triangle */
+/* http://webdesigncrowd.com/animated-buttons-css3-transitions-transforms/ */ 
+
+.button-container{
+    position: relative; /*Important, Keeps the CSS3 Shapes in place*/
+    margin: 3px;
+    width: 25px;
+    height: 25px;
+    padding: 3px 0;
+}
+.arrow-container {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+    width: 25px;
+    height: 23px;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.arrow-down { 
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    font-size:0px;
+    line-height: 0px;
+}
+
+.rotate{
+    -webkit-transform: rotateZ(-90deg) translateX(5px);
+    -moz-transform: rotateZ(-90deg) translateX(5px);
+    transform: rotateZ(-90deg) translateX(5px);
+}
+
+/* Nested lists for nested PUT/POST content parameters */
+
+%border-spacing {
+    margin: {
+        top: 1%;
+        bottom: 1%;
+    }
+}
+
+%inline-lists {
+    display: inline-block;
+}
+
+@mixin content($method: 'get', $color: $get) {
+    .#{$method} div.content {
+        ul {
+            // ul generally represents rows. Using 'display: block' for line breaks.
+            display: block;
+            margin-left: 2%;
+            list-style: none;
+
+            // For 'ul' with the following classes, make their list elements in-line.
+            // Rows!
+            &.header, &.string, &.integer, &.enumerated, &.list {
+                @extend %border-spacing;
+
+                & > li {
+                    @extend %inline-lists;
+                    &.parameter {
+                        margin-right: 3em;
+                    }
+                }
+                
+                border-bottom: 1px solid darken($color, 20%);
+                padding-top: 4px;
+                padding-bottom: 10px;
+            }
+
+            &.header {
+                font-weight: bold;
+                > li.parameter{
+                    width: 8em;
+                }
+            }
+
+            &.collection, &.object {
+                @extend %border-spacing;
+
+                // Making the following list elements into a row since the parameter
+                // list element will contain a 'ul' and start on the following line
+                & > li.name, & > li.type, & > li.description {
+                    @extend %inline-lists;
+                }
+
+                // Remove left margin for the collection/object parameter container.
+    /* May want to just setup ul.subcontainer and style that instead. */
+                & > li.parameter > ul {
+                    margin-left: 0;
+                }
+            }
+
+            // Spacing between list elements.
+            // Don't think text is wrapped like it would be in table cells,
+            // should check on this. 
+            li {
+                &.name {
+                    width: 8em;
+                    word-wrap: break-word;
+                    vertical-align: top;
+                }
+                &.type {
+                    width: 8em;
+                    vertical-align: top;
+                }
+                &.description {
+                    width: 27em;
+                    word-wrap: break-word;
+                    vertical-align: top;
+                }
+            }
+        }
+
+        ul.collection ul.parameters {
+            background-color: saturate(darken($color, 5%), 30%);
+            @include border-radius(5px);
+        }
+
+        ul.collection ul.parameters ul.collection ul.parameters {
+            background-color: saturate(darken($color, 10%), 20%);
+            @include border-radius(5px);
+        }
+
+        ul.collection ul.parameters ul.collection ul.parameters ul.collection ul.parameters {
+            background-color: saturate(darken($color, 15%), 10%);
+            @include border-radius(5px);
+        }
+
+        /* Initial alignment */
+        // This needs to go at the end of the div.content block,
+        // otherwise 'div.content ul' seems to override the rule.
+        > ul {
+            margin-left: 0;
+            > li > ul {
+                margin-left: 0;
+            }
+        }
+
+        // In the event that things are so deeply nested, this will make it possible
+        // to see nested content parameters.
+        overflow-x: scroll;
+    }
+}
+
+/* Only need this for PUT and POST methods, GET and DELETE won't have content
+    blocks. Or at least don't currently.
+ */
+@include content('post', $post);
+@include content('put', $put);
 
 @media all and (orientation:portrait) {
 }
@@ -595,28 +925,26 @@ dd {
 }
 
 @media print {
-      * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
-      -ms-filter: none !important; }
- /* Black prints faster: sanbeiji.com/archives/953 */
-      a, a:visited { color: #444 !important; text-decoration: underline; }
+    * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+    -ms-filter: none !important; }
+    /* Black prints faster: sanbeiji.com/archives/953 */
+    a, a:visited { color: #444 !important; text-decoration: underline; }
 
-      a[href]:after { content: " (" attr(href) ")"; }
+    a[href]:after { content: " (" attr(href) ")"; }
 
-      abbr[title]:after { content: " (" attr(title) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
 
-      .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-  /* Don't show links for images, or javascript/internal links */
-      pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+    /* Don't show links for images, or javascript/internal links */
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
 
-      thead { display: table-header-group; }
- /* css-discuss.incutio.com/wiki/Printing_Tables */
-      tr, img { page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    /* css-discuss.incutio.com/wiki/Printing_Tables */
+    tr, img { page-break-inside: avoid; }
 
-      @page { margin: 0.5cm; }
+    @page { margin: 0.5cm; }
 
-      p, h2, h3 { orphans: 3; widows: 3; }
+    p, h2, h3 { orphans: 3; widows: 3; }
 
-      h2, h3{ page-break-after: avoid; }
-
-  }
-
+    h2, h3{ page-break-after: avoid; }
+}
