@@ -1,3 +1,184 @@
+Features introduced  in this branch:
+====================================
+
+Bookmarks
+---------
+Endpoints and methods are now links. When the url entered is a linked item, that item will be expanded upon page load.
+
+Search
+------
+Whatever term is typed into the search box, that term will be searched for in the json configuration file; API names (endpoint names) are not included in the search [probably something that should be changed].
+
+Split Configuration
+-------------------
+This function was developed with the assumption that the starting input
+would be the main api file, which would look like the following:
+
+```js
+{ "endpoints":
+    [...]
+}
+```
+
+The include statement syntax looks like this:
+
+```js
+{
+    "external": {
+        "href": "./api_name/data.json",
+        "type": "list"
+    }
+}
+```
+
+```js
+{
+    "external": {
+        "href": "file:///user/home/api.json",
+    }
+}
+```
+
+"type": "list" is used only when the contents of the file to be included is a list object 
+that will be merged into an existing list. 
+An example would be storing all the get methods for an endpoint as a list of objects in 
+an external file.
+
+API Description Anywhere
+------------------------
+If one has a sufficiently large API that splitting it up would make it more
+manageable, perhaps it would be nice to have the API description stored in a
+seperate repository, and imported as a sub-module. (To my knowledge) git 
+sub-modules can only exist in the top level directory of a project.
+
+This feature allows you to define where to look for an API description file,
+beyond the default location of '/public/data/' in the IODocs installation 
+directory.
+
+Example configuration:
+```js
+"requestbin": {
+    "name": "Requestb.in",
+    "protocol": "http",
+    "baseURL": "requestb.in",
+    "publicPath": "/",
+    "href": "file:///user/home/api/"
+}
+```
+Given the above configuration, when looking for the API description file,
+instead of looking in 'IODocs/public/data/', it will look in '/user/home/api'.
+This works well with the split configuration feature. If the 'href' property
+is not defined in the config file, the default location of 'IODocs/public/data/'
+will be used instead.
+
+This feature is currently only setup for files on disk, but could be adapted to
+using descriptions located on the web as well.
+
+Future functionality:
+    { "href": "http://www.example.com/foo.json" }
+The function would return the parsed JSON data from foo.json, dealing
+with file retrieval from the web.
+
+PUT and POST content body
+=========================
+### Replaces jQuery 1.6 with jQuery 1.9.0
+Content parameters show what can be entered for POST and PUT methods. When a method's parameters are filled out, the method's corresponding text area will show what the JSON form would look like.
+
+*Note*: Perhaps there's a better term than 'content parameters', but I do not know it. I call them such as they appear under the word 'Content' in the display, and in the 'content' block in the api description file.
+
+*Note 2*: 'content' and 'contentType' are two variables introduced in this fork by @dgc-wh to be able to send the content body as part of PUT and POST requests. 'content' replaces the 'requestBody' variable.
+
+A few new types are introduced specifically for content parameters.
+* collection - a list of objects belonging to a property. eg - "collection" : [{ "prop": "val", "prop2": "val2" }, { "prop3": "val3", "prop4": "val4" }]
+* object - a set of properties and values belonging to a single property. eg. - "obj" : { "prop": "val", "prop2": "val2" }
+* list - a list of values belonging to a property. eg. - "list" : [ "val", "val2", "val3" ]
+
+Here is an example api that shows usage of all of these new types. 
+
+```js
+{
+    "endpoints": [
+        {
+            "name": "Testing API",
+            "methods": [
+                {
+                    "MethodName": "Modify an application",
+                    "Synopsis": "Modify a single application | stub",
+                    "HTTPMethod": "PUT",
+                    "URI": "/application/:app_id",
+                    "RequiresOAuth": "N",
+                    "content": {
+                        "schema":{"type":"string"},
+                        "contentType":["application/json","application/xml"],
+                        "parameters": [
+                            {
+                                "Name": "scan_schedule",
+                                "Required": "N",
+                                "Type": "object",
+                                "Description": "| stub",
+                                "parameters": [
+                                    {
+                                        "Name": "specs",
+                                        "Required": "N",
+                                        "Default": "",
+                                        "Type": "collection",
+                                        "Description": "",
+                                        "parameters": [
+                                            {
+                                                "Name": "type",
+                                                "Required": "N",
+                                                "Default": "",
+                                                "Type": "string",
+                                                "Description": ""
+                                            },
+                                            {
+                                                "Name": "cron_spec",
+                                                "Required": "N",
+                                                "Default": "",
+                                                "Type": "string",
+                                                "Description": ""
+                                            },
+                                            {
+                                                "Name": "duration",
+                                                "Required": "N",
+                                                "Default": "",
+                                                "Type": "integer",
+                                                "Description": "The unit of measure is 'seconds'."
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "exclude_dirs",
+                                        "Required": "N",
+                                        "Type": "list",
+                                        "Description": "List of directories to be excluded. | stub",
+                                        "parameters": [
+                                            {
+                                                "Required": "N",
+                                                "Type": "string"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "parameters": [
+                        {
+                            "Name": "app_id",
+                            "Required": "Y",
+                            "Type": "integer",
+                            "Description": "Application id of application to be modified. | stub"
+                        }                 
+                    ]
+                }                         
+            ]                             
+        }                                 
+    ]
+}    
+```
+
+
 I/O Docs - Open Source in Node.js
 =================================
 Copyright 2012 Mashery, Inc.
@@ -265,12 +446,12 @@ Line:
     "oauth" : {
        "type": "three-legged",
        "requestURL": "https://api.twitter.com/oauth/request_token",
-       "signinURL": "https://api.twitter.com/oauth/authorize?oauth_token="
+       "signinURL": "https://api.twitter.com/oauth/authorize?oauth_token=",
        "accessURL": "https://api.twitter.com/oauth/access_token",
        "version": "1.0",
-       "crypt": "HMAC-SHA1",
-   }
-   "keyParam": "",
+       "crypt": "HMAC-SHA1"
+   },
+   "keyParam": ""
 }
 ```
 

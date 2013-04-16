@@ -1,3 +1,4 @@
+include mixins/content_parameters
 h1=apiInfo.name 
 - if (session.authed && apiInfo.oauth && apiInfo.oauth.type =='three-legged')
     - var authed ='authed'
@@ -39,6 +40,13 @@ form#credentials
                  div
                     input(name='oauth', value='Authenticate with OAuth', type='submit', id='oauth-auth')
 
+br
+div
+    form#searchForm
+        label(for='search1') Search&nbsp;
+        input(id='search1')
+    a#clear-search(href='#') Clear search
+
 div(id='controls')
     ul
         li
@@ -50,7 +58,8 @@ ul
     - each endpoint in apiDefinition.endpoints
         li.endpoint
             h3.title
-                span.name=endpoint.name
+                span.name
+                    a(href='#'+endpoint.name.replace(/\s/g, '-'))=endpoint.name
                 ul.actions
                     li.list-methods
                         a(href='#') List Methods
@@ -65,7 +74,9 @@ ul
                     - else
                         - var secure =''
                     li(class='method ' + httpmethod + ' ' + secure)
-                        div.title
+                        div.title.clickable
+                            - var methodLink = (endpoint.name + '-' + method.HTTPMethod + '-' + method.MethodName).replace(/\s/g, '-')
+                            a(href='#'+methodLink) 
                             span.http-method #{method.HTTPMethod}
                             span.name #{method.MethodName}
                             span.uri #{method.URI}
@@ -84,6 +95,7 @@ ul
                                             th Parameter
                                             th Value
                                             th Type
+                                            th Location
                                             th Description
                                     tbody
                                         - var paramCount =0
@@ -119,7 +131,10 @@ ul
                                                                            option(value=choice) #{choice}
                                                       - else
                                                           input(name='params[' + parameter.Name + ']', value=parameter.Default, placeholder=className)
+                                                          input(type='hidden', name='locations['+parameter.Name+']', value=parameter.Location || 'query')
                                                   td.type=parameter.Type
+                                                  td.location
+                                                      p=parameter.Location || 'query'
                                                   td.description
                                                       p=parameter.Description || 'No description'
                                                       - if (parameter.Type =='enumerated' && parameter.EnumeratedDescription)
@@ -152,17 +167,21 @@ ul
                                                         a(href='#', class='remove') Remove
                                         a(href='#', class='add-headers') Add Header
                                     // Create header fields and button to add/remove headers.
+
                             - if (method.content)
                                 div.content
                                     h4.title
                                         div.indicator
                                         span Content
+                                    - if (method.content.parameters != undefined)
+                                        - if (method.content.parameters.length > 0)
+                                            mixin content(apiInfo, method.content.parameters)
                                     div.contentType
                                         select(name='contentType')
                                             - each choice in method.content.contentType
                                                 option(value=choice) #{choice}
                                     div.fields
-                                        textarea(columns='80', rows='10', name='requestContent', placeholder='{}')
-                                        a(href='#', class='remove') Remove
+                                        textarea(columns='80', rows='10', id='requestContent', name='requestContent', placeholder='{}')
+                                        pre(class='requestContent prettyprint')
                             - if (!method['read-only'])
                                 input(type='submit', id=method.MethodName, value='Try it!')
