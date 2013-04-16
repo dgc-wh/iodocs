@@ -1,3 +1,12 @@
+/* Colors */
+/* Mixins */
+/*
+  Setting colors for a method container, the form, and http method indicator
+*/
+/*
+  font-family for monospace
+*/
+/* line 38, scss/style.scss */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
 q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
 th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -9,51 +18,59 @@ th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgr
   vertical-align: baseline;
 }
 
+/* line 47, scss/style.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+/* line 51, scss/style.scss */
 blockquote, q {
   quotes: none;
 }
 
+/* line 55, scss/style.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
 
+/* line 60, scss/style.scss */
 #io-footer {
   margin-top: 25px;
 }
-
-#io-footer a{
+/* line 63, scss/style.scss */
+#io-footer a {
   text-decoration: none;
   color: inherit;
 }
-
+/* line 67, scss/style.scss */
 #io-footer a:hover {
   text-decoration: underline;
   color: inherit;
 }
 
+/* line 74, scss/style.scss */
 .f-left {
   font-size: 8pt;
   text-align: left;
   float: left;
 }
 
+/* line 80, scss/style.scss */
 .f-right {
   font-size: 8pt;
   text-align: right;
   float: right;
 }
 
+/* line 86, scss/style.scss */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
 
+/* line 92, scss/style.scss */
 mark {
   background-color: #ff9;
   color: #000;
@@ -61,40 +78,47 @@ mark {
   font-weight: bold;
 }
 
+/* line 99, scss/style.scss */
 del {
   text-decoration: line-through;
 }
 
+/* line 104, scss/style.scss */
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
 
+/* line 109, scss/style.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+/* line 114, scss/style.scss */
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
 }
 
+/* line 124, scss/style.scss */
 input,
 select {
   vertical-align: middle;
 }
 
+/* line 128, scss/style.scss */
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small;
 }
 
+/* line 136, scss/style.scss */
 select,
 input,
 textarea,
@@ -102,6 +126,7 @@ button {
   font: 99% sans-serif;
 }
 
+/* line 143, scss/style.scss */
 pre,
 code,
 kbd,
@@ -109,38 +134,46 @@ samp {
   font-family: monospace, sans-serif;
 }
 
+/* line 147, scss/style.scss */
 html {
   overflow-y: scroll;
 }
 
+/* line 151, scss/style.scss */
 a:link {
   -webkit-tap-highlight-color: #ff5e99;
 }
 
+/* line 156, scss/style.scss */
 a:hover,
 a:active {
   outline: none;
 }
 
+/* line 162, scss/style.scss */
 a,
 a:active,
 a:visited {
   color: #607890;
 }
 
+/* line 166, scss/style.scss */
 a:hover {
   color: #036;
 }
 
+/* line 171, scss/style.scss */
 ul,
 ol {
   margin-left: 2em;
 }
 
+/* line 175, scss/style.scss */
 ol {
   list-style-type: decimal;
 }
 
+/* line 180, scss/style.scss */
 nav ul,
 nav li {
   margin: 0;
@@ -148,19 +181,23 @@ nav li {
   list-style-image: none;
 }
 
+/* line 186, scss/style.scss */
 small {
   font-size: 85%;
 }
 
+/* line 191, scss/style.scss */
 strong,
 th {
   font-weight: bold;
 }
 
+/* line 195, scss/style.scss */
 td {
   vertical-align: top;
 }
 
+/* line 200, scss/style.scss */
 sub,
 sup {
   font-size: 75%;
@@ -168,14 +205,17 @@ sup {
   position: relative;
 }
 
+/* line 206, scss/style.scss */
 sup {
   top: -0.5em;
 }
 
+/* line 210, scss/style.scss */
 sub {
   bottom: -0.25em;
 }
 
+/* line 214, scss/style.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -183,27 +223,33 @@ pre {
   padding: 15px;
 }
 
+/* line 222, scss/style.scss */
 .ie6 legend,
 .ie7 legend {
   margin-left: -7px;
 }
 
+/* line 226, scss/style.scss */
 input[type="radio"] {
   vertical-align: text-bottom;
 }
 
+/* line 230, scss/style.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
 }
 
+/* line 234, scss/style.scss */
 .ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
+/* line 238, scss/style.scss */
 .ie6 input {
   vertical-align: text-bottom;
 }
 
+/* line 246, scss/style.scss */
 label,
 input[type="button"],
 input[type="submit"],
@@ -212,6 +258,7 @@ button {
   cursor: pointer;
 }
 
+/* line 253, scss/style.scss */
 button,
 input,
 select,
@@ -221,235 +268,251 @@ textarea {
   margin: 0;
 }
 
+/* line 259, scss/style.scss */
 textarea {
   overflow: auto;
+  width: 60%;
 }
 
+/* line 265, scss/style.scss */
 input::-moz-focus-inner,
 button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
+/* line 271, scss/style.scss */
 input:invalid,
 textarea:invalid {
-  -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
-  -o-border-radius: 1px;
+  -moz-border-radius: 1px;
   -ms-border-radius: 1px;
-  -khtml-border-radius: 1px;
+  -o-border-radius: 1px;
   border-radius: 1px;
-  -moz-box-shadow: 0, 0, 5px, red;
   -webkit-box-shadow: 0, 0, 5px, red;
-  -o-box-shadow: 0, 0, 5px, red;
+  -moz-box-shadow: 0, 0, 5px, red;
   box-shadow: 0, 0, 5px, red;
 }
 
+/* line 277, scss/style.scss */
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
 }
 
-::selection,
-::-moz-selection {
+/* line 281, scss/style.scss */
+::selection, ::-moz-selection {
   background: #f6f5c1;
   color: #444;
   text-shadow: none;
 }
 
+/* line 295, scss/style.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
+/* line 303, scss/style.scss */
 body,
 select,
 input,
 textarea {
   color: #444;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* line 308, scss/style.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+/* line 312, scss/style.scss */
 html {
   height: 100%;
 }
 
+/* line 316, scss/style.scss */
 body {
   width: 960px;
   margin: 15px auto;
   padding-bottom: 20px;
 }
 
+/* line 322, scss/style.scss */
 h1 {
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
+/* line 328, scss/style.scss */
 h2 {
   font-weight: normal;
   font-size: 18px;
   margin-bottom: 15px;
 }
 
+/* line 333, scss/style.scss */
 h4 {
   font-weight: normal;
   font-size: 14px;
 }
 
+/* line 337, scss/style.scss */
 ul {
   margin: 0;
 }
 
+/* line 341, scss/style.scss */
 li {
   list-style: none;
   margin-left: 0;
 }
 
+/* line 346, scss/style.scss */
 .credentials {
   background-color: #f4f4e1;
   border: 1px solid #cbcb71;
-  -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   overflow: hidden;
   *zoom: 1;
   padding: 15px;
 }
-
+/* line 353, scss/style.scss */
 .credentials.authed {
   background-color: #d6f6bd;
   border-color: #86bf6a;
   padding: 10px;
 }
-
+/* line 359, scss/style.scss */
 .credentials.authed form {
   display: none;
 }
-
+/* line 363, scss/style.scss */
 .credentials img {
   margin-left: 10px;
 }
-
+/* line 367, scss/style.scss */
 .credentials h2 {
   margin-bottom: 0;
 }
-
+/* line 371, scss/style.scss */
 .credentials div {
   float: left;
   margin-right: 15px;
 }
-
+/* line 376, scss/style.scss */
 .credentials form {
   margin-top: 10px;
 }
-
+/* line 380, scss/style.scss */
 .credentials label {
   font-weight: bold;
   display: block;
   margin-bottom: 3px;
 }
-
+/* line 386, scss/style.scss */
 .credentials input {
   width: 200px;
 }
-
+/* line 390, scss/style.scss */
 .credentials #oauth-auth {
   margin-top: 20px;
 }
 
+/* line 395, scss/style.scss */
 #controls {
   overflow: hidden;
   *zoom: 1;
   margin-top: 10px;
-  border: 1px solid #999;
+  border: 1px solid #999999;
   border-width: 1px 0;
   padding: 10px 0;
 }
-
+/* line 402, scss/style.scss */
 #controls li {
   padding-right: 10px;
   float: left;
 }
-
+/* line 406, scss/style.scss */
 #controls li:not(:first-child) {
   padding-left: 10px;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #dddddd;
 }
 
+/* line 413, scss/style.scss */
 .endpoint {
   margin: 0;
   background-color: #f9f9f9;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   overflow: hidden;
   *zoom: 1;
-  -moz-transition-property: background-color;
   -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
   -o-transition-property: background-color;
   transition-property: background-color;
-  -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -moz-transition-timing-function: ease;
   -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
   -o-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-
+/* line 422, scss/style.scss */
 .endpoint.expanded {
   background-color: #fff;
 }
-
+/* line 426, scss/style.scss */
 .endpoint > .title {
   font-weight: normal;
   padding: 20px 0 10px 10px;
   overflow: hidden;
   *zoom: 1;
 }
-
+/* line 431, scss/style.scss */
 .endpoint > .title .name {
   font-size: 18px;
   float: left;
 }
-
+/* line 435, scss/style.scss */
 .endpoint > .title .name:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-
+/* line 441, scss/style.scss */
 .endpoint > .title .actions {
   float: right;
 }
-
+/* line 444, scss/style.scss */
 .endpoint > .title .actions li {
   float: left;
   padding: 0 10px;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #dddddd;
 }
-
+/* line 450, scss/style.scss */
 .endpoint > .title .actions li:first-child {
   border: 0;
 }
 
+/* line 457, scss/style.scss */
 .methods {
   display: none;
 }
 
+/* line 461, scss/style.scss */
 .method {
   font-size: 14px;
-  border: 1px solid #eee;
-  -moz-border-radius: 5px;
+  border: 1px solid #eeeeee;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   margin: 10px 0;
   /*    &.authrequired .http-method {
@@ -458,235 +521,237 @@ li {
           background-position: 7px 50%;
       }*/
 }
-
+/* line 467, scss/style.scss */
 .method div.headers {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 15px;
 }
-
+/* line 472, scss/style.scss */
 .method div.headers h4 {
   margin-top: 0;
 }
-
+/* line 476, scss/style.scss */
 .method div.headers .fields {
   display: none;
   padding: 0 15px;
   margin-bottom: 15px;
 }
-
+/* line 482, scss/style.scss */
 .method div.headers .indicator {
   border-width: 5px;
-  border-color: transparent transparent transparent #333;
+  border-color: transparent transparent transparent #333333;
   border-style: solid;
   display: block;
   float: left;
   margin: 11px 0 0 10px;
 }
-
+/* line 491, scss/style.scss */
 .method div.headers.expanded .indicator {
-  border-color: #333 transparent transparent transparent;
+  border-color: #333333 transparent transparent transparent;
   margin-top: 14px;
 }
-
+/* line 497, scss/style.scss */
 .method:first-of-type {
   margin-top: 0;
 }
-
+/* line 501, scss/style.scss */
 .method .title {
   overflow: hidden;
-  -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
 }
-
+/* line 505, scss/style.scss */
 .method .title:hover {
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
-
+/* line 509, scss/style.scss */
 .method .title:hover span {
   text-decoration: underline;
 }
-
+/* line 512, scss/style.scss */
 .method .title:hover span.http-method {
   text-decoration: none;
 }
-
+/* line 519, scss/style.scss */
 .method .title span {
   margin: 0 10px 0;
   line-height: 33px;
   float: left;
 }
-
+/* line 525, scss/style.scss */
 .method .title .uri {
   color: #777;
 }
-
+/* line 529, scss/style.scss */
 .method .title .name {
   font-size: 16px;
 }
-
+/* line 533, scss/style.scss */
 .method .title .description {
   float: right;
   font-size: 12px;
   text-align: right;
 }
-
+/* line 539, scss/style.scss */
 .method .title .http-method {
   padding: 0 10px;
   width: 40px;
   font-size: 12px;
   text-align: center;
   margin: 0;
-  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Bitstream Vera Mono', monospace;
-  -moz-border-radius: 5px;
+  font-family: "Inconsolata", "Monaco", "Consolas", "Bitstream Vera Mono", monospace;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   color: #fff;
   line-height: 33px;
   float: left;
 }
-
+/* line 561, scss/style.scss */
 .method form {
   clear: both;
   padding: 15px;
   display: none;
 }
-
+/* line 566, scss/style.scss */
 .method form a.clear-results {
   color: red;
   margin-left: 20px;
   font-size: 12px;
 }
-
+/* line 571, scss/style.scss */
 .method form a.clear-results:hover {
   background-color: red;
   color: #fff;
 }
-
+/* line 578, scss/style.scss */
 .method table {
   margin-bottom: 15px;
   width: 100%;
 }
-
+/* line 583, scss/style.scss */
 .method tr.required {
   font-weight: bold;
 }
-
+/* line 587, scss/style.scss */
 .method th {
   font-weight: bold;
   text-align: left;
 }
-/* line 569, scss/style.scss */
+/* line 592, scss/style.scss */
 .method th, .method td {
   padding: 5px;
   vertical-align: middle;
 }
-
+/* line 597, scss/style.scss */
 .method td, .method pre {
-  font-family: 'Inconsolata', 'Monaco', 'Consolas', 'Bitstream Vera Mono', monospace;
+  font-family: "Inconsolata", "Monaco", "Consolas", "Bitstream Vera Mono", monospace;
 }
-
+/* line 602, scss/style.scss */
 .method td.description {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
-
+/* line 607, scss/style.scss */
 .method td.type {
   font-size: 12px;
 }
-
+/* line 612, scss/style.scss */
 .method h4 {
   margin-top: 15px;
   margin-bottom: 3px;
 }
-
+/* line 616, scss/style.scss */
 .method h4 a.select-all {
   font-size: 12px;
   margin-left: 15px;
 }
-
+/* line 622, scss/style.scss */
 .method pre {
   font-size: 12px;
-  padding: 10px;
   overflow: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.4);
 }
-
+/* line 628, scss/style.scss */
 .method pre.response {
   max-height: 500px;
 }
-
+/* line 632, scss/style.scss */
 .method pre.prettyprint {
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-
+/* line 637, scss/style.scss */
 .method pre.error {
-  background-color: rgba(255, 245, 245, 0.9);
+  background-color: rgba(255, 66, 66, 0.2);
   border-color: rgba(255, 100, 100, 0.5);
 }
 
+/* line 15, scss/style.scss */
 .get {
   background: #e7f0f7;
   border-color: #aecce4;
 }
-
+/* line 19, scss/style.scss */
 .get .http-method {
   background-color: #0061ac;
 }
-
+/* line 23, scss/style.scss */
 .get th, .get td {
   border-bottom: 1px solid #9ac0de;
 }
 
+/* line 15, scss/style.scss */
 .post {
   background: #e7f6ec;
   border-color: #afe1c0;
 }
-
+/* line 19, scss/style.scss */
 .post .http-method {
   background-color: #04a73a;
 }
-
+/* line 23, scss/style.scss */
 .post th, .post td {
   border-bottom: 1px solid #9ddab1;
 }
 
+/* line 15, scss/style.scss */
 .put {
   background: #f9f2e9;
   border-color: #e9cead;
 }
-
+/* line 19, scss/style.scss */
 .put .http-method {
   background-color: #b06300;
 }
-
+/* line 23, scss/style.scss */
 .put th, .put td {
   border-bottom: 1px solid #e3c399;
 }
 
+/* line 15, scss/style.scss */
 .delete {
   background: #f5e8e8;
   border-color: #deb3b3;
 }
-
+/* line 19, scss/style.scss */
 .delete .http-method {
   background-color: #a20909;
 }
-
+/* line 23, scss/style.scss */
 .delete th, .delete td {
   border-bottom: 1px solid #d6a1a1;
 }
 
+/* line 650, scss/style.scss */
 .ir {
   display: block;
   text-indent: -999em;
@@ -696,6 +761,7 @@ li {
   direction: ltr;
 }
 
+/* line 659, scss/style.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -707,6 +773,7 @@ li {
   width: 1px;
 }
 
+/* line 671, scss/style.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -717,10 +784,12 @@ li {
   width: auto;
 }
 
+/* line 680, scss/style.scss */
 .invisible {
   visibility: hidden;
 }
 
+/* line 685, scss/style.scss */
 .clearfix:before,
 .clearfix:after {
   content: "\0020";
@@ -729,37 +798,347 @@ li {
   overflow: hidden;
 }
 
+/* line 692, scss/style.scss */
 .clearfix:after {
   clear: both;
 }
 
+/* line 696, scss/style.scss */
 .clearfix {
   zoom: 1;
 }
 
+/* line 700, scss/style.scss */
 dl {
-  display: block;
+  display: inline-block;
   margin-bottom: 10px;
   font-weight: normal;
 }
+
+/* line 705, scss/style.scss */
 dt {
   width: 30%;
-  border-top: 1px rgba(0,0,0,.2) solid;
-  padding-top: 5px;
-  margin-top: 5px;
-  display: block;
-  float: left;
-}
-dd {
-  width: 70%;
-  border-top: 1px rgba(0,0,0,.2) solid;
+  border-top: 1px rgba(0, 0, 0, 0.2) solid;
   padding-top: 5px;
   margin-top: 5px;
   display: block;
   float: left;
 }
 
+/* line 713, scss/style.scss */
+dd {
+  width: 70%;
+  border-top: 1px rgba(0, 0, 0, 0.2) solid;
+  padding-top: 5px;
+  margin-top: 5px;
+  display: block;
+  float: left;
+}
+
+/**/
+/* New additions. */
+/**/
+/* Type-ahead search css */
+/* line 727, scss/style.scss */
+.ui-autocomplete-category {
+  font-weight: bold;
+  padding: 0.2em 0.4em;
+  margin: 0.8em 0 0.2em;
+  line-height: 1.5;
+}
+
+/* Used to hide endpoints and methods that do not match for a given search */
+/* line 735, scss/style.scss */
+.hide-this {
+  display: none;
+}
+
+/* Bookmark css - Making the entire method bar clickable.*/
+/* http://blog.avtex.com/2012/01/27/how-to-make-an-entire-div-clickable-with-css/ */
+/* line 741, scss/style.scss */
+div.clickable {
+  /* Containing div must have a position value */
+  position: relative;
+}
+
+/* line 745, scss/style.scss */
+div.clickable a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  /* Makes sure the link   doesn't get underlined */
+  /* Commenting out z-index as it is causing problems with search results
+  which also makes use of z-index. Can probably resolve conflict with 
+  different values.
+  z-index:10; */
+  /* raises anchor tag above everything else in div */
+  background-color: white;
+  /*workaround to make clickable in IE */
+  opacity: 0;
+  /*workaround to make clickable in IE */
+  filter: alpha(opacity=1);
+  /*workaround to make clickable in IE */
+}
+
+/* Rotating minimize triangle */
+/* http://webdesigncrowd.com/animated-buttons-css3-transitions-transforms/ */
+/* line 764, scss/style.scss */
+.button-container {
+  position: relative;
+  /*Important, Keeps the CSS3 Shapes in place*/
+  margin: 3px;
+  width: 25px;
+  height: 25px;
+  padding: 3px 0;
+}
+
+/* line 771, scss/style.scss */
+.arrow-container {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
+  width: 25px;
+  height: 23px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+/* line 783, scss/style.scss */
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+/* line 793, scss/style.scss */
+.rotate {
+  -webkit-transform: rotateZ(-90deg) translateX(5px);
+  -moz-transform: rotateZ(-90deg) translateX(5px);
+  transform: rotateZ(-90deg) translateX(5px);
+}
+
+/* Nested lists for nested PUT/POST content parameters */
+/* line 801, scss/style.scss */
+.post div.content ul.header, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only, .post div.content ul.collection, .post div.content ul.object, .put div.content ul.header, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only, .put div.content ul.collection, .put div.content ul.object {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+/* line 808, scss/style.scss */
+.post div.content ul.header > li, .post div.content ul.string > li, .post div.content ul.integer > li, .post div.content ul.enumerated > li, .post div.content ul.list > li, .post div.content ul.list-only > li, .post div.content ul.collection > li.name, .post div.content ul.collection > li.type, .post div.content ul.collection > li.description, .post div.content ul.object > li.name, .post div.content ul.object > li.type, .post div.content ul.object > li.description, .put div.content ul.header > li, .put div.content ul.string > li, .put div.content ul.integer > li, .put div.content ul.enumerated > li, .put div.content ul.list > li, .put div.content ul.list-only > li, .put div.content ul.collection > li.name, .put div.content ul.collection > li.type, .put div.content ul.collection > li.description, .put div.content ul.object > li.name, .put div.content ul.object > li.type, .put div.content ul.object > li.description {
+  display: inline-block;
+}
+
+/* Only need this for PUT and POST methods, GET and DELETE won't have content
+    blocks. Or at least don't currently.
+ */
+/* line 813, scss/style.scss */
+.post div.content {
+  /* Darkening the background for collection parameters by nesting level, only goes 3 deep */
+  /* Initial alignment */
+  overflow-x: scroll;
+}
+/* line 814, scss/style.scss */
+.post div.content ul {
+  display: block;
+  margin-left: 2%;
+  list-style: none;
+  /* For list and list-only type parameters, add a bit of margin
+      for spacing between the added boxes. */
+}
+/* line 822, scss/style.scss */
+.post div.content ul.header, .post div.content ul.string, .post div.content ul.integer, .post div.content ul.enumerated, .post div.content ul.list, .post div.content ul.list-only {
+  border-bottom: 1px solid #9ddab1;
+  padding-top: 4px;
+  padding-bottom: 10px;
+}
+/* line 827, scss/style.scss */
+.post div.content ul.header > li.parameter, .post div.content ul.string > li.parameter, .post div.content ul.integer > li.parameter, .post div.content ul.enumerated > li.parameter, .post div.content ul.list > li.parameter, .post div.content ul.list-only > li.parameter {
+  margin-right: 3em;
+}
+/* line 837, scss/style.scss */
+.post div.content ul.header {
+  font-weight: bold;
+}
+/* line 839, scss/style.scss */
+.post div.content ul.header > li.parameter {
+  width: 8em;
+}
+/* line 844, scss/style.scss */
+.post div.content ul.collection, .post div.content ul.object {
+  /* May want to just setup ul.subcontainer and style that instead. */
+}
+/* line 855, scss/style.scss */
+.post div.content ul.collection > li.parameter > ul, .post div.content ul.object > li.parameter > ul {
+  margin-left: 0;
+}
+/* line 863, scss/style.scss */
+.post div.content ul.list-only > li.parameter > ul > li, .post div.content ul.list > li.parameter > ul > li {
+  margin-bottom: 4%;
+}
+/* line 872, scss/style.scss */
+.post div.content ul li.name {
+  width: 8em;
+  word-wrap: break-word;
+  vertical-align: top;
+}
+/* line 877, scss/style.scss */
+.post div.content ul li.type {
+  width: 8em;
+  vertical-align: top;
+}
+/* line 881, scss/style.scss */
+.post div.content ul li.description {
+  width: 27em;
+  word-wrap: break-word;
+  vertical-align: top;
+}
+/* line 890, scss/style.scss */
+.post div.content ul.collection ul.parameters {
+  background-color: #ccf8da;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 895, scss/style.scss */
+.post div.content ul.collection ul.parameters ul.collection ul.parameters {
+  background-color: #baf0cc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 900, scss/style.scss */
+.post div.content ul.collection ul.parameters ul.collection ul.parameters ul.collection ul.parameters {
+  background-color: #aae7be;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 908, scss/style.scss */
+.post div.content > ul {
+  margin-left: 0;
+}
+/* line 910, scss/style.scss */
+.post div.content > ul > li > ul {
+  margin-left: 0;
+}
+
+/* line 813, scss/style.scss */
+.put div.content {
+  /* Darkening the background for collection parameters by nesting level, only goes 3 deep */
+  /* Initial alignment */
+  overflow-x: scroll;
+}
+/* line 814, scss/style.scss */
+.put div.content ul {
+  display: block;
+  margin-left: 2%;
+  list-style: none;
+  /* For list and list-only type parameters, add a bit of margin
+      for spacing between the added boxes. */
+}
+/* line 822, scss/style.scss */
+.put div.content ul.header, .put div.content ul.string, .put div.content ul.integer, .put div.content ul.enumerated, .put div.content ul.list, .put div.content ul.list-only {
+  border-bottom: 1px solid #e3c399;
+  padding-top: 4px;
+  padding-bottom: 10px;
+}
+/* line 827, scss/style.scss */
+.put div.content ul.header > li.parameter, .put div.content ul.string > li.parameter, .put div.content ul.integer > li.parameter, .put div.content ul.enumerated > li.parameter, .put div.content ul.list > li.parameter, .put div.content ul.list-only > li.parameter {
+  margin-right: 3em;
+}
+/* line 837, scss/style.scss */
+.put div.content ul.header {
+  font-weight: bold;
+}
+/* line 839, scss/style.scss */
+.put div.content ul.header > li.parameter {
+  width: 8em;
+}
+/* line 844, scss/style.scss */
+.put div.content ul.collection, .put div.content ul.object {
+  /* May want to just setup ul.subcontainer and style that instead. */
+}
+/* line 855, scss/style.scss */
+.put div.content ul.collection > li.parameter > ul, .put div.content ul.object > li.parameter > ul {
+  margin-left: 0;
+}
+/* line 863, scss/style.scss */
+.put div.content ul.list-only > li.parameter > ul > li, .put div.content ul.list > li.parameter > ul > li {
+  margin-bottom: 4%;
+}
+/* line 872, scss/style.scss */
+.put div.content ul li.name {
+  width: 8em;
+  word-wrap: break-word;
+  vertical-align: top;
+}
+/* line 877, scss/style.scss */
+.put div.content ul li.type {
+  width: 8em;
+  vertical-align: top;
+}
+/* line 881, scss/style.scss */
+.put div.content ul li.description {
+  width: 27em;
+  word-wrap: break-word;
+  vertical-align: top;
+}
+/* line 890, scss/style.scss */
+.put div.content ul.collection ul.parameters {
+  background-color: #fce7cd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 895, scss/style.scss */
+.put div.content ul.collection ul.parameters ul.collection ul.parameters {
+  background-color: #f6dbb9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 900, scss/style.scss */
+.put div.content ul.collection ul.parameters ul.collection ul.parameters ul.collection ul.parameters {
+  background-color: #eecfa8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 908, scss/style.scss */
+.put div.content > ul {
+  margin-left: 0;
+}
+/* line 910, scss/style.scss */
+.put div.content > ul > li > ul {
+  margin-left: 0;
+}
+
+/* Existed previously, believe (perhaps incorrectly) @media declarations should
+ exist between style declarations, so moved to the end. */
 @media print {
+  /* line 940, scss/style.scss */
   * {
     background: transparent !important;
     color: black !important;
@@ -768,45 +1147,57 @@ dd {
     -ms-filter: none !important;
   }
 
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  /* line 943, scss/style.scss */
   a, a:visited {
-    color: #444 !important;
+    color: #444444 !important;
     text-decoration: underline;
   }
 
+  /* line 945, scss/style.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
+  /* line 947, scss/style.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
+  /* line 949, scss/style.scss */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
     content: "";
   }
 
+  /* Don't show links for images, or javascript/internal links */
+  /* line 951, scss/style.scss */
   pre, blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid;
   }
 
+  /* line 953, scss/style.scss */
   thead {
     display: table-header-group;
   }
 
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  /* line 955, scss/style.scss */
   tr, img {
     page-break-inside: avoid;
   }
 
   @page {
     margin: 0.5cm;
-  }
+}
 
+  /* line 959, scss/style.scss */
   p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
+  /* line 961, scss/style.scss */
   h2, h3 {
     page-break-after: avoid;
   }

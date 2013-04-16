@@ -34,12 +34,12 @@ var express     = require('express'),
     https       = require('https'),
     crypto      = require('crypto'),
     redis       = require('redis'),
+    pathy       = require('path'),
     RedisStore  = require('connect-redis')(express);
 
 // Configuration
 try {
-    var configJSON = fs.readFileSync(__dirname + "/config.json");
-    var config = JSON.parse(configJSON.toString());
+    var config = require('./config.json');
 } catch(e) {
     console.error("File config.json not found or is invalid.  Try: `cp config.json.sample config.json`");
     process.exit(1);
@@ -69,14 +69,16 @@ db.on("error", function(err) {
 //
 // Load API Configs
 //
-var apisConfig;
-fs.readFile(__dirname +'/public/data/apiconfig.json', 'utf-8', function(err, data) {
-    if (err) throw err;
-    apisConfig = JSON.parse(data);
+
+try {
+    var apisConfig = require('./public/data/apiconfig.json');
     if (config.debug) {
-         console.log(util.inspect(apisConfig));
+        console.log(util.inspect(apisConfig));
     }
-});
+} catch(e) {
+    console.error("File apiconfig.json not found or is invalid.");
+    process.exit(1);
+}
 
 //
 // Determine if we should launch as http/s and get keys and certs if needed
@@ -315,16 +317,31 @@ function processRequest(req, res, next) {
     };
 
     var reqQuery = req.body,
+        customHeaders = {},
         params = reqQuery.params || {},
         content = reqQuery.requestContent || '',
         contentType = reqQuery.contentType || '',
+        locations = reqQuery.locations || {},
         methodURL = reqQuery.methodUri,
         httpMethod = reqQuery.httpMethod,
         apiKey = reqQuery.apiKey,
         apiSecret = reqQuery.apiSecret,
-        apiName = reqQuery.apiName
+        apiName = reqQuery.apiName,
         apiConfig = apisConfig[apiName],
         key = req.sessionID + ':' + apiName;
+
+    // Extract custom headers from the params
+    for( var param in params ) 
+    {
+         if (params.hasOwnProperty(param)) 
+         {
+            if (params[param] !== '' && locations[param] == 'header' ) 
+            {
+                customHeaders[param] = params[param];
+                delete params[param];
+            }
+         }
+    }
 
     // Replace placeholders in the methodURL with matching params
     for (var param in params) {
@@ -347,16 +364,22 @@ function processRequest(req, res, next) {
     var baseHostInfo = apiConfig.baseURL.split(':');
     var baseHostUrl = baseHostInfo[0],
         baseHostPort = (baseHostInfo.length > 1) ? baseHostInfo[1] : "";
+    var headers = {};
+    for( header in apiConfig.headers )
+        headers[header] = apiConfig.headers[header];
+    for( header in customHeaders )
+        headers[header] = customHeaders[header];
 
     var paramString = query.stringify(params),
         privateReqURL = apiConfig.protocol + '://' + apiConfig.baseURL + apiConfig.privatePath + methodURL + ((paramString.length > 0) ? '?' + paramString : ""),
         options = {
-            headers: apiConfig.headers,
+            headers: headers,
             protocol: apiConfig.protocol + ':',
             host: baseHostUrl,
             port: baseHostPort,
             method: httpMethod,
-            path: apiConfig.publicPath + methodURL + ((paramString.length > 0) ? '?' + paramString : "")
+            path: apiConfig.publicPath + methodURL + ((paramString.length > 0) ? '?' + paramString : ""),
+            rejectUnauthorized: false
         };
 
     if (apiConfig.oauth) {
@@ -556,23 +579,19 @@ function processRequest(req, res, next) {
             options.headers = headers;
         }
 
-	if (content.length > 0) {
-            options.headers['Content-Length'] = content.length;
-        }
-
         if(options.headers === void 0){
             options.headers = {}
         }
         if (!options.headers['Content-Length']) {
-            if (requestBody) {
-                options.headers['Content-Length'] = requestBody.length;
+            if (content) {
+                options.headers['Content-Length'] = content.length;
             }
             else {
                 options.headers['Content-Length'] = 0;
             }
         }
 
-        if (!options.headers['Content-Type'] && requestBody) {
+        if (!options.headers['Content-Type'] && content) {
             options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
         }
 
@@ -650,13 +669,14 @@ function processRequest(req, res, next) {
             };
         });
 
-	if(content !== ''){
-	    apiCall.write(content,'utf-8');
+        if(content !== ''){
+            apiCall.write(content,'utf-8');
         }
         apiCall.end();
     }
 }
 
+var cachedApiInfo = [];
 
 // Dynamic Helpers
 // Passes variables to the view
@@ -693,12 +713,253 @@ app.dynamicHelpers({
     },
     apiDefinition: function(req, res) {
         if (req.params.api) {
-            var data = fs.readFileSync(__dirname + '/public/data/' + req.params.api + '.json');
-            return JSON.parse(data);
+            var data = getData(req.params.api);
+            processApiIncludes(data, req.params.api);
+            cachedApiInfo = data;
+            return data;
         }
     }
-})
+});
 
+/*
+   Can be called in the following ways:
+        getData("klout");
+        getData("klout", "./klout/get-methods.json");
+        getData("klout", "/user/home/klout/klout.json");
+        getData("klout", "/user/home/random/nonsense.json");
+
+*/
+function getData(api, passedPath) {
+    var end = ".json";
+    var loc;
+    // Error checking
+    if ( /[A-Za-z_\-\d]+/.test(api)) {
+        //console.log('Valid input for API name.');
+    }
+    else {
+        console.log('API name provided contains invalid characters.');        
+    }
+
+    /*
+       Check whether api-name given is in apiconfig.
+       Check whether api has 'href' property in config.
+       If so, check if 'href' property is of 'file' or 'htttp'.
+       If 'file', check that 'href' property contains a directory; print warning
+        if not a directory
+       Check if there was a second argument given (passedPath)
+       If passedPath, check whether it is a relative path (should start with './'
+        if it is).
+       Otherwise, check that the passedPath is of 'file' type and get the data
+        from it. Assuming a full path is being given.
+       If no passedPath, attempt to return the api-name.json file from the directory
+        given in the config file.
+       If no 'href' property in given config for given api name, but passedPath
+        exists with a relative directory, use default location and attempt to
+        return data.
+       If no 'href' property and no passedPath, attempt to get api-name.json from
+        default location (iodocs installation directory + '/public/data').
+       If given api name isn't found in the config file, print statement stating
+        as much.
+    */
+
+    if (apisConfig.hasOwnProperty(api)) {
+        if (apisConfig[api].hasOwnProperty('href')) {
+            loc = url.parse(apisConfig[api]['href']);
+
+            if (loc.protocol.match(/^file:$/)) {
+                // Need a directory check on loc.path here
+                // Not sure if that should be sync or async.
+                if (undefined !== passedPath) {
+                    if (/^.\//.test(passedPath)) {
+                        return require(pathy.resolve(loc.path, passedPath));
+                    }
+                    else if (url.parse(passedPath).protocol
+                            && url.parse(passedPath).protocol.match(/^file:$/)) {
+                        return require(passedPath);
+                    }
+                }
+                else {
+                    return require(pathy.join(loc.path + api + end));
+                }
+            }
+        }
+        else if (/^.\//.test(passedPath)) {
+            return require(pathy.resolve(__dirname + '/public/data/' , passedPath));
+        }
+        else {
+            return require(__dirname + '/public/data/' + api + '.json');
+        }
+    }
+    else {
+        console.log("'" + api + "' does not exist in config file.");
+    }
+}
+
+// This function was developed with the assumption that the starting input
+// would be the main api file, which would look like the following:
+//    { "endpoints":
+//        [...]
+//    }
+//
+// The include statement syntax looks like this:
+//    {
+//        "external":
+//        {
+//            "href": "./public/data/desired/data.json",
+//            "type": "list"
+//        }
+//    }
+// "type": "list" is used only when the contents of the file to be included is a list object 
+// that will be merged into an existing list. 
+// An example would be storing all the get methods for an endpoint as a list of objects in 
+// an external file.
+function processApiIncludes (jsonData, apiName) {
+    // used to determine object types in a more readable manner
+    var what = Object.prototype.toString;
+    var includeKeyword = 'external';
+    var includeLocation = 'href';
+
+    if (typeof jsonData === "object") {
+        for (var key in jsonData) {
+            // If an object's property contains an array, go through the objects in the array
+            //  Endpoints and Methods are examples of this
+            //  Endpoints contains a list of javascript objects, which are easily split into individual files.
+            //      Each endpoint is basically a 1 to 1 javascript object relationship
+            //  Methods aren't quite as nice.
+            //      It could be convenient to split methods into get/put/post/delete externals.
+            //      This then creates a 1 to many javascript object relationship
+            if (what.call(jsonData[key]) === '[object Array]') {
+                var i = jsonData[key].length;
+
+                // Iterating through the array in reverse so that if an element needs to be replaced
+                // by multiple elements, the array index does not need to be updated. 
+                while (i--) {
+                    var arrayObj = jsonData[key][i];
+                    if ( includeKeyword in arrayObj ) {
+                        var tempArray = getData(apiName, arrayObj[includeKeyword][includeLocation]);
+                        // 1 include request to be replaced by multiple objects (methods)
+                        if (arrayObj[includeKeyword]['type'] == 'list') {
+
+                            // recurse here to replace values of properties that may need replacing
+                            processApiIncludes(tempArray, apiName);
+                            // why isn't this jsonData[key][i]?
+                            //  Because the array itself is being replaced with an updated version
+                            jsonData[key] = mergeExternal(i, jsonData[key], tempArray);
+
+                        }
+                        // 1 include request to be replaced by 1 object (endpoint)
+                        else {
+                            jsonData[key][i] = tempArray;
+                            processApiIncludes(jsonData[key][i], apiName);
+                        }
+                    }
+                }
+            }
+
+            // If an object's property contains an include statement, this will handle it.
+            if (what.call(jsonData[key]) === '[object Object]') {
+                for (var property in jsonData[key]) {
+                    if (what.call(jsonData[key][property]) === '[object Object]') {
+                        if (includeKeyword in jsonData[key][property]) {
+                            jsonData[key][property] = getData(apiName, jsonData[key][property][includeKeyword][includeLocation]);
+                            processApiIncludes(jsonData[key][property], apiName);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Takes the array position of an element in array1, removes that element, 
+// and in its place, the contents of array2 are merged in.
+function mergeExternal (arrayPos, array1, array2) {
+    var a1_tail = array1.splice(arrayPos, array1.length);
+    a1_tail.splice(0, 1);
+    return array1.concat(array2).concat(a1_tail);
+}
+
+// Search function.
+// Expects processed API json data and a search term.
+// There should be no 'external' link objects present.
+function search (jsonData, searchTerm) {
+    // From: http://simonwillison.net/2006/Jan/20/escape/#p-6
+    var regexFriendly = function(text) {
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    };
+
+    // If ' OR ' is present in the search string, the search term will be split on ' OR ',
+    // and the first two parts will be used. These two parts will have spaces 
+    // stripped from them and then the regex term will present results that contain
+    // matches that have either term.
+    //
+    // If ' OR ' is not present, the given term will be searched for, spaces will not be 
+    // removed from the given term in this case.
+    var regex;
+    if (/\s+OR\s+/.test(searchTerm)) {
+        var terms = searchTerm.split(/\s+OR\s+/);
+        terms[0] = regexFriendly(terms[0].replace(/\s+/, ''));
+        terms[1] = regexFriendly(terms[1].replace(/\s+/, ''));
+        regex = new RegExp ( "("+terms[0]+"|"+terms[1]+")" , "i");
+    }
+    else {
+        var terms = searchTerm.split(/\s+/);
+        var regexString = "";
+        for (var t = 0; t < terms.length; t++) {
+            regexString += "(?=.*" + regexFriendly(terms[t]) + ")";
+        }
+        regex = new RegExp( regexString, "i" );
+    }
+
+    // Get a list of all methods from the data.
+    var searchMatches = [];
+
+    // Iterate through endpoints
+    for (var i = 0; i < jsonData.endpoints.length; i++) {
+        var object = jsonData.endpoints[i];
+
+        // Iterate through methods
+        for (var j = 0; j < object.methods.length; j++) {
+            if ( filterSearchObject(object.methods[j], regex) ) {
+                searchMatches.push({"label":object.methods[j]['MethodName'], "category": object.name, "type":object.methods[j]['HTTPMethod']});
+            }
+        }
+    }
+
+    return searchMatches;
+}
+
+// Method searching function
+// Recursively check properties of a method object for a match to the given search term.
+function filterSearchObject (randomThing, regex) {
+    var what = Object.prototype.toString;
+    if (what.call(randomThing) === '[object Array]') {
+        for (var i = 0; i < randomThing.length; i++) {
+            if (filterSearchObject(randomThing[i], regex)) {
+                return true;
+            }
+        }
+    }
+    else if (what.call(randomThing) === '[object Object]') {
+        for (var methodProperty in randomThing) {
+            if (randomThing.hasOwnProperty(methodProperty)) {
+                if (filterSearchObject(randomThing[methodProperty], regex)) {
+                    return true;
+                }
+            }
+        }
+    }
+    else if (what.call(randomThing) === '[object String]' || what.call(randomThing) === '[object Number]' ) {
+        if ( regex.test(randomThing)) {
+            return true;
+        }
+    }
+    else {
+        return false;
+    }
+
+    return false;
+}
 
 //
 // Routes
@@ -707,6 +968,20 @@ app.get('/', function(req, res) {
     res.render('listAPIs', {
         title: config.title
     });
+});
+
+//
+// Search function
+//
+// Note: If a change is made to app.js, the node process restarted, and the search 
+// function  is used immediately without restart, there will be an error coming from the 
+// search() function regarding the use of '.length'. Refresh the page, and the error 
+// will go away. A page refresh is necessary to create a cached version of the api 
+// which this route uses.
+//  Not sure what the fix for this is.
+app.get('/search', function(req, res) {
+    var searchTerm = decodeURIComponent(req.query.term);
+    res.send( search(cachedApiInfo, searchTerm) );
 });
 
 // Process the API request
@@ -746,6 +1021,8 @@ app.get('/:api([^\.]+)', function(req, res) {
 
 if (!module.parent) {
     var port = process.env.PORT || config.port;
-    app.listen(port);
-    console.log("Express server listening on port %d", app.address().port);
+    var l = app.listen(port);
+    l.on('listening', function(err) {
+        console.log("Express server listening on port %d", app.address().port);
+    });
 }

@@ -1,0 +1,102 @@
+mixin content(apiInfo, contentArray, className, noheader, rowType)
+    ul.parameters
+        - if (rowType == 'collection')
+            li.collection-original
+                div.button-container
+                    div.arrow-container
+                        a(href='#', onclick='return false', class='collection-minimize arrow-down')
+        - if (rowType == 'object')
+            li
+                div.button-container
+                    div.arrow-container
+                        a(href='#', onclick='return false', class='collection-minimize arrow-down')
+        - if (noheader === undefined) 
+            li
+                ul.header
+                    li.name Parameter
+                    li.parameter Value
+                    li.type Type
+                    li.description Description
+        - each parameter in contentArray
+            - if (parameter.Required =='Y')
+                - var required =true
+                - var className ='required'
+            - else
+                - var required =false
+                - var className =''
+            - if (rowType == 'collection')
+                li.collection-original
+                    mixin row(apiInfo, parameter, className)
+            - else
+                li
+                    mixin row(apiInfo, parameter, className)
+
+
+
+mixin row(apiInfo, parameter, className)
+    ul(class=parameter.Type)
+        - if (parameter.Type == 'object' || parameter.Type == 'collection')
+            li.name=parameter.Name
+                - if (parameter.Type == 'collection')
+                    a(href='#', class='add-collection button add', onclick='return false')
+                        img(src='/images/plus.png', style='margin-left: 10px;')
+            li.type=parameter.Type
+            li.description
+                mixin description(parameter)
+            li.parameter
+                mixin parameters(apiInfo, parameter, className)
+        - else if (parameter.Type == 'list' || parameter.Type == 'list-only')
+            li.name=parameter.Name
+                a(href='#', class='add-list button add', onclick='return false')
+                    img(src='/images/plus.png', style='margin-left: 10px;')
+            li.parameter
+                ul
+                    li 
+                        mixin parameters(apiInfo, parameter, className)
+            li.type=parameter.Type
+            li.description
+                mixin description(parameter)
+        - else
+            li.name=parameter.Name
+            li.parameter
+                mixin parameters(apiInfo, parameter, className)
+            li.type=parameter.Type
+            li.description
+                mixin description(parameter)
+
+mixin parameters(apiInfo, parameter, className)
+    - if (parameter.Type =='enumerated')
+        mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+    - else if (parameter.Type =='boolean')
+        mixin enumeratedOrBoolean(parameter, className, parameter.Type)
+    - else if (parameter.Type =='object' || parameter.Type =='collection')
+        - if (parameter.parameters != undefined)
+            - if (parameter.parameters.length > 0)
+                mixin content(apiInfo, parameter.parameters, className, true, parameter.Type)
+    - else
+        input(value=parameter.Default, placeholder=className)
+
+mixin enumeratedOrBoolean(parameter, className, paramType)
+     select(placeholder=className)
+          - if (parameter.Default =='')
+                  option(value='') 
+          - if (paramType == 'boolean')
+              - each choice in [apiInfo.booleanTrueVal,apiInfo.booleanFalseVal]
+                 - if (parameter.Default ==choice)
+                         option(value=choice, selected=true) #{choice}
+                 - else
+                         option(value=choice) #{choice}
+          - else if (paramType == 'enumerated')
+              - each choice in parameter.EnumeratedList
+                 - if (parameter.Default ==choice)
+                         option(value=choice, selected=true) #{choice}
+                 - else
+                         option(value=choice) #{choice}
+
+mixin description(parameter)
+    p=parameter.Description || 'No description'
+    - if (parameter.Type =='enumerated' && parameter.EnumeratedDescription)
+        dl
+            - each description, choice in parameter.EnumeratedDescription
+                dt #{choice}
+                dd #{description}
