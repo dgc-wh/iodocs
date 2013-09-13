@@ -152,43 +152,19 @@
     // Auth with OAuth
     $('#credentials').submit(function(event) {
         event.preventDefault();
+
         var params = $(this).serializeArray();
-        $('#oauthAuthenticated').hide();
-        $('section.credentials').removeClass('authed');
-        if (params[1].name == 'oauth') {
-            $.post('/auth', params, function(result) {
-                if (result.signin) {
-                    window.open(result.signin,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
-                }
-            })
-        }
-        else if (params[1].name == 'oauth2') {
-            $.post('/auth2', params, function(result) {
-                if (result.signin) {
-                    window.open(result.signin,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
-                }
-                else if (result.implicit) {
-                    window.open(result.implicit,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
-                }
-                else if (result.refresh) {
-                    window.open(result.refresh,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
-                }
-                else {
-                    window.location.reload();
-                }
-            })
-        };
+
+        $.post('/auth', params, function(result) {
+            if (result.signin) {
+                window.open(result.signin,"_blank","height=900,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0");
+            }
+        })
     });
-<<<<<<< HEAD
     $('#requestContent').change(function(){
 	    $('.requestContent').html('<pre class="prettyprint">' + $('#requestContent').val() + '</pre>');
             prettyPrint();
     });
-=======
-    
-    // $.('#access_token').val(foo);
-
->>>>>>> e24ec1ce176a02d0e38ccc37342d6afe6aa1f213
 
     /*
         Try it! button. Submits the method params, apikey and secret if any, and apiName
@@ -260,6 +236,8 @@
             resultContainer.append($(document.createElement('pre'))
                 .addClass('response prettyprint'));
         }
+
+        console.log(params);
 
         $.post('/processReq', params, function(result, text) {
             // If we get passed a signin property, open a window to allow the user to signin/link their account
