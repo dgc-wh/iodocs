@@ -4,7 +4,7 @@
         "methods": [
             {
                 "MethodName": "List schedules",
-                "Synopsis": "List all schedules owned by user. | stub",
+                "Synopsis": "List all schedules owned by user.",
                 "HTTPMethod": "GET",
                 "URI": "/schedule",
                 "RequiresOAuth": "N",
@@ -14,76 +14,76 @@
                         "Required": "N",
                         "Type": "string",
                         "Default":"",
-                        "Description": "Scan name. | stub"
+                        "Description": "Scan name."
                     },
                     {
                         "Name": "start_date",
                         "Required": "N",
                         "Type": "string",
                         "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; Start date. | stub"
+                        "Description": "Start date."
                     },
                     {
                         "Name": "end_date",
                         "Required": "N",
                         "Type": "string",
                         "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; End date. | stub"
+                        "Description": "End date."
                     },
                     {
                         "Name": "duration",
                         "Required": "N",
                         "Type": "string",
                         "Default":"",
-                        "Description": "Time duration in seconds (I think). | stub"
+                        "Description": "Time duration in seconds."
                     },
                     {
                         "Name": "timezone",
                         "Required": "N",
                         "Type": "string",
                         "Default":"",
-                        "Description": "Time zone of schedule. Ex: America/New_York | stub"
+                        "Description": "Time zone of schedule. Ex: America/New_York"
                     },
                     {
                         "Name": "job",
                         "Required": "N",
                         "Type": "integer",
                         "Default":"",
-                        "Description": "DON'T HAVE WORKING EXAMPLE; Job id | stub"
+                        "Description": "Job id"
                     },
                     {
                         "Name": "creator",
                         "Required": "N",
                         "Type": "integer",
                         "Default":"",
-                        "Description": "Job schedule creator. | stub"
+                        "Description": "Job schedule creator."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml"],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     },
                     {
                         "Name": "page:limit",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Number of pages to retrieve."
+                        "Description": "Number of pages to retrieve."
                     },
                     {
                         "Name": "page:offset",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description": "NOT SURE THIS PARAMETER IS RESPECTED | Begin retrieving pages from this index."
+                        "Description": "Begin retrieving pages from this index."
                     }
                 ]
             },
             {
                 "MethodName": "Get single schedule",
-                "Synopsis": "List a single schedule. | stub",
+                "Synopsis": "List a single schedule.",
                 "HTTPMethod": "GET",
                 "URI": "/schedule/:id",
                 "RequiresOAuth": "N",
@@ -99,13 +99,13 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml"],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Delete a schedule",
-                "Synopsis": "Delete a single schedule. | stub",
+                "Synopsis": "Delete a single schedule.",
                 "HTTPMethod": "DELETE",
                 "URI": "/schedule/:id",
                 "RequiresOAuth": "N",

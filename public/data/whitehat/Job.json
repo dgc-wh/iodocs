@@ -63,7 +63,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
@@ -108,7 +108,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
@@ -255,7 +255,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
@@ -406,15 +406,15 @@
                                     "Name": "target",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: This is a thing. It has two possibilities, type or id. Not sure that this is necessary in PUT.",
+                                    "Type": "object",
+                                    "Description": "It has two possibilities, type or id.",
                                     "parameters": [
                                         {
                                             "Name": "type",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "collection",
-                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "user",
@@ -469,13 +469,13 @@
                                 {
                                     "Name": "services",
                                     "Required": "N",
-                                    "Type": "collection",
-                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value. Not sure that this is necessary in PUT.",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "service",
                                             "Required": "N",
-                                            "Type": "collection",
+                                            "Type": "object",
                                             "Description": "",
                                             "parameters": [
                                                 {
@@ -488,7 +488,7 @@
                                                             "Name": "type",
                                                             "Required": "N",
                                                             "Type": "string",
-                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                            "Description": ""
                                                         },
                                                         {
                                                             "Name": "value",
@@ -503,84 +503,68 @@
                                     ]
                                 },
                                 {
-                                    "Name": "schedule",
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "Format should follow ISO8601."
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "specs",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "collection",
-                                    "Description": "TODO: Change collection to object.",
+                                    "Description": "",
                                     "parameters": [
                                         {
-                                            "Name": "timezone",
+                                            "Name": "type",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "string",
                                             "Description": ""
                                         },
                                         {
-                                            "Name": "start_date",
+                                            "Name": "cron_spec",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "string",
-                                            "Description": "should work for HTTP::Date::parse_date"
-                                        },
-                                        {
-                                            "Name": "end_date",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "",
                                             "Description": ""
                                         },
                                         {
-                                            "Name": "name",
+                                            "Name": "duration",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "",
-                                            "Description": ""
+                                            "Type": "integer",
+                                            "Description": "The unit of measure is 'seconds'."
                                         },
                                         {
-                                            "Name": "spec",
+                                            "Name": "weekday",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "",
-                                            "parameters": [
-                                                {
-                                                    "Name": "type",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "cron_spec",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "duration",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": "This probably shouldn't be string."
-                                                },
-                                                {
-                                                    "Name": "timezone",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "weekday",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "enumerated",
-                                                    "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-                                                    "Description": ""
-                                                }
-                                            ]
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
                                         }
                                     ]
                                 }
@@ -611,7 +595,7 @@
                             "Required": "N",
                             "Default": "",
                             "Type": "object",
-                            "Description": "TODO: Changed to object, but want to TODO anyway.",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "use_patterns",
@@ -706,15 +690,15 @@
                                     "Name": "target",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: This is a thing. It has two possibilities, type or id. Not sure that this is necessary in PUT.",
+                                    "Type": "object",
+                                    "Description": "It has two possibilities, type or id.",
                                     "parameters": [
                                         {
                                             "Name": "type",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "collection",
-                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "user",
@@ -769,13 +753,13 @@
                                 {
                                     "Name": "services",
                                     "Required": "N",
-                                    "Type": "collection",
-                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value. Not sure that this is necessary in PUT.",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "service",
                                             "Required": "N",
-                                            "Type": "collection",
+                                            "Type": "object",
                                             "Description": "",
                                             "parameters": [
                                                 {
@@ -788,7 +772,7 @@
                                                             "Name": "type",
                                                             "Required": "N",
                                                             "Type": "string",
-                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                            "Description": ""
                                                         },
                                                         {
                                                             "Name": "value",
@@ -803,93 +787,68 @@
                                     ]
                                 },
                                 {
-                                    "Name": "schedule",
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "Format should follow ISO8601."
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "specs",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "collection",
-                                    "Description": "Collection or object? Looks like an object.",
+                                    "Description": "",
                                     "parameters": [
                                         {
-                                            "Name": "schedule",
+                                            "Name": "type",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
-                                            "parameters": [
-                                                {
-                                                    "Name": "timezone",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "start_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": "should work for HTTP::Date::parse_date"
-                                                },
-                                                {
-                                                    "Name": "end_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "name",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "spec",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "collection",
-                                                    "Description": "",
-                                                    "parameters": [
-                                                        {
-                                                            "Name": "type",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "cron_spec",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "duration",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": "This probably shouldn't be string."
-                                                        },
-                                                        {
-                                                            "Name": "timezone",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "weekday",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "enumerated",
-                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-                                                            "Description": ""
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "cron_spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "duration",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": "The unit of measure is 'seconds'."
+                                        },
+                                        {
+                                            "Name": "weekday",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
                                         }
                                     ]
                                 }
@@ -924,15 +883,15 @@
                         {
                             "Name": "job",
                             "Required": "N",
-                            "Type": "collection",
-                            "Description": "Should be an object, not a collection. Should this property appear here? Should it contain all the stuff that it has in say 'Put Schedule'? Should it contain 'whitelist' in 'Put Schedule' and 'Post/Create Job'?",
+                            "Type": "object",
+                            "Description": "",
                             "parameters":[
                                 {
                                     "Name": "whitelist",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: Not a collection, it's an object.",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "use_urls",
@@ -956,8 +915,8 @@
                             "Name": "whitelist",
                             "Required": "N",
                             "Default": "",
-                            "Type": "collection",
-                            "Description": "TODO: Not a collection, it's an object.",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "use_urls",
@@ -1033,15 +992,15 @@
                                     "Name": "target",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: This is a thing. It has two possibilities, type or id",
+                                    "Type": "object",
+                                    "Description": "It has two possibilities, type or id",
                                     "parameters": [
                                         {
                                             "Name": "type",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "collection",
-                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "user",
@@ -1096,13 +1055,13 @@
                                 {
                                     "Name": "services",
                                     "Required": "N",
-                                    "Type": "collection",
-                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value.",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "service",
                                             "Required": "N",
-                                            "Type": "collection",
+                                            "Type": "object",
                                             "Description": "",
                                             "parameters": [
                                                 {
@@ -1115,7 +1074,7 @@
                                                             "Name": "type",
                                                             "Required": "N",
                                                             "Type": "string",
-                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                            "Description": ""
                                                         },
                                                         {
                                                             "Name": "value",
@@ -1130,93 +1089,68 @@
                                     ]
                                 },
                                 {
-                                    "Name": "schedule",
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "Format should follow ISO8601."
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "specs",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "collection",
-                                    "Description": "Collection or object? Looks like an object. Not sure this is necessary in POST.",
+                                    "Description": "",
                                     "parameters": [
                                         {
-                                            "Name": "schedule",
+                                            "Name": "type",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
-                                            "parameters": [
-                                                {
-                                                    "Name": "timezone",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "start_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": "should work for HTTP::Date::parse_date"
-                                                },
-                                                {
-                                                    "Name": "end_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "name",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "spec",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "collection",
-                                                    "Description": "",
-                                                    "parameters": [
-                                                        {
-                                                            "Name": "type",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "cron_spec",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "duration",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": "This probably shouldn't be string."
-                                                        },
-                                                        {
-                                                            "Name": "timezone",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "weekday",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "enumerated",
-                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-                                                            "Description": ""
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "cron_spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "duration",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": "The unit of measure is 'seconds'."
+                                        },
+                                        {
+                                            "Name": "weekday",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
                                         }
                                     ]
                                 }
@@ -1260,7 +1194,7 @@
                                     "Name": "pattern",
                                     "Required": "N",
                                     "Type":"string",
-                                    "Description": "I don't know what this is supposed to look like, need to find out."
+                                    "Description": "Kleen star or literal substring match."
                                 }
                             ]
                         }
@@ -1315,15 +1249,15 @@
                                     "Name": "target",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "collection",
-                                    "Description": "TODO: This is a thing. It has two possibilities, type or id",
+                                    "Type": "object",
+                                    "Description": "It has two possibilities, type or id",
                                     "parameters": [
                                         {
                                             "Name": "type",
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "collection",
-                                            "Description": "This is an annoying enumerated list scenario where some of the list options have values themselves. There is the choice of 'user', 'site', 'disco'. 'disco' doesn't seem to require a value.",
+                                            "Description": "",
                                             "parameters": [
                                                 {
                                                     "Name": "user",
@@ -1378,13 +1312,13 @@
                                 {
                                     "Name": "services",
                                     "Required": "N",
-                                    "Type": "collection",
-                                    "Description": "Services is an object, that has an object as its value, which in turn has a collection as its value.",
+                                    "Type": "object",
+                                    "Description": "",
                                     "parameters": [
                                         {
                                             "Name": "service",
                                             "Required": "N",
-                                            "Type": "collection",
+                                            "Type": "object",
                                             "Description": "",
                                             "parameters": [
                                                 {
@@ -1397,7 +1331,7 @@
                                                             "Name": "type",
                                                             "Required": "N",
                                                             "Type": "string",
-                                                            "Description": "Should  'hostname' or 'ip_range', 'scan_depth' looks like an option too. Probably ought to be an enumerated type instead of string."
+                                                            "Description": ""
                                                         },
                                                         {
                                                             "Name": "value",
@@ -1412,93 +1346,68 @@
                                     ]
                                 },
                                 {
-                                    "Name": "schedule",
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "Format should follow ISO8601."
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "specs",
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "collection",
-                                    "Description": "Collection or object? Looks like an object. Not sure this is necessary in POST.",
+                                    "Description": "",
                                     "parameters": [
                                         {
-                                            "Name": "schedule",
+                                            "Name": "type",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "collection",
-                                            "Description": "Looking for schedule inside of schedule. I'm tempted to question my reading comprehension. Looks like it should be an object (with stuff).",
-                                            "parameters": [
-                                                {
-                                                    "Name": "timezone",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "start_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "string",
-                                                    "Description": "should work for HTTP::Date::parse_date"
-                                                },
-                                                {
-                                                    "Name": "end_date",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "name",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "",
-                                                    "Description": ""
-                                                },
-                                                {
-                                                    "Name": "spec",
-                                                    "Required": "N",
-                                                    "Default": "",
-                                                    "Type": "collection",
-                                                    "Description": "'cron_spec' or 'cron_string'? It looks like cron_string is ",
-                                                    "parameters": [
-                                                        {
-                                                            "Name": "type",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "cron_spec",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "duration",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": "This probably shouldn't be string."
-                                                        },
-                                                        {
-                                                            "Name": "timezone",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "string",
-                                                            "Description": ""
-                                                        },
-                                                        {
-                                                            "Name": "weekday",
-                                                            "Required": "N",
-                                                            "Default": "",
-                                                            "Type": "enumerated",
-                                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-                                                            "Description": ""
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "cron_spec",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "string",
+                                            "Description": ""
+                                        },
+                                        {
+                                            "Name": "duration",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "integer",
+                                            "Description": "The unit of measure is 'seconds'."
+                                        },
+                                        {
+                                            "Name": "weekday",
+                                            "Required": "N",
+                                            "Default": "",
+                                            "Type": "enumerated",
+                                            "EnumeratedList": [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+                                            "Description": ""
                                         }
                                     ]
                                 }

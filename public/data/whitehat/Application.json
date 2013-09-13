@@ -4,7 +4,7 @@
         "methods": [
             {
                 "MethodName": "Get application collection",
-                "Synopsis": "Get application collection | stub",
+                "Synopsis": "Get application collection",
                 "HTTPMethod": "GET",
                 "URI": "/application/",
                 "RequiresOAuth": "N",
@@ -14,28 +14,28 @@
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for the label. | stub"
+                        "Description":"Search for the label."
                     },
                     {
                         "Name": "query_label_like",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Search for something like the given label. | stub"
+                        "Description":"Search for something like the given label."
                     },
                     {
                         "Name": "query_application",
                         "Required": "N",
                         "Default": "",
                         "Type": "integer",
-                        "Description":"Can be one or more comma-seperated application ids | stub"
+                        "Description":"Can be one or more comma-seperated application ids"
                     },
                     {
                         "Name": "query_client_id",
                         "Required": "N",
                         "Default": "",
                         "Type": "string",
-                        "Description":"Can be one or more comma-seperated client ids | stub"
+                        "Description":"Can be one or more comma-seperated client ids"
                     },
                     {
                         "Name": "query_status",
@@ -43,7 +43,7 @@
                         "Type": "enumerated",
                         "Default": "",
                         "EnumeratedList": [ "not_configured", "site_disabled", "verify_in_progress", "need_scan_schedule", "config_in_progress", "scan_running", "active" ],
-                        "Description":"Status values: [not_configured (not yet configured), site_disabled (administratively disabled), verify_in_progress (has VVSCA open), need_scan_schedule,  config_in_progress (job is suspended for some reason), scan_running (has a scan running), active (none of the above, idle)] | stub"
+                        "Description":"Status values: [not_configured (not yet configured), site_disabled (administratively disabled), verify_in_progress (has VVSCA open), need_scan_schedule,  config_in_progress (job is suspended for some reason), scan_running (has a scan running), active (none of the above, idle)]"
                     },
                     {
                         "Name": "query_has_schedule",
@@ -51,7 +51,7 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Checks whether there is a schedule. | stub"
+                        "Description": "Checks whether there is a schedule."
                     },
                     {
                         "Name": "display_scan_schedule",
@@ -67,14 +67,14 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        "Description": "Determines whether or not results will contain vuln statistics for given application."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Choose format for results. | stub"
+                        "Description": "Choose format for results."
                     },
                     {
                         "Name": "page:limit",
@@ -99,7 +99,7 @@
             },
             {
                 "MethodName": "Get users of application",
-                "Synopsis": "Get collection of users of a particular application. | stub",
+                "Synopsis": "Get collection of users of a particular application.",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/users",
                 "RequiresOAuth": "N",
@@ -108,20 +108,20 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id of application you want the users for. | stub"
+                        "Description": "Application id of application you want the users for."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Choose format for results. | stub"
+                        "Description": "Choose format for results."
                     }
                 ]
             },
             {
                 "MethodName": "Get single application",
-                "Synopsis": "gets a single application| stub",
+                "Synopsis": "gets a single application",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id",
                 "RequiresOAuth": "N",
@@ -130,7 +130,7 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id of application you are interested in. | stub"
+                        "Description": "Application id of application you are interested in."
                     },
                     {
                         "Name": "display_scan_schedule",
@@ -146,20 +146,20 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        "Description": "Determines whether or not results will contain vuln statistics for given application."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Get collection of codebases",
-                "Synopsis": "Get codebase collection. | stub",
+                "Synopsis": "Get codebase collection.",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/codebase/",
                 "RequiresOAuth": "N",
@@ -168,7 +168,7 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id. | stub"
+                        "Description": "Application id."
                     },
                     {
                         "Name": "display_exclude_dirs",
@@ -186,7 +186,7 @@
             },
             {
                 "MethodName": "Get single codebase",
-                "Synopsis": "Get information about a codebase. | stub",
+                "Synopsis": "Get information about a codebase.",
                 "HTTPMethod": "GET",
                 "URI": "/application/:app_id/codebase/:codebase_id",
                 "RequiresOAuth": "N",
@@ -195,13 +195,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id. | stub"
+                        "Description": "Application id."
                     },
                     {
                         "Name": "codebase_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Codebase id. | stub"
+                        "Description": "Codebase id."
                     },
                     {
                         "Name": "display_exclude_dirs",
@@ -219,7 +219,7 @@
             },
             {
                 "MethodName": "Modify an application",
-                "Synopsis": "Modify a single application | stub",
+                "Synopsis": "Modify a single application",
                 "HTTPMethod": "PUT",
                 "URI": "/application/:app_id",
                 "RequiresOAuth": "N",
@@ -231,14 +231,42 @@
                             "Name": "label",
                             "Required": "N",
                             "Type": "string",
-                            "Description": "| stub"
+                            "Description": ""
                         },
                         {
                             "Name": "scan_schedule",
                             "Required": "N",
                             "Type": "object",
-                            "Description": "TODO: Change from 'collection' to 'object'. | stub",
+                            "Description": "",
                             "parameters": [
+                                {
+                                    "Name": "timezone",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "start_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": "Format should follow ISO8601."
+                                },
+                                {
+                                    "Name": "end_date",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
+                                {
+                                    "Name": "name",
+                                    "Required": "N",
+                                    "Default": "",
+                                    "Type": "string",
+                                    "Description": ""
+                                },
                                 {
                                     "Name": "specs",
                                     "Required": "N",
@@ -258,21 +286,14 @@
                                             "Required": "N",
                                             "Default": "",
                                             "Type": "string",
-                                            "Description": " word word word word word (optional word) [where 'word' stands for any set of non-whitespace character| stub"
+                                            "Description": ""
                                         },
                                         {
                                             "Name": "duration",
                                             "Required": "N",
                                             "Default": "",
-                                            "Type": "string",
-                                            "Description": "This probably shouldn't be string."
-                                        },
-                                        {
-                                            "Name": "timezone",
-                                            "Required": "N",
-                                            "Default": "",
-                                            "Type": "string",
-                                            "Description": ""
+                                            "Type": "integer",
+                                            "Description": "The unit of measure is 'seconds'."
                                         },
                                         {
                                             "Name": "weekday",
@@ -291,19 +312,19 @@
                             "Required": "N",
                             "Type": "enumerated",
                             "EnumeratedList": ["", 0, false],
-                            "Description": "Provisioning can not be set to true. | stub"
+                            "Description": "Provisioning can not be set to true."
                         },
                         {
                             "Name": "appliance",
                             "Required": "N",
-                            "Type": "collection",
-                            "Description": "TODO: Change from 'collection' to 'object'. | stub",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "id",
                                     "Required": "N",
                                     "Type": "integer",
-                                    "Description": "Appliance id | stub"
+                                    "Description": "Appliance id"
                                 }
                             ]
                         }
@@ -314,7 +335,7 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id of application to be modified. | stub"
+                        "Description": "Application id of application to be modified."
                     },
                     {
                         "Name": "display_scan_schedule",
@@ -330,20 +351,20 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        "Description": "Determines whether or not results will contain vuln statistics for given application."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Put an appliance",
-                "Synopsis": "Put an appliance. What's an appliance? | stub",
+                "Synopsis": "Put an appliance. What's an appliance?",
                 "HTTPMethod": "PUT",
                 "URI": "/application/:app_id/appliance",
                 "RequiresOAuth": "N",
@@ -355,7 +376,7 @@
                             "Name": "id",
                             "Required": "Y",
                             "Type": "integer",
-                            "Description": "Appliance id | stub"
+                            "Description": "Appliance id"
                         }
                     ]
                 },
@@ -364,13 +385,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id of application to be uploaded. | stub"
+                        "Description": "Application id of application to be uploaded."
                     }
                 ]
             },
             {
                 "MethodName": "New scan schedule for a application",
-                "Synopsis": "Setup a scan schedule for a particular application. | stub",
+                "Synopsis": "Setup a scan schedule for a particular application.",
                 "HTTPMethod": "PUT",
                 "URI": "/application/:app_id/scan_schedule",
                 "RequiresOAuth": "N",
@@ -378,6 +399,34 @@
                     "schema":{"type":"string"},
                     "contentType":["application/json","application/xml"],
                     "parameters": [
+                        {
+                            "Name": "timezone",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "start_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": "Format should follow ISO8601."
+                        },
+                        {
+                            "Name": "end_date",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
+                        {
+                            "Name": "name",
+                            "Required": "N",
+                            "Default": "",
+                            "Type": "string",
+                            "Description": ""
+                        },
                         {
                             "Name": "specs",
                             "Required": "N",
@@ -397,21 +446,14 @@
                                     "Required": "N",
                                     "Default": "",
                                     "Type": "string",
-                                    "Description": " word word word word word (optional word) [where 'word' stands for any set of non-whitespace character| stub"
+                                    "Description": " digits digits digits digits digits (optional digits) [where 'digits' stands for any set of non-whitespace digits]"
                                 },
                                 {
                                     "Name": "duration",
                                     "Required": "N",
                                     "Default": "",
-                                    "Type": "string",
-                                    "Description": "This probably shouldn't be string."
-                                },
-                                {
-                                    "Name": "timezone",
-                                    "Required": "N",
-                                    "Default": "",
-                                    "Type": "string",
-                                    "Description": ""
+                                    "Type": "integer",
+                                    "Description": "The unit of measure is 'seconds'."
                                 },
                                 {
                                     "Name": "weekday",
@@ -431,13 +473,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id for which a new scan schedule will be created. | stub"
+                        "Description": "Application id for which a new scan schedule will be created."
                     }
                 ]
             },
             {
                 "MethodName": "Modify codebase",
-                "Synopsis": "Modify an existing codebase. | stub",
+                "Synopsis": "Modify an existing codebase.",
                 "HTTPMethod": "PUT",
                 "URI": "/application/:app_id/codebase/:codebase_id",
                 "RequiresOAuth": "N",
@@ -449,19 +491,19 @@
                             "Name": "application_id",
                             "Required": "Y",
                             "Type": "integer",
-                            "Description": "Application id. | stub"
+                            "Description": "Application id."
                         },
                         {
                             "Name": "id",
                             "Required": "N",
                             "Type": "integer",
-                            "Description": "Codebase id. | stub"
+                            "Description": "Codebase id."
                         },
                         {
                             "Name": "exclude_dirs",
                             "Required": "N",
                             "Type": "list",
-                            "Description": "List of directories to be excluded. | stub",
+                            "Description": "List of directories to be excluded.",
                             "parameters": [
                                 {
                                     "Required": "N",
@@ -519,13 +561,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id. | stub"
+                        "Description": "Application id."
                     },
                     {
                         "Name": "codebase_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Codebase id. | stub"
+                        "Description": "Codebase id."
                     },
                     {
                         "Name": "display_exclude_dirs",
@@ -543,7 +585,7 @@
             },
             {
                 "MethodName": "Create new application",
-                "Synopsis": "Create a new application | stub",
+                "Synopsis": "Create a new application",
                 "HTTPMethod": "POST",
                 "URI": "/application/",
                 "RequiresOAuth": "N",
@@ -561,8 +603,8 @@
                         {
                             "Name": "appliance",
                             "Required": "N",
-                            "Type": "collection",
-                            "Description": "TODO: Change from 'collection' to 'object'. | stub ",
+                            "Type": "object",
+                            "Description": "",
                             "parameters": [
                                 {
                                     "Name": "id",
@@ -589,20 +631,20 @@
                         "Default": 0,
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
-                        "Description": "Determines whether or not results will contain vuln statistics for given application.."
+                        "Description": "Determines whether or not results will contain vuln statistics for given application."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Create a codebase",
-                "Synopsis": "Create a new codebase. | stub",
+                "Synopsis": "Create a new codebase.",
                 "HTTPMethod": "POST",
                 "URI": "/application/:app_id/codebase/",
                 "RequiresOAuth": "N",
@@ -614,13 +656,13 @@
                             "Name": "application_id",
                             "Required": "Y",
                             "Type": "integer",
-                            "Description": "Application id. Must match app_id.| stub"
+                            "Description": "Application id. Must match app_id."
                         },
                         {
                             "Name": "exclude_dirs",
                             "Required": "N",
                             "Type": "list",
-                            "Description": "List of directories to be excluded. | stub",
+                            "Description": "List of directories to be excluded.",
                             "parameters": [
                                 {
                                     "Required": "N",
@@ -679,7 +721,7 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id. | stub"
+                        "Description": "Application id."
                     },
                     {
                         "Name": "display_exclude_dirs",
@@ -697,7 +739,7 @@
             },
             {
                 "MethodName": "Delete application",
-                "Synopsis": "Delete a single application. | stub",
+                "Synopsis": "Delete a single application.",
                 "HTTPMethod": "DELETE",
                 "URI": "/application/:app_id",
                 "RequiresOAuth": "N",
@@ -706,13 +748,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id of application to be delete. | stub"
+                        "Description": "Application id of application to be delete."
                     }
                 ]
             },
             {
                 "MethodName": "Delete a codebase",
-                "Synopsis": "Delete a codebase. | stub",
+                "Synopsis": "Delete a codebase.",
                 "HTTPMethod": "DELETE",
                 "URI": "/application/:app_id/codebase/:codebase_id",
                 "RequiresOAuth": "N",
@@ -721,13 +763,13 @@
                         "Name": "app_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Application id. | stub"
+                        "Description": "Application id."
                     },
                     {
                         "Name": "codebase_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Codebase id. | stub"
+                        "Description": "Codebase id."
                     }
                 ]
             }

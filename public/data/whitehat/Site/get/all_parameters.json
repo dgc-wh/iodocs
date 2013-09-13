@@ -27,7 +27,7 @@
                     {
                         "Name": "query_active_admin",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"0 for sites that lack administrative approval, 1 for sites that have administrative approval. Administrative approval refers to things such as service contracts being signed or payment approval."
@@ -35,7 +35,7 @@
                     {
                         "Name": "query_active_consult",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_consult' refers to decisions made by TRC in the operation of scanning or evaluating a site. This is used to disable scans when there are technical issues."
@@ -43,7 +43,7 @@
                     {
                         "Name": "query_active_user",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"0 represents a disabled site, 1 represents an enabled site. 'active_user' refers to the customer's approval of the site being scanned. This is used by customer support to disable scans at the customer's request."
@@ -86,7 +86,7 @@
                     {
                         "Name": "query_discovery",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"Deprecated"
@@ -94,7 +94,7 @@
                     {
                         "Name": "query_enable_scan_creds",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"0 for scans that do not use credentials, 1 for scans that do use credentials."
@@ -109,7 +109,7 @@
                     {
                         "Name": "query_industry",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "Financial Services", "Government", "Education", "Telecommunications", "Retail", "Healthcare", "Manufacturing", "Energy", "IT", "Insurance", "Pharmaceutical", "Banking", "Non Profit", "Social Networking", "Automotive", "Entertainment & Media", "Gaming", "Food & Beverage", "Technology", "Transport & Distribution" ],
                         "Description":"Query the vertical market the site belongs to."
@@ -159,7 +159,7 @@
                     {
                         "Name": "query_satellite",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1, "true", "false"],
                         "Description":"Indicates whether this site is scanned through a satellite device (for internal intranet and development sites)."
@@ -209,7 +209,7 @@
                     {
                         "Name": "query_service_level",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "None", "PE", "SE", "BE", "DE", "PL" ],
                         "Description":"Indicates whether this site is monitored by the Premium, Standard, Baseline Sentinel, Discovery Edition (deprecated), or Pre-Launch Service."
@@ -217,7 +217,7 @@
                     {
                         "Name": "query_service_type",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [ "Enterprise", "Flex" ],
                         "Description":""
@@ -282,6 +282,7 @@
                     {
                         "Name": "display_min",
                         "Required": "N",
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"A meta-parameter which exposes only the label and id properties of the Site resource. This parameter is lowest precedence and so other display parameters may be used to expose specific properties."
@@ -289,7 +290,7 @@
                     {
                         "Name": "display_entry_points_content",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description": "Display request content for POST entry points."
@@ -298,7 +299,7 @@
                         
                         "Name": "display_scan_status",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description":"Expose a list of scan related indicators as a property on the Site resource. These flags indicate whether scans are running properly and whether user action is required to make scans run."
@@ -306,7 +307,7 @@
                     {
                         "Name": "display_groups",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose a list of groups to which the site belongs as a property of the Site resource"
@@ -314,7 +315,7 @@
                     {
                         "Name": "display_scans",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":""
@@ -322,7 +323,7 @@
                     {
                         "Name": "display_vuln_stats",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose simple statistics about the number of vulns on the Site."
@@ -330,7 +331,7 @@
                     {
                         "Name": "display_vuln_policy",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose 'vuln_policy' as an object property of the Site resource which refers to the Vulnerability Policy currently applied to the site."
@@ -338,7 +339,7 @@
                     {
                         "Name": "display_assessment_complete",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose 'assessment_complete' as a boolean property of the Site resource which indicates whether there are outstanding vulnerabilities under assessment. A false value indicates that either scanning or evaluation is incomplete."
@@ -346,7 +347,7 @@
                     {
                         "Name": "display_contract_info",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":""
@@ -354,7 +355,7 @@
                     {
                         "Name": "display_organization",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":""
@@ -369,7 +370,7 @@
                     {
                         "Name": "display_entry_points",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
                         "Description": "Entry points are starting point URLs for scan crawling. Setting this option will include a list of entry points as a property of the Site resource."
@@ -377,7 +378,7 @@
                     {
                         "Name": "display_site_credentials",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose a list of site credentials which may be used to log into the site under test. These are represented in plain text in order to allow for automated processes. It is recommended that sensitive credentials not be used for this purpose."
@@ -385,7 +386,7 @@
                     {
                         "Name": "display_allowed_hosts",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose a list of allowed hosts as a property of the Site resource. Allowed hosts are hosts other than the site_url which are allowed be scanned as a part of a Site."
@@ -393,7 +394,7 @@
                     {
                         "Name": "display_scan_schedule",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":"Expose the scan schedule which indicates when automated scanning will take place."
@@ -401,7 +402,7 @@
                     {
                         "Name": "display_service_type",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":""
@@ -409,7 +410,7 @@
                     {
                         "Name": "display_description",
                         "Required": "N",
-                        "Default": 0,
+                        "Default": "",
                         "Type": "enumerated",
                         "EnumeratedList": [0, 1],
             "Description":""

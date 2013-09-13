@@ -4,7 +4,7 @@
         "methods": [
             {
                 "MethodName": "Retrieve all role collections",
-                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "Synopsis": "Collection containing all roles visible to the current requestor.",
                 "HTTPMethod": "GET",
                 "URI": "/role",
                 "RequiresOAuth": "N",
@@ -14,13 +14,13 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Retrieve role collection",
-                "Synopsis": "Collection containing all roles visible to the current requestor. | stub",
+                "Synopsis": "Collection containing all roles visible to the current requestor.",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/role",
                 "RequiresOAuth": "N",
@@ -36,13 +36,13 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             },
             {
                 "MethodName": "Retrieve role resource",
-                "Synopsis": "Role resource containing a description of the role and associated privileges. | stub",
+                "Synopsis": "Role resource containing a description of the role and associated privileges.",
                 "HTTPMethod": "GET",
                 "URI": "/:client_id/role/:id",
                 "RequiresOAuth": "N",
@@ -64,7 +64,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Format of results. | stub"
+                        "Description": "Format of results."
                     }
                 ]
             }

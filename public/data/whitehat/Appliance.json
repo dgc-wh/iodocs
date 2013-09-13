@@ -45,7 +45,7 @@
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Choose format for results. | stub"
+                        "Description": "Choose format for results."
                     }
                 ]
             },
@@ -60,14 +60,14 @@
                         "Name": "appliance_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Appliance id. | stub"
+                        "Description": "Appliance id."
                     },
                     {
                         "Name": "accept_fmt",
                         "Required": "N",
                         "Type": "enumerated",
                         "EnumeratedList": ["application/json", "text/xml", "text/csv" ],
-                        "Description": "Choose format for results. | stub"
+                        "Description": "Choose format for results."
                     }
                 ]
             },
@@ -82,7 +82,7 @@
                         "Name": "appliance_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Appliance id. | stub"
+                        "Description": "Appliance id."
                     }
                 ]
             },
@@ -111,7 +111,7 @@
                         "Name": "appliance_id",
                         "Required": "Y",
                         "Type": "integer",
-                        "Description": "Appliance id. | stub"
+                        "Description": "Appliance id."
                     }
                 ]
             },
