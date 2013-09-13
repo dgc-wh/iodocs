@@ -583,7 +583,19 @@ li {
   line-height: 33px;
   float: left;
 }
+<<<<<<< HEAD
 /* line 525, scss/style.scss */
+=======
+
+.method .title .name span {
+  float: none;
+}
+
+.method .title .uri span {
+  float: none;
+}
+
+>>>>>>> e24ec1ce176a02d0e38ccc37342d6afe6aa1f213
 .method .title .uri {
   color: #777;
 }
@@ -808,7 +820,26 @@ li {
   zoom: 1;
 }
 
+<<<<<<< HEAD
 /* line 700, scss/style.scss */
+=======
+.foo{
+  color:red;
+}
+
+strong{
+  font-weight: bold;
+}
+
+em {
+  font-style:italic;
+}
+
+underline {
+  text-decoration:underline
+}
+
+>>>>>>> e24ec1ce176a02d0e38ccc37342d6afe6aa1f213
 dl {
   display: inline-block;
   margin-bottom: 10px;
@@ -1202,3 +1233,17 @@ div.clickable a {
     page-break-after: avoid;
   }
 }
+
+/* Type-ahead search css */
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+}
+
+/* Use to hide endpoints and methods that do not match for a given search */
+.hide-this {
+    display: none;
+}
+
